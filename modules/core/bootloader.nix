@@ -3,16 +3,17 @@
   boot = {
     loader = {
       systemd-boot = {
-        enable = false;
+        enable = true;
         editor = false;
       };
 
       timeout = lib.mkDefault 0;
 
       efi.canTouchEfiVariables = true;
+      efi.efiSysMountPoint = "/boot/efi";
 
       grub = {
-        enable = true;
+        enable = false;
         device = "nodev";
         efiSupport = true;
         timeoutStyle = "countdown";
