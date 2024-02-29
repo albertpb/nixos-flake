@@ -6,10 +6,8 @@
     ];
 
   console = {
-    font = "ter-132n";
-    packages = [ pkgs.terminus_font ];
-    useXkbConfig = true;
-    earlySetup = false;
+    font = "lat2-16";
+    earlySetup = true;
   };
 
   fileSystems."/" =

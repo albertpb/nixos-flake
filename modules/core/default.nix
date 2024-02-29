@@ -30,6 +30,8 @@ in
         (import ./user.nix)
       ] ++ [
         (import ./packages.nix)
+      ] ++ [
+        (import ./services)
       ];
     };
 }
