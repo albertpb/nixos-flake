@@ -8,8 +8,8 @@
     extraSpecialArgs = { inherit inputs username; };
 
     users.${username} = {
-      imports = [ 
-        (import ./../home) 
+      imports = [
+        (import ./../home)
       ];
       home.homeDirectory = "/home/${username}";
       home.stateVersion = "23.11";

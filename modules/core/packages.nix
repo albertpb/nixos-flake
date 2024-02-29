@@ -4,5 +4,6 @@
     floorp
     nwg-look
     nixpkgs-fmt
+    glib # fix nwg-look not aplying changes
   ];
 }
