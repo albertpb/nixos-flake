@@ -20,6 +20,7 @@
   environment.systemPackages = with pkgs; [
     wget
     git
+    pciutils
   ];
 
   time.timeZone = "America/Santiago";

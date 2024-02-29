@@ -7,8 +7,10 @@
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs username; };
 
-    users.${username} = { pkgs, ... }: {
-      imports = [ (import ./../home) ];
+    users.${username} = {
+      imports = [ 
+        (import ./../home) 
+      ];
       home.homeDirectory = "/home/${username}";
       home.stateVersion = "23.11";
 

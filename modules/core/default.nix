@@ -28,6 +28,8 @@ in
         (import ./fonts.nix)
       ] ++ [
         (import ./user.nix)
+      ] ++ [
+        (import ./packages.nix)
       ];
     };
 }
