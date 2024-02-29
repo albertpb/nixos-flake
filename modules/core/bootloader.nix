@@ -3,7 +3,7 @@
   boot = {
     loader = {
       systemd-boot = {
-        enable = true;
+        enable = false;
         editor = false;
       };
 
@@ -13,7 +13,7 @@
       efi.efiSysMountPoint = "/boot/efi";
 
       grub = {
-        enable = false;
+        enable = true;
         device = "nodev";
         efiSupport = true;
         timeoutStyle = "countdown";
