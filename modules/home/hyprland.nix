@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ username, pkgs, ... }:
 {
   home.file.".config/hypr/hyprland.conf".text = ''
     ########################################################################################
@@ -22,6 +22,7 @@
     # exec-once = waybar & hyprpaper & firefox
     exec-once=hyprctl setcursor capitaine-cursors 24
     exec-once=waybar
+    exec-once=hyprpaper
 
     # Source a file (multi-file configs)
     # source = ~/.config/hypr/myColors.conf
@@ -131,6 +132,12 @@
     # See https://wiki.hyprland.org/Configuring/Keywords/ for more
     $mainMod = SUPER
 
+    $w1 = hyprctl hyprpaper wallpaper "DP-2,~/wallpapers/1.png"
+    $w2 = hyprctl hyprpaper wallpaper "DP-2,~/wallpapers/2.png"
+    $w3 = hyprctl hyprpaper wallpaper "DP-2,~/wallpapers/3.png"
+    $w4 = hyprctl hyprpaper wallpaper "DP-2,~/wallpapers/4.png"
+    $w5 = hyprctl hyprpaper wallpaper "DP-2,~/wallpapers/5.png"
+
     # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
     bind = $mainMod, Q, exec, kitty
     bind = $mainMod, C, killactive, 
@@ -149,27 +156,27 @@
 
     # Switch workspaces with mainMod + [0-9]
     bind = $mainMod, 1, workspace, 1
+    bind = $mainMod, 1, exec,$w1
     bind = $mainMod, 2, workspace, 2
+    bind = $mainMod, 2, exec,$w2
     bind = $mainMod, 3, workspace, 3
+    bind = $mainMod, 3, exec,$w3
     bind = $mainMod, 4, workspace, 4
+    bind = $mainMod, 4, exec,$w4
     bind = $mainMod, 5, workspace, 5
-    bind = $mainMod, 6, workspace, 6
-    bind = $mainMod, 7, workspace, 7
-    bind = $mainMod, 8, workspace, 8
-    bind = $mainMod, 9, workspace, 9
-    bind = $mainMod, 0, workspace, 10
+    bind = $mainMod, 5, exec,$w5
 
     # Move active window to a workspace with mainMod + SHIFT + [0-9]
     bind = $mainMod SHIFT, 1, movetoworkspace, 1
+    bind = $mainMod SHIFT, 1, exec,$w1
     bind = $mainMod SHIFT, 2, movetoworkspace, 2
+    bind = $mainMod SHIFT, 2, exec,$w2
     bind = $mainMod SHIFT, 3, movetoworkspace, 3
+    bind = $mainMod SHIFT, 3, exec,$w3
     bind = $mainMod SHIFT, 4, movetoworkspace, 4
+    bind = $mainMod SHIFT, 4, exec,$w4
     bind = $mainMod SHIFT, 5, movetoworkspace, 5
-    bind = $mainMod SHIFT, 6, movetoworkspace, 6
-    bind = $mainMod SHIFT, 7, movetoworkspace, 7
-    bind = $mainMod SHIFT, 8, movetoworkspace, 8
-    bind = $mainMod SHIFT, 9, movetoworkspace, 9
-    bind = $mainMod SHIFT, 0, movetoworkspace, 10
+    bind = $mainMod SHIFT, 5, exec,$w5
 
     # Example special workspace (scratchpad)
     bind = $mainMod, S, togglespecialworkspace, magic
@@ -182,5 +189,21 @@
     # Move/resize windows with mainMod + LMB/RMB and dragging
     bindm = $mainMod, mouse:272, movewindow
     bindm = $mainMod, mouse:273, resizewindow
+  '';
+
+  home.file.".config/hypr/hyprpaper.conf".text = ''
+    preload = /home/${username}/wallpapers/1.png
+    preload = /home/${username}/wallpapers/2.png
+    preload = /home/${username}/wallpapers/3.png
+    preload = /home/${username}/wallpapers/4.png
+    preload = /home/${username}/wallpapers/5.png
+
+    wallpaper = DP-2,/home/${username}/wallpapers/1.png
+
+    #enable splash text rendering over the wallpaper
+    splash = false
+
+    #fully disable ipc
+    # ipc = off
   '';
 }

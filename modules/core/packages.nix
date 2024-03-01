@@ -9,5 +9,8 @@
     xdg-utils
     pavucontrol
     rnnoise-plugin
+    hyprpaper
+    sxiv
+    feh
   ];
 }
