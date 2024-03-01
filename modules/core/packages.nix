@@ -13,4 +13,9 @@
     sxiv
     feh
   ];
+
+  environment.systemPackages = with pkgs; [
+    neovim
+    wget
+  ];
 }
