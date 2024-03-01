@@ -15,6 +15,9 @@
     mako
     libnotify
     hwloc
+    brasero # make iso files
+    shotman # take screenshots
+    slurp # Select a region in wayland
   ];
 
   environment.systemPackages = with pkgs; [
