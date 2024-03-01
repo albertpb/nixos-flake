@@ -151,7 +151,7 @@
         position = "top";
         modules-left = [ "custom/logo" "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "memory" "network" ];
+        modules-right = [ "tray" "pulseaudio" "memory" "network" ];
         "custom/logo" = {
           format = "  ";
           tooltip = false;
@@ -206,6 +206,19 @@
           tooltip-format-disconnected = "Disconnected";
           interval = 5;
           nospacing = 1;
+        };
+        pulseaudio = {
+          format = "{icon}";
+          format-bluetooth = "󰂰";
+          nospacing = 1;
+          tooltip-format = "Volume : {volume}%";
+          format-muted = "󰝟";
+          format-icons = {
+            headphone = "";
+            default = [ "󰖀" "󰕾" "" ];
+          };
+          on-click = "pamixer -t";
+          scroll-step = 1;
         };
       }
     ];

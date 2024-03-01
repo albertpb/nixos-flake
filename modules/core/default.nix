@@ -32,6 +32,10 @@ in
         (import ./packages.nix)
       ] ++ [
         (import ./services)
+      ] ++ [
+        (import ./security.nix)
+      ] ++ [
+        (import ./sound.nix)
       ];
     };
 }
