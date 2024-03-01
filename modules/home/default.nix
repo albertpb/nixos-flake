@@ -5,5 +5,6 @@
     ++ [ (import ./rofi.nix) ]
     ++ [ (import ./waybar.nix) ]
     ++ [ (import ./kitty.nix) ]
-    ++ [ (import ./keeweb) ];
+    ++ [ (import ./keeweb) ]
+    ++ [ (import ./git.nix) ];
 }
