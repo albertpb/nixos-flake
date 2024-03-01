@@ -6,5 +6,6 @@
     nixpkgs-fmt
     glib # fix nwg-look not aplying changes
     libsecret
+    xdg-utils
   ];
 }
