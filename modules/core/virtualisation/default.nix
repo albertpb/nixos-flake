@@ -2,8 +2,8 @@
   imports = [
     ./vfio.nix
     ./virtualisation.nix
-#    ./libvirt.nix
-  ];  
+    #    ./libvirt.nix
+  ];
 
   virtualisation = {
     vfio = {
@@ -17,8 +17,9 @@
 
     hugepages = {
       enable = true;
-      defaultPageSize = "4M";
-      pageSize = "4M";
+      defaultPageSize = "2M";
+      pageSize = "2M";
+      numPages = 16000;
     };
   };
 
@@ -30,13 +31,15 @@
       swtpm.enable = true;
       ovmf = {
         enable = true;
-        packages = [(pkgs.OVMF.override {
-          secureBoot = true;
-          tpmSupport = true;
-        }).fd];
+        packages = [
+          (pkgs.OVMF.override {
+            secureBoot = true;
+            tpmSupport = true;
+          }).fd
+        ];
       };
     };
-  }; 
+  };
 
   programs.virt-manager.enable = true;
 }

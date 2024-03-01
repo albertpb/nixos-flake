@@ -14,6 +14,7 @@
     feh
     mako
     libnotify
+    hwloc
   ];
 
   environment.systemPackages = with pkgs; [
