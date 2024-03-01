@@ -6,5 +6,6 @@
     ++ [ (import ./waybar.nix) ]
     ++ [ (import ./kitty.nix) ]
     ++ [ (import ./keeweb) ]
-    ++ [ (import ./git.nix) ];
+    ++ [ (import ./git.nix) ]
+    ++ [ (import ./mako.nix) ];
 }

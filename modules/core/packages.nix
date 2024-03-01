@@ -12,6 +12,8 @@
     hyprpaper
     sxiv
     feh
+    mako
+    libnotify
   ];
 
   environment.systemPackages = with pkgs; [
