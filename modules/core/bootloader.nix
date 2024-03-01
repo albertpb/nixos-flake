@@ -21,6 +21,8 @@
       #};
     };
 
+    supportedFilesystems = [ "ntfs" ];
+
     kernelModules = [ "kvm-amd" ];
     kernelParams = [
       "quiet"

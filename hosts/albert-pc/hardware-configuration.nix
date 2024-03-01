@@ -56,6 +56,13 @@
       fsType = "ext4";
     };
 
+  fileSystems."/data" =
+    {
+      device = "/dev/disk/by-uuid/9C4A76964A766D40";
+      fsType = "ntfs-3g";
+      options = [ "rw" "uid=1000" ];
+    };
+
   swapDevices =
     [{ device = "/dev/disk/by-uuid/e4abad48-6b98-4468-93b5-aacd3a72a934"; }];
 
