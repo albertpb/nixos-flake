@@ -8,5 +8,6 @@
     libsecret
     xdg-utils
     pavucontrol
+    rnnoise-plugin
   ];
 }
