@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   security = {
-    polkit = enable;
-    rtkit = enable;
+    polkit.enable = true;
+    rtkit.enable = true;
   };
 }
