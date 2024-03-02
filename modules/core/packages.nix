@@ -18,6 +18,7 @@
     brasero # make iso files
     shotman # take screenshots
     slurp # Select a region in wayland
+    pinta
   ];
 
   environment.systemPackages = with pkgs; [
