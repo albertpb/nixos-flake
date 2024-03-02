@@ -42,7 +42,6 @@
 
     initrd.verbose = false;
     initrd.availableKernelModules = [ "nvme" "ahci" "thunderbolt" "xhci_pci" "usbhid" "uas" "usb_storage" "sd_mod" ];
-    initrd.kernelModules = [ "amdgpu" ];
     initrd.systemd.enable = true;
   };
 }

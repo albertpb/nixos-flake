@@ -15,6 +15,10 @@ in
       modules = [
         (import ./../../hosts/albert-pc/hardware-configuration.nix)
       ] ++ [
+        (import ./../../hosts/albert-pc/packages.nix)
+      ] ++ [
+        (import ./../../hosts/albert-pc/user.nix)
+      ] ++ [
         (import ./virtualisation/default.nix)
       ] ++ [
         (import ./bootloader.nix)
@@ -27,7 +31,36 @@ in
       ] ++ [
         (import ./fonts.nix)
       ] ++ [
-        (import ./user.nix)
+        (import ./packages.nix)
+      ] ++ [
+        (import ./services)
+      ] ++ [
+        (import ./security.nix)
+      ] ++ [
+        (import ./sound.nix)
+      ];
+    };
+
+  nixos-ai = nixpkgs.lib.nixosSystem
+    {
+      specialArgs = { inherit self inputs username; };
+
+      modules = [
+        (import ./../../hosts/nixos-ai/hardware-configuration.nix)
+      ] ++ [
+        (import ./../../hosts/nixos-ai/packages.nix)
+      ] ++ [
+        (import ./../../hosts/nixos-ai/user.nix)
+      ] ++ [
+        (import ./bootloader.nix)
+      ] ++ [
+        (import ./network.nix)
+      ] ++ [
+        (import ./program.nix)
+      ] ++ [
+        (import ./system.nix)
+      ] ++ [
+        (import ./fonts.nix)
       ] ++ [
         (import ./packages.nix)
       ] ++ [

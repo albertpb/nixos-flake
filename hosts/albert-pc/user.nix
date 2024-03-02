@@ -9,7 +9,7 @@
 
     users.${username} = {
       imports = [
-        (import ./../home)
+        (import ./home)
       ];
       home.homeDirectory = "/home/${username}";
       home.stateVersion = "23.11";
