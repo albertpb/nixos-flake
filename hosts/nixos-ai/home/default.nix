@@ -1,10 +1,7 @@
 { inputs, username, ... }:
 {
-  imports = [ (import ./hyprland.nix) ]
-    ++ [ (import ./vscodium.nix) ]
+  imports = [ (import ./vscodium.nix) ]
     ++ [ (import ./rofi.nix) ]
-    ++ [ (import ./waybar.nix) ]
     ++ [ (import ./kitty.nix) ]
-    ++ [ (import ./git.nix) ]
-    ++ [ (import ./mako.nix) ];
+    ++ [ (import ./git.nix) ];
 }
