@@ -10,9 +10,10 @@ in
 {
   services.greetd = {
     enable = true;
+    #vt = config.services.xserver.tty;
     settings = {
       default_session = {
-        command = "${tuigreet} --time --remember --remember-session --sessions ";
+        command = "${tuigreet} --time --remember --remember-session --cmd 'sx sxhkd & exec bspwm'";
         user = "greeter";
       };
     };

@@ -19,5 +19,8 @@
   environment.systemPackages = with pkgs; [
     neovim
     wget
+    killall
+    zip
+    unzip
   ];
 }

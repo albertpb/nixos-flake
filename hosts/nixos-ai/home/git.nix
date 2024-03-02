@@ -3,6 +3,8 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
+    userName = "albertpb";
+    userEmail = "palumbo.alb@gmail.com";
 
     extraConfig = {
       credential.helper = "${

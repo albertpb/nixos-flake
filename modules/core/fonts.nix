@@ -11,6 +11,9 @@
         "FiraCode"
         "DroidSansMono"
         "JetBrainsMono"
+        "Meslo"
+        "Iosevka"
+        "IosevkaTerm"
       ];
     })
   ];
