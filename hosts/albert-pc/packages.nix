@@ -6,5 +6,6 @@
     hyprpaper
     mako
     nwg-look
+    swaylock-effects
   ];
 }

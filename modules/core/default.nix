@@ -21,6 +21,8 @@ in
       ] ++ [
         (import ./../../hosts/albert-pc/services)
       ] ++ [
+        (import ./../../hosts/albert-pc/security.nix)
+      ] ++ [
         (import ./virtualisation/default.nix)
       ] ++ [
         (import ./bootloader.nix)

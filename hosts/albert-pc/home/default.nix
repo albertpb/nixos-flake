@@ -7,5 +7,6 @@
     ++ [ (import ./kitty.nix) ]
     ++ [ (import ./keeweb) ]
     ++ [ (import ./git.nix) ]
-    ++ [ (import ./mako.nix) ];
+    ++ [ (import ./mako.nix) ]
+    ++ [ (import ./swayidle.nix) ];
 }
