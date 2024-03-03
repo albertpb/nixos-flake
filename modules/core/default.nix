@@ -23,6 +23,8 @@ in
       ] ++ [
         (import ./../../hosts/albert-pc/security.nix)
       ] ++ [
+        (import ./../../hosts/albert-pc/program.nix)
+      ] ++ [
         (import ./virtualisation/default.nix)
       ] ++ [
         (import ./bootloader.nix)
@@ -55,6 +57,8 @@ in
         (import ./../../hosts/nixos-ai/user.nix)
       ] ++ [
         (import ./../../hosts/nixos-ai/services)
+      ] ++ [
+        (import ./../../hosts/nixos-ai/program.nix)
       ] ++ [
         (import ./bootloader.nix)
       ] ++ [

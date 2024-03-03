@@ -24,6 +24,7 @@
     exec-once=waybar
     exec-once=hyprpaper
     exec-once=gnome-keyring-daemon --daemonize
+    exec-once=swayidle -w
 
     # Source a file (multi-file configs)
     # source = ~/.config/hypr/myColors.conf

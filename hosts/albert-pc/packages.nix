@@ -8,5 +8,6 @@
     nwg-look
     swaylock-effects
     macchina
+    swayidle
   ];
 }

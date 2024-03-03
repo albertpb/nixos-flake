@@ -8,6 +8,5 @@
     ++ [ (import ./keeweb) ]
     ++ [ (import ./git.nix) ]
     ++ [ (import ./mako.nix) ]
-    ++ [ (import ./swayidle.nix) ]
     ++ [ (import ./zsh.nix) ];
 }
