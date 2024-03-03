@@ -17,7 +17,7 @@
     };
 
     hugepages = {
-      enable = true;
+      enable = false;
       defaultPageSize = "1G";
       pageSize = "1G";
       numPages = 32;
