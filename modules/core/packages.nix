@@ -23,5 +23,6 @@
     killall
     zip
     unzip
+    btop
   ];
 }
