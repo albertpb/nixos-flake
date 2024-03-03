@@ -23,6 +23,7 @@
     exec-once=hyprctl setcursor capitaine-cursors 24
     exec-once=waybar
     exec-once=hyprpaper
+    exec-once=gnome-keyring-daemon --daemonize
 
     # Source a file (multi-file configs)
     # source = ~/.config/hypr/myColors.conf

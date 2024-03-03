@@ -2,6 +2,7 @@
 
 #### BSPWM AUTOSTART ####
 sxhkd -c ~/.config/sxhkd/sxhkdrc &
+gnome-keyring-daemon --daemonize &
 polybar -q main -c ~/.config/polybar/config.ini &
 xsetroot -cursor_name left_ptr &
 setxkbmap latam &
