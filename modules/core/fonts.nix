@@ -7,6 +7,7 @@
     powerline-symbols
     material-icons
     material-design-icons
+    corefonts
 
     (nerdfonts.override {
       fonts = [
