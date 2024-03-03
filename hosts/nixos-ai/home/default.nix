@@ -7,5 +7,6 @@
     ++ [ (import ./dunst.nix) ]
     ++ [ (import ./picom.nix) ]
     ++ [ (import ./polybar.nix) ]
-    ++ [ (import ./sxhkd.nix) ];
+    ++ [ (import ./sxhkd.nix) ]
+    ++ [ (import ./zsh.nix) ];
 }

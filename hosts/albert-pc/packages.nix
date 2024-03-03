@@ -7,5 +7,6 @@
     mako
     nwg-look
     swaylock-effects
+    macchina
   ];
 }

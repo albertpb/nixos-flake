@@ -9,6 +9,7 @@
     kitty
     feh
     lxappearance
+    macchina
   ];
 
   environment.systemPackages = with pkgs; [
