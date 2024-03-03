@@ -5,7 +5,9 @@
     font-awesome
     powerline-fonts
     powerline-symbols
+    material-icons
     material-design-icons
+
     (nerdfonts.override {
       fonts = [
         "FiraCode"
@@ -14,6 +16,7 @@
         "Meslo"
         "Iosevka"
         "IosevkaTerm"
+        "Hack"
       ];
     })
   ];

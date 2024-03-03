@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home.file.".config/polybar/colors.ini".text = ''
+  home.file.".config/sxhkd/sxhkdrc".text = ''
     # Web
     super + shift + w
       brave-browser

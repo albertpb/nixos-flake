@@ -1,92 +1,119 @@
 { pkgs, username, ... }:
 {
-  home.file.".config/polybar/colors.ini".text = ''
-    [colors]
-    background = #1a1b26
-    foreground = #c0caf5
-    primary= #7aa2f7
-    secondary= #c0caf5	
-    alert= #31363d	
-    disabled= #a8a9b9	
-  '';
 
   home.file.".config/polybar/config.ini".text = ''
-    [global/wm]
-    margin-bottom = 6
-    margin-top = 0
-    include-file = ~/.config/polybar/colors.ini
-    include-file = ~/.config/polybar/modules.ini
+    [colors]
+    bg = #1a1b26
+    bg-alt = #20212C
+    fg = #c0caf5
+    fg-alt = #5D5E72
+
+    red = #ff7a93
+
+    trans = #00000000
+    semi-trans-black = #cc000000
+
+    shade-1 = #32344a
+    shade-2 = #444b6a
+    shade-3 = #787c99
+    shade-4 = #CACACE
+    shade-5 = #acb0d0
 
     [bar/main]
     width = 100%
-    height = 24pt
-    radius = 6
-
-    ; dpi = 96
-
-    background = ''${colors.background}
-    foreground = ''${colors.foreground}
-
-    line-size = 3pt
-
-    border-size = 4pt
-    border-color = #00000000
-
-    padding-left = 0
-    padding-right = 1
-
-    module-margin = 1
-
-    separator = |
-    separator-foreground = ''${colors.disabled}
-
-    font-0 = monospace;2
-
-    modules-left = xworkspaces xwindow
-    modules-right = filesystem xkeyboard memory cpu eth date
-
-    cursor-click = pointer
-    cursor-scroll = ns-resize
-
-    enable-ipc = true
+    height = 35
+    offset-y = 0
+    top = true
+    fixed-center = true
 
     wm-restack = bspwm
 
-    ; override-redirect = true
+    override-redirect = false
 
-    [module/systray]
-    type = internal/tray
+    scroll-up = next
+    scroll-down = prev
 
-    format-margin = 8pt
-    tray-spacing = 16pt
+    enable-ipc = true
 
+    background = ''${colors.bg}
+    foreground = ''${colors.fg}
 
+    font-0 = "JetBrainsMono Nerd Font:style=Regular:size=10;2"
+    font-1 = "JetBrainsMono Nerd Font:style=Bold:size=10;2"
+    font-2 = "JetBrainsMono Nerd Font:size=19;5"
+    font-3 = "Material Design Icons:style=Regular;2"
+    font-4 = "Material Icons:style=Regular;2"
+    font-5 = "Font Awesome 6 Free Regular:style=Regular;2"
+
+    modules-left = date xwindow
+    modules-center = bspwm
+    modules-right = filesystem margin xkeyboard margin memory margin cpu margin eth margin tray margin
+    #margin session
+
+    cursor-click = pointer
+
+    [bar/external]
+    monitor = DP-1
+    modules-right = wlan pulseaudio 
+    #margin session
+    inherit = bar/main
 
     [settings]
     screenchange-reload = true
-    pseudo-transparency = true
 
-    ; vim:ft=dosini
-  '';
+    [module/bspwm]
+    type = internal/bspwm
 
-  home.file.".config/polybar/modules.ini".text = ''
+    format = <label-state> <label-mode>
+
+    label-focused = %index%
+    label-focused-foreground = ''${colors.shade-5}
+    label-focused-padding = 2
+
+    label-occupied = %index%
+    label-occupied-foreground = ''${colors.shade-3}
+    label-occupied-padding = 2
+
+    label-empty = %index%
+    label-empty-foreground = ''${colors.shade-1}
+    label-empty-padding = 2
+
+    [module/date]
+    type = internal/date
+    interval = 1
+
+    time = "%a, %b %d %H:%M"
+
+    format = <label>
+    format-foreground = ''${colors.fg}
+    format-padding = 1
+    format-prefix = %{T5}%{T-}
+    label = %{T1}%time%%{T-}
+    label-padding = 1
+
+    [module/margin]
+    type = custom/text
+
+    content = %{T2} %{T-}
+    content-foreground = ''${colors.trans}
+
     [module/xworkspaces]
     type = internal/xworkspaces
 
     label-active = %name%
-    label-active-background = ''${colors.background-alt}
-    label-active-underline= ''${colors.primary}
+    label-active-background = ''${colors.bg-alt}
+    label-active-underline= ''${colors.shade-5}
     label-active-padding = 1
 
     label-occupied = %name%
     label-occupied-padding = 1
 
     label-urgent = %name%
-    label-urgent-background = ''${colors.alert}
+    label-urgent-background = ''${colors.shade-5}
     label-urgent-padding = 1
 
     label-empty = %name%
-    label-empty-foreground = ''${colors.disabled}
+    label-empty-foreground = ''${colors.shade-1}
     label-empty-padding = 1
 
     [module/xwindow]
@@ -102,44 +129,20 @@
     label-mounted = %{F#F0C674}%mountpoint%%{F-} %percentage_used%%
 
     label-unmounted = %mountpoint% not mounted
-    label-unmounted-foreground = ''${colors.disabled}
-
-    [module/pulseaudio]
-    type = internal/pulseaudio
-
-    format-volume-prefix = "VOL "
-    format-volume-prefix-foreground = ''${colors.primary}
-    format-volume = <label-volume>
-
-    label-volume = %percentage%%
-
-    label-muted = muted
-    label-muted-foreground = ''${colors.disabled}
-
-    [module/xkeyboard]
-    type = internal/xkeyboard
-    blacklist-0 = num lock
-
-    label-layout = %layout%
-    label-layout-foreground = ''${colors.primary}
-
-    label-indicator-padding = 2
-    label-indicator-margin = 1
-    label-indicator-foreground = ''${colors.background}
-    label-indicator-background = ''${colors.secondary}
+    label-unmounted-foreground = ''${colors.shade-1}
 
     [module/memory]
     type = internal/memory
     interval = 2
-    format-prefix = "RAM "
-    format-prefix-foreground = ''${colors.primary}
+    format-prefix = "󰘚 "
+    format-prefix-foreground = ''${colors.shade-5}
     label = %percentage_used:2%%
 
     [module/cpu]
     type = internal/cpu
     interval = 2
-    format-prefix = "CPU "
-    format-prefix-foreground = ''${colors.primary}
+    format-prefix = " "
+    format-prefix-foreground = ''${colors.shade-5}
     label = %percentage:2%%
 
     [network-base]
@@ -149,24 +152,12 @@
     format-disconnected = <label-disconnected>
     label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 
-    [module/wlan]
-    inherit = network-base
-    interface-type = wireless
-    label-connected = %{F#F0C674}%ifname%%{F-} %essid% %local_ip%
-
     [module/eth]
     inherit = network-base
     interface-type = wired
     label-connected = %{F#F0C674}%ifname%%{F-} %local_ip%
 
-    [module/date]
-    type = internal/date
-    interval = 1
-
-    date = %H:%M
-    date-alt = %Y-%m-%d %H:%M:%S
-
-    label = %date%
-    label-foreground = ''${colors.primary}
+    [module/tray]
+    type = internal/tray
   '';
 }

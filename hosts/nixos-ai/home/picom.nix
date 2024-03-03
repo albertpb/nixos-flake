@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home.file.".config/polybar/colors.ini".text = ''
+  home.file.".config/picom/picom.conf".text = ''
     # Pretty much copied from Axarva's configs
 
     #################################
