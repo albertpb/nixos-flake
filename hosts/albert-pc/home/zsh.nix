@@ -8,6 +8,7 @@
 
     shellAliases = {
       ll = "ls -l";
+      rs-pipewire = "systemctl --user restart pipewire.service";
     };
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";
