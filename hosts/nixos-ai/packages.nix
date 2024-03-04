@@ -1,5 +1,6 @@
 { pkgs, username, ... }:
 {
+  #nixos-ai
   users.users.${username}.packages = with pkgs; [
     polybar
     picom

@@ -1,5 +1,6 @@
 { pkgs, username, ... }:
 {
+  # albert-pc
   users.users.${username}.packages = with pkgs; [
     pinta
     brasero # make iso files
@@ -9,5 +10,6 @@
     swaylock-effects
     macchina
     swayidle
+    tidal-hifi
   ];
 }
