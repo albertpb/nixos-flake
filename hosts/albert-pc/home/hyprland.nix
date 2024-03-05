@@ -183,14 +183,14 @@
     bind = $mainMod SHIFT, 5, exec,$w5
 
     # Example special workspace (scratchpad)
-    bind = $mainMod, S, togglespecialworkspace, magic
-    bind = $mainMod SHIFT, S, movetoworkspace, special:magic
+    # bind = $mainMod, S, togglespecialworkspace, magic
+    # bind = $mainMod SHIFT, S, movetoworkspace, special:magic
 
     # Scroll through existing workspaces with mainMod + scroll
     bind = $mainMod, mouse_down, workspace, e+1
     bind = $mainMod, mouse_up, workspace, e-1
 
-    bind = SHIFT ALT, S, exec, shotman --copy --capture region
+    bind = $mainMod ALT, S, exec, shotman --copy --capture region
     bind = ,Print, exec, shotman --copy --capture output
     bind = SHIFT, Print, exec, shotman --copy --capture window
 
