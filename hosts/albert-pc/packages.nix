@@ -11,5 +11,8 @@
     macchina
     swayidle
     tidal-hifi
+    grim # take screenshots
+    slurp # Select a region in wayland
+    wl-clipboard # screenshot to clipboard
   ];
 }

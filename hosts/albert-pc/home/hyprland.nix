@@ -190,9 +190,8 @@
     bind = $mainMod, mouse_down, workspace, e+1
     bind = $mainMod, mouse_up, workspace, e-1
 
-    bind = $mainMod ALT, S, exec, shotman --copy --capture region
-    bind = ,Print, exec, shotman --copy --capture output
-    bind = SHIFT, Print, exec, shotman --copy --capture window
+    bind = $mainMod SHIFT, S, exec, grim -g "$(slurp -d)" - | wl-copy
+    bind = ,Print, exec, grim - | wl-copy
 
     # Move/resize windows with mainMod + LMB/RMB and dragging
     bindm = $mainMod, mouse:272, movewindow

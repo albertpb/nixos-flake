@@ -11,9 +11,6 @@
     sxiv
     feh
     libnotify
-    hwloc
-    shotman # take screenshots
-    slurp # Select a region in wayland
   ];
 
   environment.systemPackages = with pkgs; [
@@ -24,5 +21,6 @@
     zip
     unzip
     btop
+    hwloc
   ];
 }
