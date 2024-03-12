@@ -7,5 +7,8 @@
       name = "Fira Code";
       size = 10;
     };
+    extraConfig = ''
+      background_opacity 0.6
+    '';
   };
 }

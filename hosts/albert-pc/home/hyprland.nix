@@ -19,7 +19,6 @@
     # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
     # Execute your favorite apps at launch
-    # exec-once = waybar & hyprpaper & firefox
     exec-once=hyprctl setcursor capitaine-cursors 24
     exec-once=waybar
     exec-once=hyprpaper
@@ -27,7 +26,7 @@
     exec-once=swayidle -w timeout 600 'swaylock -f --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033  --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --grace 2 --fade-in 0.2' timeout 605 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' 
 
     # Source a file (multi-file configs)
-    # source = ~/.config/hypr/myColors.conf
+    source = ~/.config/hypr/colors.conf
 
     # Some default env vars.
     env = XCURSOR_SIZE,24
@@ -66,20 +65,17 @@
     }
 
     decoration {
-        # See https://wiki.hyprland.org/Configuring/Variables/ for more
-
-        rounding = 2
+        rounding = 3
         
         blur {
             enabled = true
-            size = 3
-            passes = 1
+            passes = 2
+            new_optimizations = true
+            noise = 0.02
+            size = 8
+            contrast = 1.6
+            brightness 1.1
         }
-
-        drop_shadow = yes
-        shadow_range = 4
-        shadow_render_power = 3
-        col.shadow = rgba(1a1a1aee)
     }
 
     animations {
@@ -126,12 +122,19 @@
         sensitivity = -0.5
     }
 
+
+    # Layer Rules
+    layerrule = blur,rofi
+    layerrule = blur,waybar
+    blurls = waybar
+    blurls = rofi
+
     # Example windowrule v1
     # windowrule = float, ^(kitty)$
     # Example windowrule v2
     # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-
+    # windowrulev2 = opacity 0.7 0.7,class:^(kitty)$
 
     # See https://wiki.hyprland.org/Configuring/Keywords/ for more
     $mainMod = SUPER
@@ -200,17 +203,77 @@
 
   home.file.".config/hypr/hyprpaper.conf".text = ''
     preload = /home/${username}/wallpapers/1.png
-    preload = /home/${username}/wallpapers/2.png
-    preload = /home/${username}/wallpapers/3.png
-    preload = /home/${username}/wallpapers/4.png
-    preload = /home/${username}/wallpapers/5.png
 
-    wallpaper = DP-2,/home/${username}/wallpapers/1.png
+    wallpaper = ,/home/${username}/wallpapers/1.png
 
     #enable splash text rendering over the wallpaper
     splash = false
 
     #fully disable ipc
     # ipc = off
+  '';
+
+  home.file.".config/hypr/colors.conf".text = ''
+    $rosewaterAlpha = f5e0dc
+    $flamingoAlpha  = f2cdcd
+    $pinkAlpha      = f5c2e7
+    $mauveAlpha     = cba6f7
+    $redAlpha       = f38ba8
+    $maroonAlpha    = eba0ac
+    $peachAlpha     = fab387
+    $yellowAlpha    = f9e2af
+    $greenAlpha     = a6e3a1
+    $tealAlpha      = 94e2d5
+    $skyAlpha       = 89dceb
+    $sapphireAlpha  = 74c7ec
+    $blueAlpha      = 89b4fa
+    $lavenderAlpha  = b4befe
+
+    $textAlpha      = cdd6f4
+    $subtext1Alpha  = bac2de
+    $subtext0Alpha  = a6adc8
+
+    $overlay2Alpha  = 9399b2
+    $overlay1Alpha  = 7f849c
+    $overlay0Alpha  = 6c7086
+
+    $surface2Alpha  = 585b70
+    $surface1Alpha  = 45475a
+    $surface0Alpha  = 313244
+
+    $baseAlpha      = 1e1e2e
+    $mantleAlpha    = 181825
+    $crustAlpha     = 11111b
+
+    $rosewater = 0xfff5e0dc
+    $flamingo  = 0xfff2cdcd
+    $pink      = 0xfff5c2e7
+    $mauve     = 0xffcba6f7
+    $red       = 0xfff38ba8
+    $maroon    = 0xffeba0ac
+    $peach     = 0xfffab387
+    $yellow    = 0xfff9e2af
+    $green     = 0xffa6e3a1
+    $teal      = 0xff94e2d5
+    $sky       = 0xff89dceb
+    $sapphire  = 0xff74c7ec
+    $blue      = 0xff89b4fa
+    $lavender  = 0xffb4befe
+
+    $text      = 0xffcdd6f4
+    $subtext1  = 0xffbac2de
+    $subtext0  = 0xffa6adc8
+
+    $overlay2  = 0xff9399b2
+    $overlay1  = 0xff7f849c
+    $overlay0  = 0xff6c7086
+
+    $surface2  = 0xff585b70
+    $surface1  = 0xff45475a
+    $surface0  = 0xff313244
+
+    $base      = 0xff1e1e2e
+    $mantle    = 0xff181825
+    $crust     = 0xff11111b
   '';
 }

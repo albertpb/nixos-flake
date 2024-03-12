@@ -1,10 +1,52 @@
 { pkgs, ... }:
 {
+  home.file.".config/waybar/colors.css".text = ''
+    /*
+    *
+    * Catppuccin Mocha palette
+    * Maintainer: rubyowo
+    *
+    */
+
+    @define-color base   #1e1e2e;
+    @define-color mantle #181825;
+    @define-color crust  #11111b;
+
+    @define-color text     #cdd6f4;
+    @define-color subtext0 #a6adc8;
+    @define-color subtext1 #bac2de;
+
+    @define-color surface0 #313244;
+    @define-color surface1 #45475a;
+    @define-color surface2 #585b70;
+
+    @define-color overlay0 #6c7086;
+    @define-color overlay1 #7f849c;
+    @define-color overlay2 #9399b2;
+
+    @define-color blue      #89b4fa;
+    @define-color lavender  #b4befe;
+    @define-color sapphire  #74c7ec;
+    @define-color sky       #89dceb;
+    @define-color teal      #94e2d5;
+    @define-color green     #a6e3a1;
+    @define-color yellow    #f9e2af;
+    @define-color peach     #fab387;
+    @define-color maroon    #eba0ac;
+    @define-color red       #f38ba8;
+    @define-color mauve     #cba6f7;
+    @define-color pink      #f5c2e7;
+    @define-color flamingo  #f2cdcd;
+    @define-color rosewater #f5e0dc;
+  '';
+
   programs.waybar = {
     enable = true;
     systemd.enable = true;
 
     style = ''
+      @import "colors.css";
+
       * {
         border: none;
         border-radius: 0;
@@ -14,13 +56,8 @@
       }
 
       window#waybar {
-        background-color: #181825;
-        transition-property: background-color;
-        transition-duration: 0.5s;
-      }
-
-      window#waybar.hidden {
-        opacity: 0.5;
+        background: transparent;
+        border-bottom: none;
       }
 
       #workspaces {
@@ -34,24 +71,24 @@
         padding: 6px 18px;
         margin: 6px 3px;
         border-radius: 4px;
-        background-color: #1e1e2e;
-        color: #cdd6f4;
+        background-color: @mantle;
+        color: @text;
       }
 
       #workspaces button.active {
-        color: #1e1e2e;
-        background-color: #cdd6f4;
+        color: @mantle;
+        background-color: @teal;
       }
 
       #workspaces button:hover {
-      box-shadow: inherit;
-      text-shadow: inherit;
-      color: #1e1e2e;
-      background-color: #cdd6f4;
+        box-shadow: inherit;
+        text-shadow: inherit;
+        color: @mantle;
+        background-color: @surface1;
       }
 
       #workspaces button.urgent {
-        background-color: #f38ba8;
+        background-color: @surface2;
       }
 
       #memory,
@@ -65,8 +102,8 @@
         border-radius: 4px;
         margin: 6px 3px;
         padding: 6px 12px;
-        background-color: #1e1e2e;
-        color: #181825;
+        background-color: @base;
+        color: @surface0;
       }
 
       #custom-power {
@@ -79,27 +116,27 @@
         margin-left: 5px;
         font-size: 15px;
         border-radius: 8px 0px 0px 8px;
-        color: #1793d1;
+        color: @blue;
       }
 
       #memory {
-        background-color: #fab387;
+        background-color: @green;
       }
       #battery {
-        background-color: #f38ba8;
+        background-color: @yellow;
       }
       @keyframes blink {
         to {
-          background-color: #f38ba8;
-          color: #181825;
+          background-color: @maroon;
+          color: @yellow;
         }
       }
 
       #battery.warning,
       #battery.critical,
       #battery.urgent {
-        background-color: #ff0048;
-        color: #181825;
+        background-color: @red;
+        color: @text;
         animation-name: blink;
         animation-duration: 0.5s;
         animation-timing-function: linear;
@@ -107,40 +144,40 @@
         animation-direction: alternate;
       }
       #battery.charging {
-        background-color: #a6e3a1;
+        background-color: @green;
       }
 
       #backlight {
-        background-color: #fab387;
+        background-color: @yellow;
       }
 
       #pulseaudio {
-        background-color: #f9e2af;
+        background-color: @teal;
       }
 
       #network {
-        background-color: #94e2d5;
+        background-color: @peach;
         padding-right: 17px;
       }
 
       #clock {
-        background-color: #cba6f7;
+        background-color: @sapphire;
       }
 
       #custom-power {
-        background-color: #f2cdcd;
+        background-color: @teal;
       }
 
 
       tooltip {
-      border-radius: 8px;
-      padding: 15px;
-      background-color: #131822;
+        border-radius: 8px;
+        padding: 15px;
+        background-color: @base;
       }
 
       tooltip label {
-      padding: 5px;
-      background-color: #131822;
+        padding: 5px;
+        background-color: @base;
       }
     '';
 
