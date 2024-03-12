@@ -22,5 +22,7 @@
     unzip
     btop
     hwloc
+    usbutils
+    lshw
   ];
 }
