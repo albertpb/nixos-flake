@@ -13,7 +13,7 @@ dunst &
 # xinput set-prop 11 321 1 &
 # xinput set-prop 11 331 0 &
 # /usr/libexec/polkit-gnome-authentication-agent-1 &
-picom --config ~/.config/picom/picom.conf &
+picom -f --daemon --config ~/.config/picom/picom.conf &
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 bspc monitor -d 1 2 3 4 5 6 7

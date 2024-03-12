@@ -205,20 +205,8 @@
     #
     # opacity-rule = []
     opacity-rule = [
-      "100:name     = 'Dunst'",             # lemonbar
-      "10:class_g    = 'eww-blur_full'",            # maim
-      #"100:class_g    = 'XTerm'",
-      #"100:class_g    = 'URxvt'",
-      "80:class_g    = 'Alacritty'",
-      #"60:class_g    = 'eww-player'",
-      "100:class_g    = 'Tint2'"
-      #"80:class_g     = 'Polybar'",
-      #"100:class_g    = 'code-oss'",
-      #"100:class_g    = 'Meld'",
-      #"70:class_g     = 'TelegramDesktop'",
-      #"90:class_g     = 'Joplin'",
-      #"100:class_g    = 'firefox'",
-      #"80:class_g    = 'Spotify'"
+      "100:name     = 'Dunst'",
+      "50:name      = 'Kitty'",
     ];
 
 
@@ -258,7 +246,7 @@
     #   blur-kern = "5,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1";
     #
     # blur-kern = ""
-    blur-kern = "3x3box";
+    # blur-kern = "3x3box";
 
 
     blur: {
@@ -336,7 +324,7 @@
     # try detecting this with X RandR extension.
     #
     # refresh-rate = 60
-    refresh-rate = 60
+    refresh-rate = 144
 
     # Limit picom to repaint at most once every 1 / 'refresh_rate' second to 
     # boost performance. This should not be used with 
