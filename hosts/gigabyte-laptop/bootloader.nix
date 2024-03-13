@@ -27,7 +27,7 @@
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelModules = [ "kvm-amd" ];
+    # kernelModules = [ "kvm-amd" ];
     kernelParams = [
       "quiet"
       "splash"
@@ -38,6 +38,7 @@
       "rd.udev.log_level=3"
       "udev.log_priority=3"
     ];
+    kernelModules = [ "kvm-intel" ];
     consoleLogLevel = 0;
     extraModulePackages = [ ];
 
@@ -45,7 +46,8 @@
     # plymouth.theme = "breeze";
 
     initrd.verbose = false;
-    initrd.availableKernelModules = [ "nvme" "ahci" "thunderbolt" "xhci_pci" "usbhid" "uas" "usb_storage" "sd_mod" ];
+    initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
+    initrd.kernelModules = [ ];
     initrd.systemd.enable = true;
   };
 }

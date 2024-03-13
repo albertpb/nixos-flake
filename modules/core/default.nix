@@ -27,8 +27,6 @@ in
       ] ++ [
         (import ./virtualisation/default.nix)
       ] ++ [
-        (import ./bootloader.nix)
-      ] ++ [
         (import ./network.nix)
       ] ++ [
         (import ./program.nix)
@@ -60,8 +58,6 @@ in
       ] ++ [
         (import ./../../hosts/nixos-ai/program.nix)
       ] ++ [
-        (import ./bootloader.nix)
-      ] ++ [
         (import ./network.nix)
       ] ++ [
         (import ./program.nix)
@@ -75,6 +71,39 @@ in
         (import ./security.nix)
       ] ++ [
         (import ./sound.nix)
+      ];
+    };
+
+  gigabyte-laptop = nixpkgs.lib.nixosSystem
+    {
+      specialArgs = { inherit self inputs username; };
+
+      modules = [
+        (import ./../../hosts/gigabyte-laptop/hardware-configuration.nix)
+      ] ++ [
+        (import ./../../hosts/gigabyte-laptop/packages.nix)
+      ] ++ [
+        (import ./../../hosts/gigabyte-laptop/user.nix)
+      ] ++ [
+        (import ./../../hosts/gigabyte-laptop/services)
+      ] ++ [
+        (import ./../../hosts/gigabyte-laptop/security.nix)
+      ] ++ [
+        (import ./../../hosts/gigabyte-laptop/program.nix)
+      ] ++ [
+        (import ./network.nix)
+      ] ++ [
+        (import ./program.nix)
+      ] ++ [
+        (import ./system.nix)
+      ] ++ [
+        (import ./fonts.nix)
+      ] ++ [
+        (import ./sound.nix)
+      ] ++ [
+        (import ./packages.nix)
+      ] ++ [
+        (import ./security.nix)
       ];
     };
 }

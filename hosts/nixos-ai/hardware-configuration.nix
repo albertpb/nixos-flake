@@ -8,6 +8,8 @@
       (modulesPath + "/profiles/qemu-guest.nix")
     ] ++ [
       (import ./filesystem.nix)
+    ] ++ [
+      (import ./bootloader.nix)
     ];
 
   console = {
