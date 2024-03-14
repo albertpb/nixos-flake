@@ -11,6 +11,8 @@
       (import ./filesystem.nix)
     ] ++ [
       (import ./bootloader.nix)
+    ] ++ [
+      (import ./nvidia.nix)
     ];
 
   console = {
