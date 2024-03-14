@@ -25,6 +25,8 @@ in
       ] ++ [
         (import ./../../hosts/albert-pc/program.nix)
       ] ++ [
+        (import ./../../hosts/albert-pc/network.nix)
+      ] ++ [
         (import ./virtualisation/default.nix)
       ] ++ [
         (import ./network.nix)
@@ -58,6 +60,8 @@ in
       ] ++ [
         (import ./../../hosts/nixos-ai/program.nix)
       ] ++ [
+        (import ./../../hosts/albert-pc/network.nix)
+      ] ++ [
         (import ./network.nix)
       ] ++ [
         (import ./program.nix)
@@ -90,6 +94,8 @@ in
         (import ./../../hosts/gigabyte-laptop/security.nix)
       ] ++ [
         (import ./../../hosts/gigabyte-laptop/program.nix)
+      ] ++ [
+        (import ./../../hosts/albert-pc/network.nix)
       ] ++ [
         (import ./network.nix)
       ] ++ [

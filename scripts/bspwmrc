@@ -9,6 +9,7 @@ xsetroot -cursor_name left_ptr &
 setxkbmap latam &
 dunst &
 ~/.fehbg &
+nm-applet --indicator &
 # picom &
 # xinput set-prop 11 321 1 &
 # xinput set-prop 11 331 0 &
