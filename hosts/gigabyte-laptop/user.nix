@@ -20,7 +20,7 @@
 
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "libvirtd" ];
+    extraGroups = [ "wheel" ];
   };
 
   nix.settings.allowed-users = [ "${username}" ];
