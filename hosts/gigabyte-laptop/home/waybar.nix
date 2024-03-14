@@ -91,6 +91,7 @@
         background-color: @surface2;
       }
 
+      #cpu,
       #memory,
       #custom-power,
       #battery,
@@ -119,6 +120,9 @@
         color: @blue;
       }
 
+      #cpu {
+        background-color: @blue;
+      }
       #memory {
         background-color: @green;
       }
@@ -188,7 +192,7 @@
         position = "top";
         modules-left = [ "custom/logo" "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "pulseaudio" "memory" "network" "battery" ];
+        modules-right = [ "tray" "pulseaudio" "cpu" "memory" "network" "battery" ];
         "custom/logo" = {
           format = "  ";
           tooltip = false;
@@ -256,6 +260,11 @@
           };
           on-click = "pamixer -t";
           scroll-step = 1;
+        };
+        cpu = {
+          interval = 1;
+          format = "{}% ";
+          max-length = 10;
         };
         battery = {
           format = "<span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}";
