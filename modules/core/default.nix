@@ -112,4 +112,39 @@ in
         (import ./security.nix)
       ];
     };
+
+  zephyrus-laptop = nixpkgs.lib.nixosSystem
+    {
+      specialArgs = { inherit self inputs username; };
+
+      modules = [
+        (import ./../../hosts/zephyrus-laptop/hardware-configuration.nix)
+      ] ++ [
+        (import ./../../hosts/zephyrus-laptop/packages.nix)
+      ] ++ [
+        (import ./../../hosts/zephyrus-laptop/user.nix)
+      ] ++ [
+        (import ./../../hosts/zephyrus-laptop/services)
+      ] ++ [
+        (import ./../../hosts/zephyrus-laptop/security.nix)
+      ] ++ [
+        (import ./../../hosts/zephyrus-laptop/program.nix)
+      ] ++ [
+        (import ./../../hosts/zephyrus-pc/network.nix)
+      ] ++ [
+        (import ./network.nix)
+      ] ++ [
+        (import ./program.nix)
+      ] ++ [
+        (import ./system.nix)
+      ] ++ [
+        (import ./fonts.nix)
+      ] ++ [
+        (import ./sound.nix)
+      ] ++ [
+        (import ./packages.nix)
+      ] ++ [
+        (import ./security.nix)
+      ];
+    };
 }
