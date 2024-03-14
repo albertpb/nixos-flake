@@ -60,7 +60,7 @@ in
       ] ++ [
         (import ./../../hosts/nixos-ai/program.nix)
       ] ++ [
-        (import ./../../hosts/albert-pc/network.nix)
+        (import ./../../hosts/nixos-ai/network.nix)
       ] ++ [
         (import ./network.nix)
       ] ++ [
@@ -95,7 +95,7 @@ in
       ] ++ [
         (import ./../../hosts/gigabyte-laptop/program.nix)
       ] ++ [
-        (import ./../../hosts/albert-pc/network.nix)
+        (import ./../../hosts/gigabyte-laptop/network.nix)
       ] ++ [
         (import ./network.nix)
       ] ++ [
@@ -130,7 +130,7 @@ in
       ] ++ [
         (import ./../../hosts/zephyrus-laptop/program.nix)
       ] ++ [
-        (import ./../../hosts/zephyrus-pc/network.nix)
+        (import ./../../hosts/zephyrus-laptop/network.nix)
       ] ++ [
         (import ./network.nix)
       ] ++ [
