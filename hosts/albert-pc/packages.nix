@@ -15,5 +15,7 @@
     slurp # Select a region in wayland
     wl-clipboard # screenshot to clipboard
     glxinfo
+    brave
+    vlc
   ];
 }

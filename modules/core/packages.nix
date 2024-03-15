@@ -15,6 +15,7 @@
 
   environment.systemPackages = with pkgs; [
     neovim
+    ripgrep
     ranger
     wget
     killall
