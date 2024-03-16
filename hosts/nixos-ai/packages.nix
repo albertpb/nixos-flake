@@ -2,12 +2,12 @@
 {
   #nixos-ai
   users.users.${username}.packages = with pkgs; [
+    xclip
     polybar
     picom
     sxhkd
     rofi
     dunst
-    kitty
     feh
     lxappearance
     macchina
