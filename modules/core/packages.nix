@@ -30,6 +30,7 @@
     gzip
     lazygit
     lua-language-server
+    stylua
     nil
   ];
 }
