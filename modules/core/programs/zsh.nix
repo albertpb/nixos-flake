@@ -15,8 +15,11 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
 
     initExtra = ''
-      if [ "$TMUX" = "" ]; then tmux; fi
-      macchina
+      if [[ -z "''${TMUX}" ]];
+      then
+          tmux attach -t TMUX || tmux new -s TMUX
+          eval "''${tmuxifier init -}"
+      fi
     '';
 
     plugins = [
@@ -37,6 +40,7 @@
       plugins = [ 
         "git"
         "thefuck"
+        "tmux"
       ];
       theme = "amuse";
     };

@@ -33,5 +33,6 @@
     lua-language-server
     stylua
     nil
+    tmuxifier
   ];
 }

@@ -27,6 +27,8 @@ in
       ] ++ [
         (import ./../../hosts/albert-pc/network.nix)
       ] ++ [
+        (import ./configuration.nix)
+      ] ++ [
         (import ./virtualisation/default.nix)
       ] ++ [
         (import ./network.nix)
@@ -59,6 +61,8 @@ in
         (import ./../../hosts/nixos-ai/program.nix)
       ] ++ [
         (import ./../../hosts/nixos-ai/network.nix)
+      ] ++ [
+        (import ./configuration.nix)
       ] ++ [
         (import ./network.nix)
       ] ++ [
@@ -93,6 +97,8 @@ in
       ] ++ [
         (import ./../../hosts/gigabyte-laptop/network.nix)
       ] ++ [
+        (import ./configuration.nix)
+      ] ++ [
         (import ./network.nix)
       ] ++ [
         (import ./system.nix)
@@ -125,6 +131,8 @@ in
         (import ./../../hosts/zephyrus-laptop/program.nix)
       ] ++ [
         (import ./../../hosts/zephyrus-laptop/network.nix)
+      ] ++ [
+        (import ./configuration.nix)
       ] ++ [
         (import ./network.nix)
       ] ++ [
