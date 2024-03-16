@@ -31,8 +31,6 @@ in
       ] ++ [
         (import ./network.nix)
       ] ++ [
-        (import ./program.nix)
-      ] ++ [
         (import ./system.nix)
       ] ++ [
         (import ./fonts.nix)
@@ -63,8 +61,6 @@ in
         (import ./../../hosts/nixos-ai/network.nix)
       ] ++ [
         (import ./network.nix)
-      ] ++ [
-        (import ./program.nix)
       ] ++ [
         (import ./system.nix)
       ] ++ [
@@ -99,8 +95,6 @@ in
       ] ++ [
         (import ./network.nix)
       ] ++ [
-        (import ./program.nix)
-      ] ++ [
         (import ./system.nix)
       ] ++ [
         (import ./fonts.nix)
@@ -133,8 +127,6 @@ in
         (import ./../../hosts/zephyrus-laptop/network.nix)
       ] ++ [
         (import ./network.nix)
-      ] ++ [
-        (import ./program.nix)
       ] ++ [
         (import ./system.nix)
       ] ++ [

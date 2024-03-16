@@ -16,6 +16,7 @@
   environment.systemPackages = with pkgs; [
     neovim
     ripgrep
+    gcc
     ranger
     wget
     killall
@@ -25,5 +26,10 @@
     hwloc
     usbutils
     lshw
+    curl
+    gzip
+    lazygit
+    lua-language-server
+    nil
   ];
 }

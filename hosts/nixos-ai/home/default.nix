@@ -1,12 +1,13 @@
 { inputs, username, ... }:
 {
-  imports = [ (import ./vscodium.nix) ]
-    ++ [ (import ./rofi.nix) ]
-    ++ [ (import ./kitty.nix) ]
-    ++ [ (import ./git.nix) ]
-    ++ [ (import ./dunst.nix) ]
-    ++ [ (import ./picom.nix) ]
-    ++ [ (import ./polybar.nix) ]
-    ++ [ (import ./sxhkd.nix) ]
-    ++ [ (import ./zsh.nix) ];
+  imports = [
+    (import ./../../../modules/core/programs)
+  ] ++ [ (import ./vscodium.nix) ]
+  ++ [ (import ./rofi.nix) ]
+  ++ [ (import ./git.nix) ]
+  ++ [ (import ./dunst.nix) ]
+  ++ [ (import ./picom.nix) ]
+  ++ [ (import ./polybar.nix) ]
+  ++ [ (import ./sxhkd.nix) ]
+  ++ [ (import ./bashrc.nix) ];
 }

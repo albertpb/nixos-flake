@@ -4,7 +4,7 @@
     enable = true;
     theme = "Tokyo Night";
     font = {
-      name = "Fira Code";
+      name = "FiraCode Nerd Font";
       size = 10;
     };
     extraConfig = ''
