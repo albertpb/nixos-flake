@@ -16,6 +16,7 @@
   environment.systemPackages = with pkgs; [
     neovim
     ripgrep
+    thefuck
     gcc
     ranger
     wget

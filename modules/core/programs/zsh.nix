@@ -15,6 +15,7 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
 
     initExtra = ''
+      if [ "$TMUX" = "" ]; then tmux; fi
       macchina
     '';
 
@@ -33,7 +34,10 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = [ 
+        "git"
+        "thefuck"
+      ];
       theme = "amuse";
     };
   };
