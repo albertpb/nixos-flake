@@ -3,7 +3,6 @@
   users.users.${username}.packages = with pkgs; [
     floorp
     nixpkgs-fmt
-    glib # fix nwg-look not aplying changes
     libsecret
     xdg-utils
     pavucontrol
@@ -18,6 +17,7 @@
     ripgrep
     thefuck
     gcc
+    glib
     ranger
     wget
     killall
@@ -30,9 +30,13 @@
     curl
     gzip
     lazygit
-    lua-language-server
-    stylua
     nil
     tmuxifier
+    nodejs
+    yarn
+  ] ++ [
+    stylua
+    lua-language-server
+    marksman
   ];
 }

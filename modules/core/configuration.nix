@@ -1,4 +1,8 @@
 {pkgs,...}:
 {
-  environment.variables.EDITOR = "neovim";
+  environment = {
+    variables = {
+      EDITOR = "nvim";
+    };
+  };
 }
