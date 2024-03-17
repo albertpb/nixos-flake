@@ -90,7 +90,13 @@
       #workspaces button.urgent {
         background-color: @surface2;
       }
-
+      
+      #user,
+      #disk,
+      #window,
+      #submap,
+      #language,
+      #taskbar,
       #cpu,
       #memory,
       #custom-power,
@@ -119,7 +125,20 @@
         border-radius: 8px 0px 0px 8px;
         color: @blue;
       }
-
+      
+      #language,
+      #submap,
+      #window,
+      #taskbar {
+        background-color: @mantle;
+        color: @text;
+      }
+      #disk {
+        background-color: @flamingo;
+      }
+      #user {
+        background-color: @teal;
+      }
       #cpu {
         background-color: @blue;
       }
@@ -190,13 +209,27 @@
         height = 42;
         layer = "top";
         position = "top";
-        modules-left = [ "custom/logo" "hyprland/workspaces" ];
+        modules-left = [ "custom/logo" "hyprland/workspaces" "hyprland/window" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "pulseaudio" "cpu" "memory" "network" ];
+        modules-right = [ "tray" "hyprland/language" "hyprland/submap" "pulseaudio" "cpu" "memory" "disk" "network" ];
         "custom/logo" = {
           format = "  ";
           tooltip = false;
           on-click = "rofi -show run";
+        };
+        "hyprland/window" = {
+          format = "👉 {}";
+          rewrite = {
+          };
+          separate-outputs = true;
+        };
+        "hyprland/language" = {
+          format = ": {}";
+        };
+        "hyprland/submap" = {
+          format = "✌️ {}";
+          max-length = 8;
+          tooltip = false;
         };
         "hyprland/workspaces" = {
           on-click = "activate";
@@ -265,6 +298,24 @@
           interval = 1;
           format = "{}% ";
           max-length = 10;
+        };
+        "wlr/taskbar" = {
+          format = "{title}";
+          icon-size = 14;
+          icon-theme = "oomox-Tokyonight-Moon";
+          tooltip-format ="{title}";
+          on-click = "activate";
+          on-click-middle = "close";
+        };
+        user = {
+          format = "{user} {up {work_d} days ↑}";
+          interval = 60;
+          icon = true;
+        };
+        disk = {
+          interval = 60;
+          format = "󰋊 {percentage_used}%";
+          path = "/";
         };
       }
     ];
