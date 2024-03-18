@@ -16,6 +16,8 @@
     neovim
     ripgrep
     thefuck
+    zoxide
+    fzf
     gcc
     glib
     ranger

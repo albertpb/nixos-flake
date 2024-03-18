@@ -20,6 +20,8 @@
           tmux attach -t TMUX || tmux new -s TMUX
           eval "''${tmuxifier init -}"
       fi
+      
+      eval "$(zoxide init --cmd cd zsh)"
     '';
 
     plugins = [
