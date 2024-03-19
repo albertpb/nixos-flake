@@ -33,6 +33,7 @@
       "splash"
       "boot.shell_on_fail"
       "i915.fastboot=1"
+      "i915.force_probe=46a3"
       "loglevel=3"
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
