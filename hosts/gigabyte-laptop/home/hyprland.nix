@@ -14,8 +14,7 @@
 
     # See https://wiki.hyprland.org/Configuring/Monitors/
     # monitor=,preferred,auto,auto
-    monitor=,1920x1080@144,0x0,1
-
+    monitor=eDP-1,1920x1080@144,0x0,1
     # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
     # Execute your favorite apps at launch
