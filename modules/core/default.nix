@@ -147,4 +147,40 @@ in
         (import ./security.nix)
       ];
     };
+
+    nixos-tv = nixpkgs.lib.nixosSystem
+    {
+      specialArgs = { inherit self inputs username; };
+
+      modules = [
+        (import ./../../hosts/nixos-tv/hardware-configuration.nix)
+      ] ++ [
+        (import ./../../hosts/nixos-tv/packages.nix)
+      ] ++ [
+        (import ./../../hosts/nixos-tv/user.nix)
+      ] ++ [
+        (import ./../../hosts/nixos-tv/services)
+      ] ++ [
+        (import ./../../hosts/nixos-tv/program.nix)
+      ] ++ [
+        (import ./../../hosts/nixos-tv/network.nix)
+      ] ++ [
+        (import ./configuration.nix)
+      ] ++ [
+        (import ./network.nix)
+      ] ++ [
+        (import ./system.nix)
+      ] ++ [
+        (import ./fonts.nix)
+      ] ++ [
+        (import ./packages.nix)
+      ] ++ [
+        (import ./security.nix)
+      ] ++ [
+        (import ./sound.nix)
+      ];
+    };
+
+
+
 }
