@@ -12,6 +12,7 @@
     lxappearance
     macchina
     glxinfo
+    brasero
   ];
 
   environment.systemPackages = with pkgs; [
