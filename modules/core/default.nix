@@ -29,7 +29,7 @@ in
       ] ++ [
         (import ./configuration.nix)
       ] ++ [
-        (import ./virtualisation/default.nix)
+        (import ./../../hosts/albert-pc/virtualisation/default.nix)
       ] ++ [
         (import ./network.nix)
       ] ++ [
@@ -164,6 +164,8 @@ in
         (import ./../../hosts/nixos-tv/program.nix)
       ] ++ [
         (import ./../../hosts/nixos-tv/network.nix)
+      ] ++ [
+        (import ./../../hosts/nixos-tv/virtualisation/default.nix)
       ] ++ [
         (import ./configuration.nix)
       ] ++ [
