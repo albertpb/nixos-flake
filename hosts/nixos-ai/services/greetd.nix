@@ -13,7 +13,7 @@ in
     #vt = config.services.xserver.tty;
     settings = {
       default_session = {
-        command = "${tuigreet} --time --remember --remember-session --cmd 'sx sxhkd & exec bspwm'";
+        command = "${tuigreet} --time --remember --remember-session --cmd 'sx bspwm'";
         user = "greeter";
       };
     };
