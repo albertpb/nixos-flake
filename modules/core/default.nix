@@ -96,6 +96,8 @@ in
         (import ./../../hosts/gigabyte-laptop/program.nix)
       ] ++ [
         (import ./../../hosts/gigabyte-laptop/network.nix)
+      ] ++ [ 
+        (import ./../../hosts/gigabyte-laptop/virtualisation/default.nix)
       ] ++ [
         (import ./configuration.nix)
       ] ++ [
