@@ -115,6 +115,7 @@
         force_default_wallpaper = 0 # Set to 0 to disable the anime mascot wallpapers
         disable_hyprland_logo = true
         disable_splash_rendering = true
+        vrr = 1
     }
 
     # Example per-device config
