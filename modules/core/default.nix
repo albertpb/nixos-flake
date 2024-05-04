@@ -27,6 +27,8 @@ in
       ] ++ [
         (import ./../../hosts/albert-pc/network.nix)
       ] ++ [
+        (import ./../../hosts/albert-pc/bluetooth.nix)
+      ] ++ [
         (import ./configuration.nix)
       ] ++ [
         (import ./../../hosts/albert-pc/virtualisation/default.nix)
