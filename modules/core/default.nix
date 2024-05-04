@@ -99,6 +99,8 @@ in
       ] ++ [ 
         (import ./../../hosts/gigabyte-laptop/virtualisation/default.nix)
       ] ++ [
+        (import ./../../hosts/gigabyte-laptop/bluetooth.nix)
+      ] ++ [
         (import ./configuration.nix)
       ] ++ [
         (import ./network.nix)
