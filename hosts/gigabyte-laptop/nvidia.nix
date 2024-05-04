@@ -8,14 +8,15 @@ let
     export __VK_LAYER_NV_optimus=NVIDIA_only
     exec "$@"
   '';
-in
-{
+in {
 
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
+    extraPackages = with pkgs; [ libGL ];
+    setLdLibraryPath = true;
   };
 
   # Load nvidia driver for Xorg and Wayland
