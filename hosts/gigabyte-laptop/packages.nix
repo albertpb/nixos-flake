@@ -1,5 +1,4 @@
-{ pkgs, username, ... }:
-{
+{ pkgs, username, ... }: {
   # albert-pc
   users.users.${username}.packages = with pkgs; [
     pinta
@@ -14,5 +13,6 @@
     slurp # Select a region in wayland
     wl-clipboard # screenshot to clipboard
     glxinfo
+    remmina
   ];
 }
