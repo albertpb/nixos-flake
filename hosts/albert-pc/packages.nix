@@ -7,9 +7,7 @@
     hyprpaper
     mako
     nwg-look
-    swaylock-effects
     macchina
-    swayidle
     tidal-hifi
     grim # take screenshots
     slurp # Select a region in wayland
