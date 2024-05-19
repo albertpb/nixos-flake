@@ -25,6 +25,8 @@
       #};
     };
 
+    kernelPackages = pkgs.linuxPackages_latest;
+
     supportedFilesystems = [ "ntfs" ];
 
     # kernelModules = [ "kvm-amd" ];
