@@ -92,24 +92,4 @@ in {
       ++ [ (import ./sound.nix) ];
   };
 
-  amd-gaming-pc = nixpkgs.lib.nixosSystem {
-    specialArgs = { inherit self inputs username; };
-
-    modules =
-      [ (import ./../../hosts/amd-gaming-pc/hardware-configuration.nix) ]
-      ++ [ (import ./../../hosts/amd-gaming-pc/packages.nix) ]
-      ++ [ (import ./../../hosts/amd-gaming-pc/user.nix) ]
-      ++ [ (import ./../../hosts/amd-gaming-pc/services) ]
-      ++ [ (import ./../../hosts/amd-gaming-pc/security.nix) ]
-      ++ [ (import ./../../hosts/amd-gaming-pc/program.nix) ]
-      ++ [ (import ./../../hosts/amd-gaming-pc/network.nix) ]
-      ++ [ (import ./../../hosts/amd-gaming-pc/bluetooth.nix) ]
-      ++ [ (import ./../../hosts/amd-gaming-pc/steam.nix) ]
-      ++ [ (import ./configuration.nix) ]
-      ++ [ (import ./../../hosts/amd-gaming-pc/virtualisation/default.nix) ]
-      ++ [ (import ./network.nix) ] ++ [ (import ./system.nix) ]
-      ++ [ (import ./fonts.nix) ] ++ [ (import ./packages.nix) ]
-      ++ [ (import ./security.nix) ] ++ [ (import ./sound.nix) ];
-  };
-
 }
