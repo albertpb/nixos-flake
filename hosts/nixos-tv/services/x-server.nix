@@ -1,5 +1,9 @@
 { pkgs, username, ... }:
 {
+  services.displayManager = {
+    defaultSession = "none+bspwm";
+  };
+
   services.xserver = {
     enable = true;
 
@@ -19,7 +23,6 @@
 
     displayManager = {
       sx.enable = true;
-      defaultSession = "none+bspwm";
     };
 
     excludePackages = [ pkgs.xterm ];
