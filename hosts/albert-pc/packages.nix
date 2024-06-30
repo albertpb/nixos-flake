@@ -5,6 +5,7 @@
     pinta
     brasero # make iso files
     hyprpaper
+    hypridle
     mako
     nwg-look
     macchina

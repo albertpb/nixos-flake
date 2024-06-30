@@ -40,6 +40,6 @@
     stylua
     lua-language-server
     marksman
-    nixfmt
+    nixfmt-classic
   ];
 }

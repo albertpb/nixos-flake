@@ -74,7 +74,7 @@
             noise = 0.02
             size = 8
             contrast = 1.6
-            brightness 1.1
+            #brightness 1.1
         }
     }
 
@@ -99,10 +99,10 @@
         preserve_split = yes # you probably want this
     }
 
-    master {
+    #master {
         # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-        new_is_master = true
-    }
+        #new_is_master = true
+    #}
 
     gestures {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
@@ -118,9 +118,9 @@
 
     # Example per-device config
     # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
-    device:epic-mouse-v1 {
-        sensitivity = -0.5
-    }
+    #device:epic-mouse-v1 {
+        #sensitivity = -0.5
+    #}
 
 
     # Layer Rules

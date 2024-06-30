@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 let
-  xcfg = config.services.xserver;
-  dmcfg = xcfg.displayManager;
+  services = config.services;
+  dmcfg = services.displayManager;
   sessionData = dmcfg.sessionData;
   tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
   # hyprland-session = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/share/wayland-sessions";

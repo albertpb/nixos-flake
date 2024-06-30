@@ -3,8 +3,11 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    enableAutosuggestions = true;
     syntaxHighlighting.enable = true;
+
+    autosuggestion = {
+      enable = true;
+    };
 
     shellAliases = {
       ll = "ls -l";
