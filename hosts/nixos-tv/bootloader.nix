@@ -39,6 +39,7 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
+      "isolcpus=0,16,1,17,2,18,3,19,4,20,5,21,6,22,7,23,15,31,14,30"
     ];
     consoleLogLevel = 0;
     extraModulePackages = [ ];
