@@ -1,9 +1,6 @@
-{ pkgs, lib, ... }:
-{
+{ pkgs, lib, ... }: {
   boot = {
-    tmp = {
-      cleanOnBoot = true;
-    };
+    tmp = { cleanOnBoot = true; };
 
     loader = {
       systemd-boot = {
@@ -39,6 +36,7 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
+      "isolcpus=0,16,1,17,2,18,3,19,4,20,5,21,6,22,7,23,15,31,14,30"
     ];
     consoleLogLevel = 0;
     extraModulePackages = [ ];
@@ -47,7 +45,16 @@
     plymouth.theme = "bgrt";
 
     initrd.verbose = false;
-    initrd.availableKernelModules = [ "nvme" "ahci" "thunderbolt" "xhci_pci" "usbhid" "uas" "usb_storage" "sd_mod" ];
+    initrd.availableKernelModules = [
+      "nvme"
+      "ahci"
+      "thunderbolt"
+      "xhci_pci"
+      "usbhid"
+      "uas"
+      "usb_storage"
+      "sd_mod"
+    ];
     initrd.systemd.enable = true;
   };
 }
