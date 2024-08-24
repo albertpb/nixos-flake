@@ -27,6 +27,8 @@
 
     supportedFilesystems = [ "ntfs" ];
 
+    kernelPackages = pkgs.linuxPackages;
+
     # kernelModules = [ "kvm-amd" ];
     kernelParams = [
       "quiet"
