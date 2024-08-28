@@ -1,5 +1,4 @@
-{ pkgs, username, ... }:
-{
+{ pkgs, username, ... }: {
   #nixos-ai
   users.users.${username}.packages = with pkgs; [
     xclip
@@ -16,6 +15,9 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    linuxKernel.packages.linux_xanmod.turbostat
     linuxPackages.nvidia_x11
+    zenmonitor
   ];
+
 }

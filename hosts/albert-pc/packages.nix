@@ -1,5 +1,4 @@
-{ pkgs, username, ... }:
-{
+{ pkgs, username, ... }: {
   # albert-pc
   users.users.${username}.packages = with pkgs; [
     pinta
@@ -16,5 +15,10 @@
     glxinfo
     brave
     vlc
+  ];
+
+  environment.systemPackages = with pkgs; [
+    linuxKernel.packages.linux_xanmod.turbostat
+    zenmonitor
   ];
 }

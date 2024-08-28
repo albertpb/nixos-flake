@@ -4,14 +4,8 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ] ++ [
-      (import ./filesystem.nix)
-    ] ++ [
-      (import ./bootloader.nix)
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ]
+    ++ [ (import ./filesystem.nix) ] ++ [ (import ./bootloader.nix) ];
 
   console = {
     font = "lat2-16";
@@ -37,10 +31,14 @@
   };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  hardware.cpu.amd.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   hardware.opengl.enable = true;
   hardware.opengl.extraPackages = [ pkgs.mesa.drivers ];
+
+  powerManagement.cpuFreqGovernor = "ondemand";
 
   boot.initrd.kernelModules = [ "amdgpu" ];
 }
