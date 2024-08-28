@@ -37,5 +37,4 @@
   hardware.opengl.extraPackages = [ pkgs.mesa.drivers ];
 
   powerManagement.cpuFreqGovernor = "ondemand";
-
 }

@@ -15,9 +15,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    linuxKernel.packages.linux_xanmod.turbostat
     linuxPackages.nvidia_x11
-    zenmonitor
   ];
 
 }

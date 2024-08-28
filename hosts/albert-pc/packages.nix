@@ -16,9 +16,4 @@
     brave
     vlc
   ];
-
-  environment.systemPackages = with pkgs; [
-    linuxKernel.packages.linux_xanmod.turbostat
-    zenmonitor
-  ];
 }
