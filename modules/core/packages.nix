@@ -37,6 +37,7 @@
       tmuxifier
       nodejs
       yarn
+      stress-ng
     ] ++ [ stylua lua-language-server marksman nixfmt-classic ];
 
 }
