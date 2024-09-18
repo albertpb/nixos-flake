@@ -25,7 +25,7 @@
       #};
     };
 
-    kernelPackages = pkgs.linuxPackages_xanmod;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     supportedFilesystems = [ "ntfs" ];
 
