@@ -24,7 +24,7 @@
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
     # kernelModules = [ "kvm-amd" ];
     kernelParams = [
