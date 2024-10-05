@@ -31,5 +31,5 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
-  powermanagement.cpufreqgovernor = "ondemand";
+  powerManagement.cpuFreqGovernor = "ondemand";
 }
