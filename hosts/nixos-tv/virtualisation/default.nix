@@ -9,7 +9,7 @@
     vfio = {
       enable = true;
       IOMMUType = "amd";
-      devices = [ "10de:2204" ];
+      devices = [ "10de:2204" "10de:1aef" ];
       disableEFIfb = false;
       blacklistNvidia = false;
       ignoreMSRs = true;
