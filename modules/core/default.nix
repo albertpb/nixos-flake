@@ -18,6 +18,7 @@ in {
       ++ [ (import ./../../hosts/albert-pc/program.nix) ]
       ++ [ (import ./../../hosts/albert-pc/network.nix) ]
       ++ [ (import ./../../hosts/albert-pc/bluetooth.nix) ]
+      ++ [ (import ./../../hosts/albert-pc/distrobox.nix) ]
       ++ [ (import ./configuration.nix) ]
       ++ [ (import ./../../hosts/albert-pc/virtualisation/default.nix) ]
       ++ [ (import ./network.nix) ] ++ [ (import ./system.nix) ]
