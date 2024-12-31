@@ -1,6 +1,6 @@
 { pkgs, username, ... }:
 let 
-  cockpit-apps = pkgs.callPackage nixpkgs/cockpit/default.nix { inherit pkgs; };
+  cockpit-apps = pkgs.callPackage ../../nixpkgs/cockpit/default.nix { inherit pkgs; };
 in
 {
   users.users.${username}.packages = with pkgs; [
