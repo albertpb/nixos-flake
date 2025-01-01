@@ -100,9 +100,10 @@ in {
       ++ [ (import ./../../hosts/minipc/packages.nix) ]
       ++ [ (import ./../../hosts/minipc/services) ]
       ++ [ (import ./../../hosts/minipc/user.nix) ]
-      ++ [ (import ./../../hosts/minipc/virtualization.nix) ]
-      ++ [ (import ./configuration.nix) ] ++ [ (import ./../../hosts/minipc/network.nix) ]
-      ++ [ (import ./system.nix) ] ++ [ (import ./fonts.nix) ];
+      ++ [ (import ./configuration.nix) ] 
+      ++ [ (import ./../../hosts/minipc/network.nix) ]
+      ++ [ (import ./system.nix) ]
+      ++ [ (import ./../../hosts/minipc/virtualisation.nix) ];
   };
 
 }
