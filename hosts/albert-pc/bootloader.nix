@@ -5,7 +5,7 @@
     loader = {
       systemd-boot = {
         enable = true;
-        editor = false;
+        editor = true;
       };
 
       timeout = lib.mkDefault 5;
@@ -24,7 +24,7 @@
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelPackages = pkgs.linuxPackages_xanmod_latest;
+    kernelPackages = pkgs.linuxPackages;
 
     # kernelModules = [ "kvm-amd" ];
     kernelParams = [
