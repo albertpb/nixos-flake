@@ -13,7 +13,7 @@
 
     # See https://wiki.hyprland.org/Configuring/Monitors/
     # monitor=,preferred,auto,auto
-    monitor=,2560x1440@144,0x0,1
+      monitor=,2560x1440@144,0x0,1,transform,1
 
     # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
