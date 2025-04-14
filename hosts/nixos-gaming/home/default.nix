@@ -2,7 +2,8 @@
 {
   imports = [
     (import ./../../../modules/core/programs)
-  ] ++ [ (import ./rofi.nix) ]
+  ] 
+  ++ [ (import ./rofi.nix) ]
   ++ [ (import ./git.nix) ]
   ++ [ (import ./dunst.nix) ]
   ++ [ (import ./picom.nix) ]
