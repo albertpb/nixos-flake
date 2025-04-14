@@ -25,6 +25,23 @@ in {
       ++ [ (import ./fonts.nix) ] ++ [ (import ./packages.nix) ]
       ++ [ (import ./security.nix) ] ++ [ (import ./sound.nix) ];
   };
+ 
+  miku-pc = nixpkgs.lib.nixosSystem {
+    specialArgs = { inherit self inputs username; };
+
+    modules = [ (import ./../../hosts/albert-pc/hardware-configuration.nix) ]
+      ++ [ (import ./../../hosts/albert-pc/packages.nix) ]
+      ++ [ (import ./../../hosts/albert-pc/user.nix) ]
+      ++ [ (import ./../../hosts/albert-pc/services) ]
+      ++ [ (import ./../../hosts/albert-pc/security.nix) ]
+      ++ [ (import ./../../hosts/albert-pc/program.nix) ]
+      ++ [ (import ./../../hosts/albert-pc/network.nix) ]
+      ++ [ (import ./../../hosts/albert-pc/bluetooth.nix) ]
+      ++ [ (import ./configuration.nix) ]
+      ++ [ (import ./network.nix) ] ++ [ (import ./system.nix) ]
+      ++ [ (import ./fonts.nix) ] ++ [ (import ./packages.nix) ]
+      ++ [ (import ./security.nix) ] ++ [ (import ./sound.nix) ];
+  };
 
   nixos-ai = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit self inputs username; };
