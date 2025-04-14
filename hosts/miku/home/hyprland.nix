@@ -13,7 +13,7 @@
 
     # See https://wiki.hyprland.org/Configuring/Monitors/
     # monitor=,preferred,auto,auto
-      monitor=,2560x1440@144,0x0,1,transform,1
+    monitor=,preferred,auto,auto 
 
     # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
@@ -141,11 +141,11 @@
     # See https://wiki.hyprland.org/Configuring/Keywords/ for more
     $mainMod = SUPER
 
-    $w1 = hyprctl hyprpaper wallpaper "DP-2,~/wallpapers/1.png"
-    $w2 = hyprctl hyprpaper wallpaper "DP-2,~/wallpapers/2.png"
-    $w3 = hyprctl hyprpaper wallpaper "DP-2,~/wallpapers/3.png"
-    $w4 = hyprctl hyprpaper wallpaper "DP-2,~/wallpapers/4.png"
-    $w5 = hyprctl hyprpaper wallpaper "DP-2,~/wallpapers/5.png"
+    $w1 = hyprctl hyprpaper wallpaper ",~/wallpapers/1.png"
+    $w2 = hyprctl hyprpaper wallpaper ",~/wallpapers/2.png"
+    $w3 = hyprctl hyprpaper wallpaper ",~/wallpapers/3.png"
+    $w4 = hyprctl hyprpaper wallpaper ",~/wallpapers/4.png"
+    $w5 = hyprctl hyprpaper wallpaper ",~/wallpapers/5.png"
 
     # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
     bind = $mainMod, Q, exec, kitty

@@ -29,14 +29,14 @@ in {
   miku-pc = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit self inputs username; };
 
-    modules = [ (import ./../../hosts/albert-pc/hardware-configuration.nix) ]
-      ++ [ (import ./../../hosts/albert-pc/packages.nix) ]
-      ++ [ (import ./../../hosts/albert-pc/user.nix) ]
-      ++ [ (import ./../../hosts/albert-pc/services) ]
-      ++ [ (import ./../../hosts/albert-pc/security.nix) ]
-      ++ [ (import ./../../hosts/albert-pc/program.nix) ]
-      ++ [ (import ./../../hosts/albert-pc/network.nix) ]
-      ++ [ (import ./../../hosts/albert-pc/bluetooth.nix) ]
+    modules = [ (import ./../../hosts/miku/hardware-configuration.nix) ]
+      ++ [ (import ./../../hosts/miku/packages.nix) ]
+      ++ [ (import ./../../hosts/miku/user.nix) ]
+      ++ [ (import ./../../hosts/miku/services) ]
+      ++ [ (import ./../../hosts/miku/security.nix) ]
+      ++ [ (import ./../../hosts/miku/program.nix) ]
+      ++ [ (import ./../../hosts/miku/network.nix) ]
+      ++ [ (import ./../../hosts/miku/bluetooth.nix) ]
       ++ [ (import ./configuration.nix) ]
       ++ [ (import ./network.nix) ] ++ [ (import ./system.nix) ]
       ++ [ (import ./fonts.nix) ] ++ [ (import ./packages.nix) ]
