@@ -8,4 +8,8 @@
     # Whether to enable XWayland
     xwayland.enable = true;
   };
+
+  programs.thunar = {
+    enable = true;
+  };
 }

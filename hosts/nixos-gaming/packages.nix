@@ -11,7 +11,6 @@
     feh
     lxappearance
     macchina
-    glxinfo
   ];
 
   environment.systemPackages = with pkgs; [
