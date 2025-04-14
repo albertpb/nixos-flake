@@ -24,4 +24,23 @@
     [ { device = "/dev/disk/by-uuid/7c3921e4-89dd-4d1a-8d5a-c0a097b4221c"; }
     ];
 
+  fileSystems."/mnt/games_ex" = {
+    device = "/dev/disk/by-uuid/86966D2C966D1E45";
+    fsType = "ntfs-3g";
+  };
+
+  fileSystems."/mnt/games1" = {
+    device = "/dev/disk/by-uuid/264820EB4820BB85";
+    fsType = "ntfs-3g";
+  };
+
+  fileSystems."/mnt/games2" = {
+    device = "/dev/disk/by-uuid/ECEC9EA6EC9E6B1A";
+    fsType = "ntfs-3g";
+  };
+  
+  fileSystems."/mnt/data" = {
+    device = "/dev/disk/by-uuid/9C4A76964A766D40";
+    fsType = "ntfs-3g";
+  };
 }
