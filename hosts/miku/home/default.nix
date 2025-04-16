@@ -8,6 +8,5 @@
   ++ [ (import ./waybar.nix) ]
   ++ [ (import ./git.nix) ]
   ++ [ (import ./mako.nix) ]
-  ++ [ (import ./bashrc.nix) ]
-  ++ [ (import ./rtorrent.nix) ];
+  ++ [ (import ./bashrc.nix) ];
 }
