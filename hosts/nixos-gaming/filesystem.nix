@@ -24,23 +24,16 @@
     [ { device = "/dev/disk/by-uuid/7c3921e4-89dd-4d1a-8d5a-c0a097b4221c"; }
     ];
 
-  fileSystems."/mnt/games_ex" = {
-    device = "/dev/disk/by-uuid/86966D2C966D1E45";
-    fsType = "ntfs-3g";
-  };
+  fileSystems."/mnt/games_ex" =
+    { device = "/dev/disk/by-uuid/3D37929D64E181EE";
+      fsType = "ntfs-3g";
+      options = [ "rw" "uid=1000" ];
+    };
 
-  fileSystems."/mnt/ai2" = {
-    device = "/dev/disk/by-uuid/049C4A209C4A0D1C";
-    fsType = "ntfs-3g";
-  };
+  fileSystems."/mnt/data" =
+    { device = "/dev/disk/by-uuid/9C4A76964A766D40";
+      fsType = "ntfs-3g";
+      options = [ "rw" "uid=1000" ];
+    };
 
-  fileSystems."/mnt/games2" = {
-    device = "/dev/disk/by-uuid/ECEC9EA6EC9E6B1A";
-    fsType = "ntfs-3g";
-  };
-  
-  fileSystems."/mnt/data" = {
-    device = "/dev/disk/by-uuid/9C4A76964A766D40";
-    fsType = "ntfs-3g";
-  };
 }
