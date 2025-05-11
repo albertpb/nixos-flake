@@ -29,8 +29,8 @@
     fsType = "ntfs-3g";
   };
 
-  fileSystems."/mnt/games1" = {
-    device = "/dev/disk/by-uuid/264820EB4820BB85";
+  fileSystems."/mnt/ai2" = {
+    device = "/dev/disk/by-uuid/049C4A209C4A0D1C";
     fsType = "ntfs-3g";
   };
 
