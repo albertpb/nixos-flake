@@ -38,6 +38,7 @@
       nodejs
       yarn
       stress-ng
+      dysk
     ] ++ [ stylua lua-language-server marksman nixfmt-classic ];
 
 }
