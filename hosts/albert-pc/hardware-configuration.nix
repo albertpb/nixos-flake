@@ -35,10 +35,10 @@
   hardware.cpu.amd.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  hardware.graphics.enable = true;
-  hardware.graphics.extraPackages = [ pkgs.mesa.drivers ];
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   powerManagement.cpuFreqGovernor = "ondemand";
-
-  boot.initrd.kernelModules = [ "amdgpu" ];
 }
