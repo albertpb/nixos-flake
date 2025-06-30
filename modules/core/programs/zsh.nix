@@ -17,7 +17,7 @@
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";
 
-    initExtra = ''
+    initContent = ''
       if [[ -z "''${TMUX}" ]];
       then
           tmux attach -t TMUX || tmux new -s TMUX

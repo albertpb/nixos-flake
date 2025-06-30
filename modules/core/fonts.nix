@@ -8,17 +8,12 @@
     material-icons
     material-design-icons
     corefonts
-
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "DroidSansMono"
-        "JetBrainsMono"
-        "Meslo"
-        "Iosevka"
-        "IosevkaTerm"
-        "Hack"
-      ];
-    })
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.meslo-lg
+    nerd-fonts.iosevka
+    nerd-fonts.iosevka-term
+    nerd-fonts.hack
   ];
 }
