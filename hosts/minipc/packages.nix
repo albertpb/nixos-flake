@@ -1,5 +1,3 @@
-{ pkgs, username, ... }:
-{
-  users.users.${username}.packages = with pkgs; [
-  ];
+{ pkgs, username, ... }: {
+  users.users.${username}.packages = with pkgs; [ ];
 }

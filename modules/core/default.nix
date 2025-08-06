@@ -23,9 +23,10 @@ in {
       ++ [ (import ./../../hosts/albert-pc/virtualisation/default.nix) ]
       ++ [ (import ./network.nix) ] ++ [ (import ./system.nix) ]
       ++ [ (import ./fonts.nix) ] ++ [ (import ./packages.nix) ]
-      ++ [ (import ./security.nix) ] ++ [ (import ./sound.nix) ];
+      ++ [ (import ./user-packages.nix) ] ++ [ (import ./security.nix) ]
+      ++ [ (import ./sound.nix) ];
   };
- 
+
   miku-pc = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit self inputs username; };
 
@@ -37,9 +38,9 @@ in {
       ++ [ (import ./../../hosts/miku/program.nix) ]
       ++ [ (import ./../../hosts/miku/network.nix) ]
       ++ [ (import ./../../hosts/miku/bluetooth.nix) ]
-      ++ [ (import ./configuration.nix) ]
-      ++ [ (import ./network.nix) ] ++ [ (import ./system.nix) ]
-      ++ [ (import ./fonts.nix) ] ++ [ (import ./packages.nix) ]
+      ++ [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]
+      ++ [ (import ./system.nix) ] ++ [ (import ./fonts.nix) ]
+      ++ [ (import ./packages.nix) ] ++ [ (import ./user-packages.nix) ]
       ++ [ (import ./security.nix) ] ++ [ (import ./sound.nix) ];
   };
 
@@ -54,8 +55,8 @@ in {
       ++ [ (import ./../../hosts/nixos-ai/network.nix) ]
       ++ [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]
       ++ [ (import ./system.nix) ] ++ [ (import ./fonts.nix) ]
-      ++ [ (import ./packages.nix) ] ++ [ (import ./security.nix) ]
-      ++ [ (import ./sound.nix) ];
+      ++ [ (import ./packages.nix) ] ++ [ (import ./user-packages.nix) ]
+      ++ [ (import ./security.nix) ] ++ [ (import ./sound.nix) ];
   };
 
   gigabyte-laptop = nixpkgs.lib.nixosSystem {
@@ -74,6 +75,7 @@ in {
       ++ [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]
       ++ [ (import ./system.nix) ] ++ [ (import ./fonts.nix) ]
       ++ [ (import ./sound.nix) ] ++ [ (import ./packages.nix) ]
+      ++ [ (import ./user-packages.nix) ]
       ++ [ (import ./security.nix) ];
   };
 
@@ -91,6 +93,7 @@ in {
       ++ [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]
       ++ [ (import ./system.nix) ] ++ [ (import ./fonts.nix) ]
       ++ [ (import ./sound.nix) ] ++ [ (import ./packages.nix) ]
+      ++ [ (import ./user-packages.nix) ]
       ++ [ (import ./security.nix) ];
   };
 
@@ -107,6 +110,7 @@ in {
       ++ [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]
       ++ [ (import ./system.nix) ] ++ [ (import ./fonts.nix) ]
       ++ [ (import ./packages.nix) ] ++ [ (import ./security.nix) ]
+      ++ [ (import ./user-packages.nix) ]
       ++ [ (import ./sound.nix) ];
   };
 
@@ -117,9 +121,9 @@ in {
       ++ [ (import ./../../hosts/minipc/packages.nix) ]
       ++ [ (import ./../../hosts/minipc/services) ]
       ++ [ (import ./../../hosts/minipc/user.nix) ]
-      ++ [ (import ./configuration.nix) ] 
+      ++ [ (import ./configuration.nix) ]
       ++ [ (import ./../../hosts/minipc/network.nix) ]
-      ++ [ (import ./system.nix) ]
+      ++ [ (import ./system.nix) ] ++ [ (import ./packages.nix) ]
       ++ [ (import ./../../hosts/minipc/virtualisation.nix) ];
   };
 
@@ -135,6 +139,7 @@ in {
       ++ [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]
       ++ [ (import ./system.nix) ] ++ [ (import ./fonts.nix) ]
       ++ [ (import ./packages.nix) ] ++ [ (import ./security.nix) ]
+      ++ [ (import ./user-packages.nix) ]
       ++ [ (import ./sound.nix) ];
   };
 }
