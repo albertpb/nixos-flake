@@ -3,23 +3,27 @@
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, ... }:
 {
-fileSystems."/" =
-    { device = "/dev/disk/by-uuid/d7dd39c9-42b6-420e-aa14-b0c2cb17ebe0";
-      fsType = "ext4";
-    };
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/691f7c5b-44ad-4be8-a70f-a410b088a3d5";
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/2f09406f-0beb-447a-a43c-512d3e0a8811";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/F978-2F88";
+    { device = "/dev/disk/by-uuid/4C7E-A7C4";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/b172f952-b5ac-475c-b829-1c20e0a427a6"; }
-    ];
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/4bf71b19-00b2-4623-adf5-c0cd1607ce58";
+      fsType = "ext4";
+    };
+
+  fileSystems."/data" =
+    { device = "/dev/disk/by-uuid/7c54c7b5-c59f-4769-8285-6d6686e7d49c";
+      fsType = "ext4";
+    };
+
+  swapDevices = [ ];
+
 }
