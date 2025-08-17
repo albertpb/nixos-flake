@@ -27,6 +27,7 @@
       yarn
       stress-ng
       dysk
+      smartmontools
     ] ++ [ stylua lua-language-server marksman nixfmt-classic ];
 
 }
