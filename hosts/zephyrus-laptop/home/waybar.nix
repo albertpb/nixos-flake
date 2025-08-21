@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   home.file.".config/waybar/colors.css".text = ''
     /*
     *
@@ -90,7 +89,7 @@
       #workspaces button.urgent {
         background-color: @surface2;
       }
-      
+
       #user,
       #disk,
       #window,
@@ -125,7 +124,7 @@
         border-radius: 8px 0px 0px 8px;
         color: @blue;
       }
-      
+
       #language,
       #submap,
       #window,
@@ -204,120 +203,136 @@
       }
     '';
 
-    settings = [
-      {
-        height = 42;
-        layer = "top";
-        position = "top";
-        modules-left = [ "custom/logo" "hyprland/workspaces" "hyprland/window" ];
-        modules-center = [ "clock" ];
-        modules-right = [ "tray" "hyprland/language" "hyprland/submap" "pulseaudio" "cpu" "memory" "disk" "network" ];
-        "custom/logo" = {
-          format = "  ";
-          tooltip = false;
-          on-click = "rofi -show run";
+    settings = [{
+      height = 42;
+      layer = "top";
+      position = "top";
+      modules-left = [ "custom/logo" "hyprland/workspaces" "hyprland/window" ];
+      modules-center = [ "clock" ];
+      modules-right = [
+        "tray"
+        "hyprland/language"
+        "hyprland/submap"
+        "pulseaudio"
+        "cpu"
+        "memory"
+        "disk"
+        "network"
+        "battery"
+      ];
+      "custom/logo" = {
+        format = "  ";
+        tooltip = false;
+        on-click = "rofi -show run";
+      };
+      "hyprland/window" = {
+        format = "👉 {}";
+        rewrite = { };
+        separate-outputs = true;
+      };
+      "hyprland/language" = { format = ": {}"; };
+      "hyprland/submap" = {
+        format = "✌️ {}";
+        max-length = 8;
+        tooltip = false;
+      };
+      "hyprland/workspaces" = {
+        on-click = "activate";
+        format = "{icon}";
+        format-icons = {
+          default = "";
+          "1" = "1";
+          "2" = "2";
+          "3" = "3";
+          "4" = "4";
+          "5" = "5";
+          "6" = "6";
+          "7" = "7";
+          "8" = "8";
+          "9" = "9";
+          active = "󱓻";
+          urgent = "󱓻";
         };
-        "hyprland/window" = {
-          format = "👉 {}";
-          rewrite = {
-          };
-          separate-outputs = true;
+        persistent-workspaces = {
+          "1" = [ ];
+          "2" = [ ];
+          "3" = [ ];
+          "4" = [ ];
+          "5" = [ ];
         };
-        "hyprland/language" = {
-          format = ": {}";
+      };
+      memory = {
+        interval = 5;
+        format = "󰍛 {}%";
+        max-length = 10;
+      };
+      tray = { spacing = 10; };
+      clock = {
+        tooltip-format = "<tt>{calendar}</tt>";
+        format-alt = "  {:%a, %d %b %Y}";
+        format = "  {:%I:%M %p}";
+      };
+      network = {
+        format-wifi = "{icon}";
+        format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
+        format-ethernet = "󰀂";
+        format-alt = "󱛇";
+        format-disconnected = "󰖪";
+        tooltip-format-wifi = ''
+          {icon} {essid}
+          ⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}'';
+        tooltip-format-ethernet = ''
+          󰀂  {ifname}
+          ⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}'';
+        tooltip-format-disconnected = "Disconnected";
+        interval = 5;
+        nospacing = 1;
+      };
+      pulseaudio = {
+        format = "{icon}";
+        format-bluetooth = "󰂰";
+        nospacing = 1;
+        tooltip-format = "Volume : {volume}%";
+        format-muted = "󰝟";
+        format-icons = {
+          headphone = "";
+          default = [ "󰖀" "󰕾" "" ];
         };
-        "hyprland/submap" = {
-          format = "✌️ {}";
-          max-length = 8;
-          tooltip = false;
-        };
-        "hyprland/workspaces" = {
-          on-click = "activate";
-          format = "{icon}";
-          format-icons = {
-            default = "";
-            "1" = "1";
-            "2" = "2";
-            "3" = "3";
-            "4" = "4";
-            "5" = "5";
-            "6" = "6";
-            "7" = "7";
-            "8" = "8";
-            "9" = "9";
-            active = "󱓻";
-            urgent = "󱓻";
-          };
-          persistent-workspaces = {
-            "1" = [ ];
-            "2" = [ ];
-            "3" = [ ];
-            "4" = [ ];
-            "5" = [ ];
-          };
-        };
-        memory = {
-          interval = 5;
-          format = "󰍛 {}%";
-          max-length = 10;
-        };
-        tray = {
-          spacing = 10;
-        };
-        clock = {
-          tooltip-format = "<tt>{calendar}</tt>";
-          format-alt = "  {:%a, %d %b %Y}";
-          format = "  {:%I:%M %p}";
-        };
-        network = {
-          format-wifi = "{icon}";
-          format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
-          format-ethernet = "󰀂";
-          format-alt = "󱛇";
-          format-disconnected = "󰖪";
-          tooltip-format-wifi = "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
-          tooltip-format-ethernet = "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
-          tooltip-format-disconnected = "Disconnected";
-          interval = 5;
-          nospacing = 1;
-        };
-        pulseaudio = {
-          format = "{icon}";
-          format-bluetooth = "󰂰";
-          nospacing = 1;
-          tooltip-format = "Volume : {volume}%";
-          format-muted = "󰝟";
-          format-icons = {
-            headphone = "";
-            default = [ "󰖀" "󰕾" "" ];
-          };
-          on-click = "pamixer -t";
-          scroll-step = 1;
-        };
-        cpu = {
-          interval = 1;
-          format = "{}% ";
-          max-length = 10;
-        };
-        "wlr/taskbar" = {
-          format = "{title}";
-          icon-size = 14;
-          icon-theme = "oomox-Tokyonight-Moon";
-          tooltip-format ="{title}";
-          on-click = "activate";
-          on-click-middle = "close";
-        };
-        user = {
-          format = "{user} {up {work_d} days ↑}";
-          interval = 60;
-          icon = true;
-        };
-        disk = {
-          interval = 60;
-          format = "󰋊 {percentage_used}%";
-          path = "/";
-        };
-      }
-    ];
+        on-click = "pamixer -t";
+        scroll-step = 1;
+      };
+      cpu = {
+        interval = 1;
+        format = "{}% ";
+        max-length = 10;
+      };
+      "wlr/taskbar" = {
+        format = "{title}";
+        icon-size = 14;
+        icon-theme = "oomox-Tokyonight-Moon";
+        tooltip-format = "{title}";
+        on-click = "activate";
+        on-click-middle = "close";
+      };
+      user = {
+        format = "{user} {up {work_d} days ↑}";
+        interval = 60;
+        icon = true;
+      };
+      disk = {
+        interval = 60;
+        format = "󰋊 {percentage_used}%";
+        path = "/";
+      };
+      battery = {
+        bat = "BAT0";
+        interval = 30;
+        format = "{capacity}% ";
+        format-charging = "{capacity}% ";
+        format-plugged = "{capacity}% ";
+        format-alt = "{time} remaining";
+        tooltip = true;
+      };
+    }];
   };
-} 
+}
