@@ -22,9 +22,11 @@
     exec-once=hyprctl setcursor capitaine-cursors 24
     exec-once=waybar
     exec-once=hyprpaper
+    exec-once=blueman-applet
     exec-once=gnome-keyring-daemon --daemonize
     exec-once=nm-applet --indicator
-
+    exec-once=hypridle
+    
     # Source a file (multi-file configs)
     source = ~/.config/hypr/colors.conf
 
@@ -199,6 +201,14 @@
     # Move/resize windows with mainMod + LMB/RMB and dragging
     bindm = $mainMod, mouse:272, movewindow
     bindm = $mainMod, mouse:273, resizewindow
+  '';
+
+  home.file.".config/hypr/hypridle.conf".text = ''
+    listener {
+      timeout = 900                           # 5min
+      on-timeout = hyprctl dispatch dpms off  # command to run when timeout has passed
+      on-resume = hyprctl dispatch dpms on    # command to run when activity is detected after timeout has fired.
+    }
   '';
 
   home.file.".config/hypr/hyprpaper.conf".text = ''

@@ -4,6 +4,7 @@
   users.users.${username}.packages = with pkgs; [
     pinta
     hyprpaper
+    hypridle
     mako
     nwg-look
     macchina
@@ -11,5 +12,6 @@
     slurp # Select a region in wayland
     wl-clipboard # screenshot to clipboard
     brave
+    vlc
   ];
 }

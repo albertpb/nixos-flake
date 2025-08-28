@@ -90,6 +90,7 @@ in {
       ++ [ (import ./../../hosts/zephyrus-laptop/security.nix) ]
       ++ [ (import ./../../hosts/zephyrus-laptop/program.nix) ]
       ++ [ (import ./../../hosts/zephyrus-laptop/network.nix) ]
+      ++ [ (import ./../../hosts/zephyrus-laptop/bluetooth.nix) ]
       ++ [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]
       ++ [ (import ./system.nix) ] ++ [ (import ./fonts.nix) ]
       ++ [ (import ./sound.nix) ] ++ [ (import ./packages.nix) ]
