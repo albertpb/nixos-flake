@@ -28,6 +28,7 @@
       stress-ng
       dysk
       smartmontools
+      ethtool
     ] ++ [ stylua lua-language-server marksman nixfmt-classic ];
 
 }
