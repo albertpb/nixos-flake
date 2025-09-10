@@ -13,5 +13,6 @@
     wl-clipboard # screenshot to clipboard
     brave
     vlc
+    moonlight-qt
   ];
 }
