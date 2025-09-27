@@ -29,6 +29,7 @@
       dysk
       smartmontools
       ethtool
+      ffmpeg-full
     ] ++ [ stylua lua-language-server marksman nixfmt-classic ];
 
 }
