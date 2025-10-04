@@ -12,5 +12,8 @@
     slurp # Select a region in wayland
     wl-clipboard # screenshot to clipboard
     vlc
+    qmk
+    qmk-udev-rules
+    dfu-util
   ];
 }

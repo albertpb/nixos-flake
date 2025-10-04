@@ -32,4 +32,9 @@ in
     TTYVHangup = true;
     TTYVTDisallocate = true;
   };
+
+  systemd.services.greetd.unitConfig = {
+    After = [ "systemd-modules-load.service" ];
+    Wants = [ "systemd-modules-load.service" ];
+  };
 }
