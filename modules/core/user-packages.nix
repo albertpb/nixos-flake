@@ -10,6 +10,7 @@
     sxiv
     feh
     libnotify
+    mission-center
   ];
-}
+} 
 

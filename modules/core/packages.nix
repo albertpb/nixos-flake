@@ -30,7 +30,7 @@
       smartmontools
       ethtool
       ffmpeg-full
+      lm_sensors
     ] ++ [ stylua lua-language-server marksman nixfmt-classic ];
-
 }
 

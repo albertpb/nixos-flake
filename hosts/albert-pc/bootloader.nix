@@ -26,7 +26,8 @@
 
     kernelPackages = pkgs.linuxPackages_latest;
 
-    # kernelModules = [ "kvm-amd" ];
+    kernelModules = [ "k10temp" "nct6775" ];
+    
     kernelParams = [
       "quiet"
       "splash"

@@ -29,7 +29,8 @@
 
     supportedFilesystems = [ "ntfs" ];
 
-    # kernelModules = [ "kvm-amd" ];
+    kernelModules = [ "k10temp" "nct6775" ];
+    
     kernelParams = [
       "quiet"
       "splash"
