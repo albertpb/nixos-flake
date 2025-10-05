@@ -55,8 +55,9 @@ in {
     boot.kernelParams = (if cfg.IOMMUType == "intel" then [
       "intel_iommu=on"
       "intel_iommu=igfx_off"
+      "iommu=pt"
     ] else
-      [ "amd_iommu=on" ]) ++ (optional (builtins.length cfg.devices > 0)
+      [ "amd_iommu=on" "iommu=pt" ]) ++ (optional (builtins.length cfg.devices > 0)
         ("vfio-pci.ids=" + builtins.concatStringsSep "," cfg.devices))
       ++ (optionals cfg.applyACSpatch [
         "pcie_acs_override=downstream,multifunction"
@@ -68,6 +69,10 @@ in {
       ]);
 
     boot.kernelModules = [ "vfio_pci" "vfio_iommu_type1" "vfio" ];
+
+    boot.extraModprobeConfig = ''
+      softdep nvme pre: vfio-pci
+    '';
 
     boot.initrd.kernelModules =
       [ "vfio_pci" "vfio_iommu_type1" "vfio" ];

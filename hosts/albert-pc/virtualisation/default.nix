@@ -9,7 +9,15 @@
     vfio = {
       enable = true;
       IOMMUType = "amd";
-      devices = [ "10de:2684" "10de:22ba" "10de:2b85" "10de:22e8" ];
+      devices = [ 
+        "10de:2684"  # GPU
+        "10de:22ba"  # Audio
+        "10de:2b85"  # GPU
+        "10de:22e8"  # Audio
+        "1987:5018"  # Phison NVMe 1
+        "1022:43f5"  # AMD PCIe bridge for INNOGRIT NVMe
+        "1dbe:5236"  # INNOGRIT NVMe
+      ];
       disableEFIfb = false;
       blacklistNvidia = true;
       ignoreMSRs = true;
