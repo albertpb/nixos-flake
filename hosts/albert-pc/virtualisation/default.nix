@@ -17,6 +17,8 @@
         "1987:5018"  # Phison NVMe 1
         "1022:43f5"  # AMD PCIe bridge for INNOGRIT NVMe
         "1dbe:5236"  # INNOGRIT NVMe
+        "1022:43f5"  # AMD PCIe bridge for USB
+        "1022:43f7"  # USB 3.2
       ];
       disableEFIfb = false;
       blacklistNvidia = true;
