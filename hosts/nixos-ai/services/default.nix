@@ -6,5 +6,7 @@
     (import ./keyring.nix)
   ] ++ [
     (import ./x-server.nix)
+  ] ++ [
+    (import ./sunshine.nix)
   ];
 }

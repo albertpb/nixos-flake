@@ -18,6 +18,8 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
 
     initContent = ''
+      export NIXPKGS_ALLOW_UNFREE=1
+
       if [[ -z "''${TMUX}" ]];
       then
           tmux attach -t TMUX || tmux new -s TMUX

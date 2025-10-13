@@ -9,5 +9,6 @@
   ++ [ (import ./picom.nix) ]
   ++ [ (import ./polybar.nix) ]
   ++ [ (import ./sxhkd.nix) ]
-  ++ [ (import ./bashrc.nix) ];
+  ++ [ (import ./bashrc.nix) ]
+  ++ [ (import ./zsh.nix) ];
 }
