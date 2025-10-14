@@ -7,7 +7,7 @@
   services.xserver.videoDrivers = [ "nvidia" ]; # or "nvidiaLegacy470 etc.
 
   hardware.nvidia = {
-    open = false;
+    open = true;
     modesetting.enable = true;
 
     # Enable the Nvidia settings menu,
