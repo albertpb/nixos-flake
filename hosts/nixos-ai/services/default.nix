@@ -8,5 +8,7 @@
     (import ./x-server.nix)
   ] ++ [
     (import ./sunshine.nix)
+  ] ++ [
+    (import ./printer.nix)
   ];
 }
