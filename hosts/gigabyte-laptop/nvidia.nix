@@ -12,8 +12,6 @@ in {
 
   hardware.graphics = {
     enable = true;
-    enable32Bit = true;
-    extraPackages = with pkgs; [ libGL ];
   };
 
   # Load nvidia driver for Xorg and Wayland
