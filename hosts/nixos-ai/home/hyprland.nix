@@ -14,7 +14,7 @@
 
     # See https://wiki.hyprland.org/Configuring/Monitors/
     # monitor=,preferred,auto,auto
-    monitor=,1920x1080@144,0x0,1
+    monitor=,2560x1440@240,0x0,1
 
     # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
