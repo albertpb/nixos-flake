@@ -1,7 +1,5 @@
 { pkgs, config, ... }: {
-  hardware.graphics = {
-    enable = true;
-  };
+  hardware.graphics = { enable = true; };
 
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ]; # or "nvidiaLegacy470 etc.
@@ -14,7 +12,7 @@
     # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
-    nvidiaPersistenced = true;
+    nvidiaPersistenced = false;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
 
