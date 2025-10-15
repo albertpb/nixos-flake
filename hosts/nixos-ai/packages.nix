@@ -1,5 +1,4 @@
 { pkgs, username, ... }: {
-  #nixos-ai
   users.users.${username}.packages = with pkgs; [
     pinta
     hyprpaper
@@ -12,6 +11,4 @@
     wl-clipboard # screenshot to clipboard
     vlc
   ];
-
-  environment.systemPackages = with pkgs; [ linuxPackages.nvidia_x11 ];
 }

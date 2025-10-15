@@ -1,13 +1,7 @@
-{ inputs, username, ... }:
-{
-  imports = [
-    (import ./../../../modules/core/programs)
-  ] ++ [ (import ./vscodium.nix) ]
-  ++ [ (import ./rofi.nix) ]
-  ++ [ (import ./git.nix) ]
-  ++ [ (import ./dunst.nix) ]
-  ++ [ (import ./picom.nix) ]
-  ++ [ (import ./polybar.nix) ]
-  ++ [ (import ./sxhkd.nix) ]
-  ++ [ (import ./bashrc.nix) ];
+{ inputs, username, ... }: {
+  imports = [ (import ./../../../modules/core/programs) ]
+    ++ [ (import ./hyprland.nix) ] ++ [ (import ./vscodium.nix) ]
+    ++ [ (import ./rofi.nix) ] ++ [ (import ./waybar.nix) ]
+    ++ [ (import ./git.nix) ] ++ [ (import ./mako.nix) ]
+    ++ [ (import ./bashrc.nix) ];
 }

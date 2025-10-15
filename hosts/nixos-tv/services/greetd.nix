@@ -5,15 +5,14 @@ let
   sessionData = dmcfg.sessionData;
   tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
   # hyprland-session = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/share/wayland-sessions";
-  # hyprland-session = "${sessionData.desktops}/share/wayland-sessions";
-in
-{
+  hyprland-session = "${sessionData.desktops}/share/wayland-sessions";
+in {
   services.greetd = {
     enable = true;
-    #vt = config.services.xserver.tty;
     settings = {
       default_session = {
-        command = "${tuigreet} --time --remember --remember-session --cmd 'sx bspwm'";
+        command =
+          "${tuigreet} --time --remember --remember-session --sessions ${hyprland-session}";
         user = "greeter";
       };
     };
@@ -32,10 +31,5 @@ in
     TTYReset = true;
     TTYVHangup = true;
     TTYVTDisallocate = true;
-  };
-
-  systemd.services.greetd.unitConfig = {
-    After = [ "systemd-modules-load.service" ];
-    Wants = [ "systemd-modules-load.service" ];
   };
 }
