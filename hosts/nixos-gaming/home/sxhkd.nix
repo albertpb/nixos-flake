@@ -1,9 +1,8 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   home.file.".config/sxhkd/sxhkdrc".text = ''
     # Web
     super + shift + w
-      brave-browser
+      vivaldi
 
     # Terminal
     super + q

@@ -1,19 +1,17 @@
-{ pkgs, username, ... }:
-{
+{ pkgs, username, ... }: {
   #nixos-ai
   users.users.${username}.packages = with pkgs; [
-    xclip
-    polybar
-    picom
-    sxhkd
-    rofi
-    dunst
-    feh
-    lxappearance
+    pinta
+    hyprpaper
+    hypridle
+    mako
+    nwg-look
     macchina
+    grim # take screenshots
+    slurp # Select a region in wayland
+    wl-clipboard # screenshot to clipboard
+    vlc
   ];
 
-  environment.systemPackages = with pkgs; [
-    linuxPackages.nvidia_x11
-  ];
+  environment.systemPackages = with pkgs; [ linuxPackages.nvidia_x11 ];
 }
