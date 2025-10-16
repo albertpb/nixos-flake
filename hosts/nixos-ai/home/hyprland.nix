@@ -26,7 +26,8 @@
     exec-once=gnome-keyring-daemon --daemonize
     exec-once=nm-applet --indicator
     exec-once=hypridle
-    
+    exec-once=sunshine 
+
     # Source a file (multi-file configs)
     source = ~/.config/hypr/colors.conf
 
