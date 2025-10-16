@@ -11,4 +11,6 @@
     wl-clipboard # screenshot to clipboard
     vlc
   ];
+
+  environment.systemPackages = with pkgs; [ linuxPackages.nvidia_x11 ];
 }
