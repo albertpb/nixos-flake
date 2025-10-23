@@ -1,4 +1,8 @@
-{ lib, pkgs, config, ... }: {
+{ lib, pkgs, config, ... }: 
+let
+  unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") { };
+in
+{
   imports = [
     ./vfio.nix
     ./virtualisation.nix
@@ -33,9 +37,10 @@
       ovmf = {
         enable = true;
         packages = [
-          (pkgs.OVMF.override {
+          (unstable.OVMFFull.override {
             secureBoot = true;
             tpmSupport = true;
+            msVarsTemplate = true;
           }).fd
         ];
       };
