@@ -17,10 +17,10 @@
     };
 
     hugepages = {
-      enable = false;
+      enable = true;
       defaultPageSize = "1G";
       pageSize = "1G";
-      numPages = 20;
+      numPages = 26;
     };
   };
 
