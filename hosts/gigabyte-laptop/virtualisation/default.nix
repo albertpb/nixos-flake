@@ -42,6 +42,7 @@ in
             secureBoot = true;
             tpmSupport = true;
             msVarsTemplate = true;
+            fdSize4MB = true;
           }).fd
         ];
       };

@@ -1,8 +1,8 @@
-{ lib, pkgs, config, ... }: 
+{ lib, pkgs, config, ... }:
 let
-  unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") { };
-in
-{
+  unstable = import (fetchTarball
+    "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") { };
+in {
   imports = [
     ./vfio.nix
     ./virtualisation.nix
@@ -41,6 +41,7 @@ in
             secureBoot = true;
             tpmSupport = true;
             msVarsTemplate = true;
+            fdSize4MB = true;
           }).fd
         ];
       };
