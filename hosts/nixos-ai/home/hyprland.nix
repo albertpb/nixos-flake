@@ -214,14 +214,23 @@
 
   home.file.".config/hypr/hyprpaper.conf".text = ''
     preload = /home/${username}/wallpapers/1.png
+    preload = /home/${username}/wallpapers/2.png
+    preload = /home/${username}/wallpapers/3.png
+    preload = /home/${username}/wallpapers/4.png
+    preload = /home/${username}/wallpapers/5.png
 
     wallpaper = ,/home/${username}/wallpapers/1.png
+    wallpaper = ,/home/${username}/wallpapers/2.png
+    wallpaper = ,/home/${username}/wallpapers/3.png
+    wallpaper = ,/home/${username}/wallpapers/4.png
+    wallpaper = ,/home/${username}/wallpapers/5.png
 
     #enable splash text rendering over the wallpaper
     splash = false
 
     #fully disable ipc
     # ipc = off
+    ipc = on
   '';
 
   home.file.".config/hypr/colors.conf".text = ''
