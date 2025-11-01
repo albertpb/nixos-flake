@@ -16,6 +16,7 @@ in {
       ++ [ (import ./../../hosts/albert-pc/services) ]
       ++ [ (import ./../../hosts/albert-pc/security.nix) ]
       ++ [ (import ./../../hosts/albert-pc/program.nix) ]
+      ++ [ (import ./../../hosts/albert-pc/nvidia.nix) ]
       ++ [ (import ./../../hosts/albert-pc/network.nix) ]
       ++ [ (import ./../../hosts/albert-pc/bluetooth.nix) ]
       ++ [ (import ./../../hosts/albert-pc/distrobox.nix) ]
@@ -75,8 +76,7 @@ in {
       ++ [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]
       ++ [ (import ./system.nix) ] ++ [ (import ./fonts.nix) ]
       ++ [ (import ./sound.nix) ] ++ [ (import ./packages.nix) ]
-      ++ [ (import ./user-packages.nix) ]
-      ++ [ (import ./security.nix) ];
+      ++ [ (import ./user-packages.nix) ] ++ [ (import ./security.nix) ];
   };
 
   zephyrus-laptop = nixpkgs.lib.nixosSystem {
@@ -94,8 +94,7 @@ in {
       ++ [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]
       ++ [ (import ./system.nix) ] ++ [ (import ./fonts.nix) ]
       ++ [ (import ./sound.nix) ] ++ [ (import ./packages.nix) ]
-      ++ [ (import ./user-packages.nix) ]
-      ++ [ (import ./security.nix) ];
+      ++ [ (import ./user-packages.nix) ] ++ [ (import ./security.nix) ];
   };
 
   nixos-tv = nixpkgs.lib.nixosSystem {
@@ -111,8 +110,7 @@ in {
       ++ [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]
       ++ [ (import ./system.nix) ] ++ [ (import ./fonts.nix) ]
       ++ [ (import ./packages.nix) ] ++ [ (import ./security.nix) ]
-      ++ [ (import ./user-packages.nix) ]
-      ++ [ (import ./sound.nix) ];
+      ++ [ (import ./user-packages.nix) ] ++ [ (import ./sound.nix) ];
   };
 
   minipc = nixpkgs.lib.nixosSystem {
@@ -140,7 +138,6 @@ in {
       ++ [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]
       ++ [ (import ./system.nix) ] ++ [ (import ./fonts.nix) ]
       ++ [ (import ./packages.nix) ] ++ [ (import ./security.nix) ]
-      ++ [ (import ./user-packages.nix) ]
-      ++ [ (import ./sound.nix) ];
+      ++ [ (import ./user-packages.nix) ] ++ [ (import ./sound.nix) ];
   };
 }

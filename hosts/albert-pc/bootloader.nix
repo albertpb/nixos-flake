@@ -42,9 +42,9 @@
       "rcu_nocbs=0-7,16-23"
       "housekeeping=8-15,24-31"
       "fbcon=rotate:3"
-      "amdgpu.dcdebugmask=0x10"
-      "amdgpu.deep_color=0"
-      "amdgpu.aspm=0"
+      # "amdgpu.dcdebugmask=0x10"
+      # "amdgpu.deep_color=0"
+      # "amdgpu.aspm=0"
     ];
     consoleLogLevel = 0;
     extraModulePackages = [ ];
