@@ -39,11 +39,13 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
+      "nvidia.NVreg_UsePageAttributeTable=1"
+      "nvidia-drm.modeset=1"
     ];
     consoleLogLevel = 0;
     extraModulePackages = [ ];
 
-    plymouth.enable = true;
+    plymouth.enable = false;
     plymouth.theme = "bgrt";
 
     initrd.verbose = false;
