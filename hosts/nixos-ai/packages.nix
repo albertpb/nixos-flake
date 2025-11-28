@@ -9,8 +9,8 @@
     grim # take screenshots
     slurp # Select a region in wayland
     wl-clipboard # screenshot to clipboard
+    wayland-utils
     vlc
-    ollama-cuda
   ];
 
   environment.systemPackages = with pkgs; [ linuxPackages.nvidia_x11 ];

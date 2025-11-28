@@ -41,7 +41,7 @@
 
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
+    systemd.enable = false;
 
     style = ''
       @import "colors.css";
