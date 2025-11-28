@@ -4,15 +4,15 @@ let
   dmcfg = services.displayManager;
   sessionData = dmcfg.sessionData;
   tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
-  # hyprland-session = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/share/wayland-sessions";
-  hyprland-session = "${sessionData.desktops}/share/wayland-sessions";
+  # wayland-session = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/share/wayland-sessions";
+  wayland-session = "${sessionData.desktops}/share/wayland-sessions";
 in {
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
         command =
-          "${tuigreet} --time --remember --remember-session --sessions ${hyprland-session}";
+          "${tuigreet} --time --remember --remember-session --sessions ${wayland-session}";
         user = "greeter";
       };
     };
