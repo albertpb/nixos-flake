@@ -30,7 +30,7 @@
   };
 
   fileSystems."/mnt/ai2" = {
-    device = "/dev/disk/by-uuid/049C4A209C4A0D1C";
+    device = "/dev/disk/by-uuid/AC48DFF548DFBBF0";
     fsType = "ntfs-3g";
     options = [ "rw" "uid=1000" ];
   };
