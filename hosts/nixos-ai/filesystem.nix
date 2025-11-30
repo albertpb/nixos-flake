@@ -4,24 +4,25 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/14a8f3d1-66b1-451f-bbae-d0f83bad784f";
-    fsType = "ext4";
-  };
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/6b8e1706-7d02-4a7e-a037-d40ca8d65f70";
+      fsType = "ext4";
+    };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/1103ad7c-0633-4aa8-b44a-6f610af4d3a8";
-    fsType = "ext4";
-  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/FD94-3C1F";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/D0FC-3551";
-    fsType = "vfat";
-    options = [ "fmask=0022" "dmask=0022" ];
-  };
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/fc20ac9c-2667-4007-a952-ea2472ff7b1c";
+      fsType = "ext4";
+    };
 
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/9c6c0937-bb17-4b36-b014-f8a777f1fe33"; }];
+    [ { device = "/dev/disk/by-uuid/c6680b43-0e66-4079-b36b-8212acd407fa"; }
+    ];
 
   fileSystems."/mnt/ai1" = {
     device = "/dev/disk/by-uuid/BA5EBD5B5EBD115D";
