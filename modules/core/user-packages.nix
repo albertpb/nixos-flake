@@ -1,6 +1,5 @@
 { pkgs, username, ... }: {
   users.users.${username}.packages = with pkgs; [
-    floorp
     vivaldi
     nixpkgs-fmt
     libsecret
