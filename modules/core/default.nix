@@ -140,4 +140,24 @@ in {
       ++ [ (import ./packages.nix) ] ++ [ (import ./security.nix) ]
       ++ [ (import ./user-packages.nix) ] ++ [ (import ./sound.nix) ];
   };
+
+  nzxt = nixpkgs.lib.nixosSystem {
+    specialArgs = { inherit self inputs username; };
+
+    modules = [ (import ./../../hosts/nzxt/hardware-configuration.nix) ]
+      ++ [ (import ./../../hosts/nzxt/packages.nix) ]
+      ++ [ (import ./../../hosts/nzxt/user.nix) ]
+      ++ [ (import ./../../hosts/nzxt/services) ]
+      ++ [ (import ./../../hosts/nzxt/security.nix) ]
+      ++ [ (import ./../../hosts/nzxt/program.nix) ]
+      ++ [ (import ./../../hosts/nzxt/nvidia.nix) ]
+      ++ [ (import ./../../hosts/nzxt/network.nix) ]
+      ++ [ (import ./../../hosts/nzxt/bluetooth.nix) ]
+      ++ [ (import ./../../hosts/nzxt/distrobox.nix) ]
+      ++ [ (import ./configuration.nix) ]
+      ++ [ (import ./network.nix) ] ++ [ (import ./system.nix) ]
+      ++ [ (import ./fonts.nix) ] ++ [ (import ./packages.nix) ]
+      ++ [ (import ./user-packages.nix) ] ++ [ (import ./security.nix) ]
+      ++ [ (import ./sound.nix) ];
+  };
 }
