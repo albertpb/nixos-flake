@@ -3,7 +3,6 @@
     [
       neovim
       ripgrep
-      thefuck
       zoxide
       fzf
       gcc

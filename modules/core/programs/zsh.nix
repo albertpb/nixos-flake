@@ -44,7 +44,6 @@
       enable = true;
       plugins = [ 
         "git"
-        "thefuck"
         "tmux"
         "zoxide"
       ];
