@@ -1,5 +1,4 @@
 { pkgs, username, ... }: {
-  # albert-pc
   users.users.${username}.packages = with pkgs; [
     pinta
     brasero # make iso files
