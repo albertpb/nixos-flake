@@ -30,6 +30,8 @@
       ethtool
       ffmpeg-full
       lm_sensors
+      gopls
+      go
     ] ++ [ stylua lua-language-server marksman nixfmt-classic ];
 }
 
