@@ -14,5 +14,7 @@
     qmk
     qmk-udev-rules
     dfu-util
+    dbgate
+    bruno
   ];
 }
