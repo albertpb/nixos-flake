@@ -1,33 +1,28 @@
 { pkgs, ... }: {
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/1628ea1d-6f19-4653-a2bd-e1de6efcc76f";
-    fsType = "ext4";
-  };
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/a2ade383-367f-475e-8d87-33493b1191d2";
+      fsType = "ext4";
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/5A6E-59CA";
-    fsType = "vfat";
-  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/81AA-A4CD";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/8f15564e-5833-4c6e-9f68-ac677996325b";
-    fsType = "ext4";
-  };
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/806645a7-8976-442f-9e2b-826618b2c983";
+      fsType = "ext4";
+    };
 
-  fileSystems."/vms" = {
-    device = "/dev/disk/by-uuid/d7f4e189-1858-42e5-af9a-ad7852d56695";
-    fsType = "ext4";
-  };
-
-  #fileSystems."/data" =
-  #  {
-  #    device = "/dev/disk/by-uuid/9C4A76964A766D40";
-  #    fsType = "ntfs-3g";
-  #    options = [ "rw" "uid=1000" ];
-  #  };
+  fileSystems."/vms" =
+    { device = "/dev/disk/by-uuid/aa22e5b3-99a1-42fd-9f5d-2df5d8c4ce79";
+      fsType = "ext4";
+    };
 
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/e4abad48-6b98-4468-93b5-aacd3a72a934"; }];
+    [ { device = "/dev/disk/by-uuid/6eaee042-eca4-42f8-a78f-7506eeacdfc0"; }
+    ];
 
   fileSystems."/dev/hugepages/libvirt/1GB" = {
     device = "none";
