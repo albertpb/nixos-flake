@@ -3,13 +3,16 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    userName = "albertpb";
-    userEmail = "palumbo.alb@gmail.com";
 
-    extraConfig = {
+    settings = {
+      user = {
+        name = "albertpb";
+        email = "palumbo.alb@gmail.com";
+      };
+
       credential.helper = "${
-          pkgs.git.override { withLibsecret = true; }
-        }/bin/git-credential-libsecret";
+        pkgs.git.override { withLibsecret = true; }
+      }/bin/git-credential-libsecret";
     };
   };
 }

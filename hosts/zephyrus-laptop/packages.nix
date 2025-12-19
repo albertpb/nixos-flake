@@ -15,4 +15,10 @@
     vlc
     moonlight-qt
   ];
+
+  environment.systemPackages = with pkgs; [
+    wayland
+    wayland-utils
+  ];
+
 }

@@ -1,8 +1,4 @@
 { lib, pkgs, config, ... }: 
-let
-  # Import nixpkgs-unstable for just OVMF
-  unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") { };
-in
 {
   specialisation = {
     vm.configuration = {
@@ -47,17 +43,6 @@ in
           package = pkgs.qemu_kvm;
           runAsRoot = true;
           swtpm.enable = true;
-          ovmf = {
-            enable = true;
-            packages = [
-              (unstable.OVMFFull.override {
-                secureBoot = true;
-                tpmSupport = true;
-                msVarsTemplate = true;
-                fdSize4MB = true;
-              }).fd
-            ];
-          };
         };
       };
     

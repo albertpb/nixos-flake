@@ -11,10 +11,14 @@
     slurp # Select a region in wayland
     wl-clipboard # screenshot to clipboard
     vlc
-    qmk
-    qmk-udev-rules
     dfu-util
     dbgate
     bruno
   ];
+
+  environment.systemPackages = with pkgs; [
+    wayland
+    wayland-utils
+  ];
+
 }

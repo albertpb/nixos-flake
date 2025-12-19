@@ -3,7 +3,7 @@ let
   services = config.services;
   dmcfg = services.displayManager;
   sessionData = dmcfg.sessionData;
-  tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+  tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
   # wayland-session = "${inputs.hyprland.packages.${pkgs.system}.hyprland}/share/wayland-sessions";
   wayland-session = "${sessionData.desktops}/share/wayland-sessions";
 in {
