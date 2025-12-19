@@ -6,6 +6,11 @@
       systemd-boot = {
         enable = true;
         editor = true;
+
+        extraInstallCommands = ''
+          # Force systemd-boot to remember the last selected entry
+          sed -i 's/^default .*/default @saved/' /boot/loader/loader.conf || true
+        '';
       };
 
       timeout = lib.mkDefault 5;
@@ -37,11 +42,6 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
-      "isolcpus=0-7,16-23"
-      "nohz_full=0-7,16-23"
-      "rcu_nocbs=0-7,16-23"
-      "housekeeping=8-15,24-31"
-      "fbcon=rotate:3"
       # "amdgpu.dcdebugmask=0x10"
       # "amdgpu.deep_color=0"
       # "amdgpu.aspm=0"
@@ -64,5 +64,19 @@
       "sd_mod"
     ];
     initrd.systemd.enable = true;
+  };
+
+  specialisation = {
+    vm.configuration = {
+      boot = {
+        kernelParams = [
+          "fbcon=rotate:3"
+          "isolcpus=0-7,16-23"
+          "nohz_full=0-7,16-23"
+          "rcu_nocbs=0-7,16-23"
+          "housekeeping=8-15,24-31"
+        ];
+      };
+    };
   };
 }
