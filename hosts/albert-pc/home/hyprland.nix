@@ -104,12 +104,7 @@
         # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
         # new_is_master = true
     #}
-
-    gestures {
-        # See https://wiki.hyprland.org/Configuring/Variables/ for more
-        workspace_swipe = off
-    }
-
+    
     misc {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
         force_default_wallpaper = 0 # Set to 0 to disable the anime mascot wallpapers

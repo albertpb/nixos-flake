@@ -29,8 +29,8 @@
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelPackages = pkgs.linuxPackages_latest;
-
+    kernelPackages = pkgs.linuxPackages_6_17;  
+      
     kernelModules = [ "k10temp" "nct6775" ];
 
     kernelParams = [
