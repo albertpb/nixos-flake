@@ -8,8 +8,4 @@
     # Whether to enable XWayland
     xwayland.enable = true;
   };
-
-  programs.adb = {
-    enable = true;
-  };
 }

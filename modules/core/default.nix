@@ -73,7 +73,6 @@ in {
       ++ [ (import ./../../hosts/gigabyte-laptop/security.nix) ]
       ++ [ (import ./../../hosts/gigabyte-laptop/program.nix) ]
       ++ [ (import ./../../hosts/gigabyte-laptop/network.nix) ]
-      ++ [ (import ./../../hosts/gigabyte-laptop/virtualisation/default.nix) ]
       ++ [ (import ./../../hosts/gigabyte-laptop/bluetooth.nix) ]
       ++ [ (import ./../../hosts/gigabyte-laptop/xdg.nix) ]
       ++ [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]

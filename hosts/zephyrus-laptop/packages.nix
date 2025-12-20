@@ -11,7 +11,6 @@
     grim # take screenshots
     slurp # Select a region in wayland
     wl-clipboard # screenshot to clipboard
-    brave
     vlc
     moonlight-qt
   ];

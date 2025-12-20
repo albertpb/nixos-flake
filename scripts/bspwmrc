@@ -60,7 +60,6 @@ bspc config gapless_monocle      true
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
 #bspc rule -a mpv state=floating
-#bspc rule -a Brave-browser state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey bspsnage=off
 bspc rule -a com.katawa_shoujo.KatawaShoujo  state=floating
