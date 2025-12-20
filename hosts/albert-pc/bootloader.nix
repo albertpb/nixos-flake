@@ -1,6 +1,9 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
   boot = {
-    tmp = { cleanOnBoot = true; };
+    tmp = {
+      cleanOnBoot = true;
+    };
 
     loader = {
       grub = {
@@ -9,6 +12,10 @@
         device = "nodev";
         useOSProber = false;
         default = "saved";
+        gfxmodeEfi = "text"; # DO NOT let GRUB pick a GPU framebuffer
+        extraConfig = ''
+          terminal_output console
+        '';
       };
 
       timeout = lib.mkDefault 15;
@@ -27,9 +34,23 @@
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelPackages = pkgs.linuxPackages_6_17;  
-      
-    kernelModules = [ "k10temp" "nct6775" ];
+    kernelPackages = pkgs.linuxPackagesFor (
+      pkgs.linux_6_17.override {
+        argsOverride = rec {
+          src = pkgs.fetchurl {
+            url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
+            sha256 = "sha256-Wo3mSnX8pwbAHGwKd891p0YYQ52xleJfHwJor2svsdo=";
+          };
+          version = "6.17.8";
+          modDirVersion = "6.17.8";
+        };
+      }
+    );
+
+    kernelModules = [
+      "k10temp"
+      "nct6775"
+    ];
 
     kernelParams = [
       "quiet"
@@ -40,6 +61,8 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
+      "video=efifb:off"
+      "video=simplefb:off"
       # "amdgpu.dcdebugmask=0x10"
       # "amdgpu.deep_color=0"
       # "amdgpu.aspm=0"

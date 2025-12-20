@@ -29,6 +29,7 @@
       smartmontools
       ethtool
       ffmpeg-full
+      nvme-cli
       lm_sensors
       gopls
       go
