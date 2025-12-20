@@ -6,11 +6,6 @@
       systemd-boot = {
         enable = true;
         editor = true;
-
-        extraInstallCommands = ''
-          # Force systemd-boot to remember the last selected entry
-          sed -i 's/^default .*/default @saved/' /boot/loader/loader.conf || true
-        '';
       };
 
       timeout = lib.mkDefault 5;
@@ -77,6 +72,8 @@
           "housekeeping=8-15,24-31"
         ];
       };
+
+      system.nixos.tags = [ "vm" ];
     };
   };
 }
