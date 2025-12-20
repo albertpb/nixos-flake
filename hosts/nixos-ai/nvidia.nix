@@ -13,7 +13,7 @@
     nvidiaSettings = true;
 
     nvidiaPersistenced = false;
-    powerManagement.enable = true;
+    powerManagement.enable = false;
     powerManagement.finegrained = false;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.

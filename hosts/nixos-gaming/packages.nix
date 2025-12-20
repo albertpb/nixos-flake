@@ -12,5 +12,5 @@
     vlc
   ];
 
-  environment.systemPackages = with pkgs; [ linuxPackages.nvidia_x11 ];
+  environment.systemPackages = with pkgs; [ ];
 }

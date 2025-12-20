@@ -1,8 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    (import ./kde.nix)
-  ] ++ [
     (import ./keyring.nix)
   ] ++ [
     (import ./sunshine.nix)
