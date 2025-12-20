@@ -122,6 +122,7 @@ in {
     specialArgs = { inherit self inputs username; };
 
     modules = [ (import ./../../hosts/minipc/hardware-configuration.nix) ]
+      ++ [ (import ./../../hosts/minipc/radeon.nix) ]
       ++ [ (import ./../../hosts/minipc/packages.nix) ]
       ++ [ (import ./../../hosts/minipc/services) ]
       ++ [ (import ./../../hosts/minipc/user.nix) ]
