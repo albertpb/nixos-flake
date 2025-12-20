@@ -35,5 +35,5 @@
   hardware.cpu.intel.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  powermanagement.cpufreqgovernor = "ondemand";
+  powerManagement.cpuFreqGovernor = "ondemand";
 }
