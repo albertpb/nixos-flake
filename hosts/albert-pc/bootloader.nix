@@ -34,18 +34,7 @@
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelPackages = pkgs.linuxPackagesFor (
-      pkgs.linux_6_17.override {
-        argsOverride = rec {
-          src = pkgs.fetchurl {
-            url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
-            sha256 = "sha256-Wo3mSnX8pwbAHGwKd891p0YYQ52xleJfHwJor2svsdo=";
-          };
-          version = "6.17.8";
-          modDirVersion = "6.17.8";
-        };
-      }
-    );
+    kernelPackages = pkgs.linuxPackages_6_17;
 
     kernelModules = [
       "k10temp"
