@@ -52,6 +52,7 @@
       "udev.log_priority=3"
       "video=efifb:off"
       "video=simplefb:off"
+      "pcie_aspm=off"
       # "amdgpu.dcdebugmask=0x10"
       # "amdgpu.deep_color=0"
       # "amdgpu.aspm=0"
