@@ -14,6 +14,7 @@
     # See https://wiki.hyprland.org/Configuring/Monitors/
     # monitor=,preferred,auto,auto
       monitor=HDMI-A-3,2560x1440@144,0x0,1,transform,1
+      monitor=HDMI-A-2,2560x1440@144,0x0,1,transform,1
       monitor=HDMI-A-1,3840x2160@240,1440x0,1
 
     # See https://wiki.hyprland.org/Configuring/Keywords/ for more

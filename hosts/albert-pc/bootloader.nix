@@ -72,8 +72,6 @@
           "housekeeping=8-15,24-31"
         ];
       };
-
-      system.nixos.tags = [ "vm" ];
     };
   };
 }

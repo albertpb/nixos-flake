@@ -15,8 +15,13 @@
       fsType = "ext4";
     };
 
-  fileSystems."/vms" =
+  fileSystems."/data/vms" =
     { device = "/dev/disk/by-uuid/aa22e5b3-99a1-42fd-9f5d-2df5d8c4ce79";
+      fsType = "ext4";
+    };
+
+  fileSystems."/data/ai" =
+    { device = "/dev/disk/by-uuid/ec329450-ae28-4b80-8172-875aa938a1cf";
       fsType = "ext4";
     };
 
