@@ -3,12 +3,15 @@
     tmp = { cleanOnBoot = true; };
 
     loader = {
-      systemd-boot = {
+      grub = {
         enable = true;
-        editor = true;
+        efiSupport = true;
+        device = "nodev";
+        useOSProber = false;
+        default = "saved";
       };
 
-      timeout = lib.mkDefault 5;
+      timeout = lib.mkDefault 15;
 
       efi.canTouchEfiVariables = true;
 
