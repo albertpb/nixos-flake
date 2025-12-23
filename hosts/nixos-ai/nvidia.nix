@@ -1,6 +1,12 @@
-{ pkgs, config, ... }: {
-  hardware.graphics = { enable = true; };
+{ pkgs, config, ... }:
+let
+  package = config.boot.kernelPackages.nvidiaPackages.stable;
+in
+{
 
+  hardware.graphics = {
+    enable = true;
+  };
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ]; # or "nvidiaLegacy470 etc.
 
@@ -17,6 +23,6 @@
     powerManagement.finegrained = false;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.production;
+    package = pkgs.nvidia-patch.patch-nvenc (pkgs.nvidia-patch.patch-fbc package);
   };
 }

@@ -7,15 +7,25 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nvidia-patch.url = "github:icewind1991/nvidia-patch-nixos";
+    nvidia-patch.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, self, ... } @ inputs:
+  outputs =
+    { nixpkgs, self, ... }@inputs:
     let
       username = "albert";
+
+      nixpkgs.overlays = [ inputs.nvidia-patch.overlays.default ];
     in
     {
       nixosConfigurations = import ./modules/core/default.nix {
-        inherit self nixpkgs inputs username;
+        inherit
+          self
+          nixpkgs
+          inputs
+          username
+          ;
       };
     };
 }
