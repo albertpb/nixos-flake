@@ -55,6 +55,7 @@ in {
       ++ [ (import ./../../hosts/nixos-ai/services) ]
       ++ [ (import ./../../hosts/nixos-ai/program.nix) ]
       ++ [ (import ./../../hosts/nixos-ai/network.nix) ]
+      ++ [ (import ./../../hosts/nixos-ai/envs.nix) ]
       ++ [ (import ./../../hosts/nixos-ai/xdg.nix) ]
       ++ [ (import ./configuration.nix) ] ++ [ (import ./network.nix) ]
       ++ [ (import ./system.nix) ] ++ [ (import ./fonts.nix) ]
