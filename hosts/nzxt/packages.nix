@@ -14,6 +14,7 @@
     dfu-util
     dbgate
     bruno
+    moonlight-qt
   ];
 
   environment.systemPackages = with pkgs; [
