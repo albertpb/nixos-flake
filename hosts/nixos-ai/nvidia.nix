@@ -1,8 +1,16 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 let
   package = config.boot.kernelPackages.nvidiaPackages.stable;
 in
 {
+  nixpkgs.overlays = [
+    inputs.nvidia-patch.overlays.default
+  ];
 
   hardware.graphics = {
     enable = true;

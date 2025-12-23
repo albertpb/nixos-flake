@@ -15,8 +15,6 @@
     { nixpkgs, self, ... }@inputs:
     let
       username = "albert";
-
-      nixpkgs.overlays = [ inputs.nvidia-patch.overlays.default ];
     in
     {
       nixosConfigurations = import ./modules/core/default.nix {
