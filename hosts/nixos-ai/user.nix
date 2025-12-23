@@ -1,4 +1,9 @@
-{ username, inputs, pkgs, ... }:
+{
+  username,
+  inputs,
+  pkgs,
+  ...
+}:
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
@@ -20,7 +25,10 @@
 
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+      "uinput" # necesary for sunshine
+    ];
   };
 
   nix.settings.allowed-users = [ "${username}" ];
