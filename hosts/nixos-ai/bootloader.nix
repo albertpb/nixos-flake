@@ -41,6 +41,7 @@
       "udev.log_priority=3"
       "nvidia.NVreg_UsePageAttributeTable=1"
       "nvidia-drm.modeset=1"
+      "nvidia-drm.fbdev=1"
     ];
     consoleLogLevel = 0;
     extraModulePackages = [ ];
