@@ -20,10 +20,14 @@
     initContent = ''
       export NIXPKGS_ALLOW_UNFREE=1
 
-      if [[ -z "''${TMUX}" ]];
-      then
-          tmux attach -t TMUX || tmux new -s TMUX
-          eval "''${tmuxifier init -}"
+      if [[ -n "$TMUX" ]] && command -v tmuxifier >/dev/null; then
+        eval "$(tmuxifier init -)"
+      fi
+    '';
+
+    loginExtra = ''
+      if [[ -z "$TMUX" ]] && [[ -t 1 ]] && command -v tmux >/dev/null; then
+        tmux attach -t TMUX 2>/dev/null || tmux new -s TMUX
       fi
     '';
 
@@ -42,9 +46,8 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ 
+      plugins = [
         "git"
-        "tmux"
         "zoxide"
       ];
       theme = "amuse";

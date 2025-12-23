@@ -8,6 +8,7 @@
       size = 12;
     };
     extraConfig = ''
+      shell zsh -l
       background_opacity 0.6
     '';
   };
