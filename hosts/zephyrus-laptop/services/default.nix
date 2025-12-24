@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
-  imports = [ (import ./greetd.nix) ] ++ [ (import ./keyring.nix) ]
-    ++ [ (import ./power.nix) ];
+{ pkgs, ... }:
+{
+  imports = [ (import ./greetd.nix) ] ++ [ (import ./power.nix) ];
 }

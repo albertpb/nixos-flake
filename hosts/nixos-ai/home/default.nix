@@ -9,5 +9,6 @@
   ++ [ (import ./git.nix) ]
   ++ [ (import ./mako.nix) ]
   ++ [ (import ./bashrc.nix) ]
-  ++ [ (import ./zsh.nix) ];
+  ++ [ (import ./zsh.nix) ]
+  ++ [ (import ./keyring.nix) ];
 }

@@ -2,7 +2,9 @@
 {
   imports = [
     (import ./../../../modules/core/programs)
-  ] ++ [ (import ./hyprland.nix) ]
+  ]
+  ++ [ (import ./hyprland.nix) ]
+  ++ [ (import ./keyring.nix) ]
   ++ [ (import ./rofi.nix) ]
   ++ [ (import ./waybar.nix) ]
   ++ [ (import ./git.nix) ]
