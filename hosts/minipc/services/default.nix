@@ -1,3 +1,4 @@
-{ pkgs, ... }: {
-  imports = [ (import ./keyring.nix) ] ++ [ (import ./ssh.nix) ];
+{ pkgs, ... }:
+{
+  imports = [ (import ./ssh.nix) ];
 }
