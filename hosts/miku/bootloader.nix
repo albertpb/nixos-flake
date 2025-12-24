@@ -1,6 +1,9 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
   boot = {
-    tmp = { cleanOnBoot = true; };
+    tmp = {
+      cleanOnBoot = true;
+    };
 
     loader = {
       systemd-boot = {
@@ -28,15 +31,16 @@
 
     # kernelModules = [ "kvm-amd" ];
     kernelParams = [
-      "quiet"
-      "splash"
-      "boot.shell_on_fail"
-      "i915.fastboot=1"
-      "loglevel=3"
-      "rd.systemd.show_status=false"
-      "rd.udev.log_level=3"
-      "udev.log_priority=3"
-      "isolcpus=0,16,1,17,2,18,3,19,4,20,5,21,6,22,7,23,15,31,14,30"
+      #"quiet"
+      #"splash"
+      #"boot.shell_on_fail"
+      #"i915.fastboot=1"
+      #"loglevel=3"
+      #"rd.systemd.show_status=false"
+      #"rd.udev.log_level=3"
+      #"udev.log_priority=3"
+      "amdgpu"
+      "kvm-amd"
     ];
     consoleLogLevel = 0;
     extraModulePackages = [ ];

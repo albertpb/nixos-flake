@@ -1,4 +1,5 @@
-{ pkgs, username, ... }: {
+{ pkgs, username, ... }:
+{
   users.users.${username}.packages = with pkgs; [
     pinta
     hyprpaper
@@ -13,5 +14,6 @@
     vlc
   ];
 
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [
+  ];
 }

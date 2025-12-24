@@ -3,14 +3,13 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-wlr
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-cosmic
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-wlr
     ];
+
+    config.common.default = "cosmic";
   };
 
-  users.users.${username}.packages = with pkgs; [
-    xdg-desktop-portal-hyprland
-    xdg-desktop-portal-wlr
-  ];
 }
