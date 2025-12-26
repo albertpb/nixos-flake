@@ -3,6 +3,6 @@
   imports = [
     (import ./../../../modules/core/programs)
   ]
-  ++ [ (import ./git.nix) ]
-  ++ [ (import ./bashrc.nix) ];
+  ++ [ (import ../../../modules/core/home/git.nix) ]
+  ++ [ (import ../../../modules/core/home/bashrc.nix) ];
 }

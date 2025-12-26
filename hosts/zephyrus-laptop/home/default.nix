@@ -3,11 +3,11 @@
   imports = [
     (import ./../../../modules/core/programs)
   ]
-  ++ [ (import ./keyring.nix) ]
   ++ [ (import ./hyprland.nix) ]
-  ++ [ (import ./rofi.nix) ]
-  ++ [ (import ./waybar.nix) ]
-  ++ [ (import ./git.nix) ]
-  ++ [ (import ./mako.nix) ]
-  ++ [ (import ./bashrc.nix) ];
+  ++ [ (import ../../../modules/core/home/keyring.nix) ]
+  ++ [ (import ../../../modules/core/home/rofi.nix) ]
+  ++ [ (import ../../../modules/core/home/waybar.nix) ]
+  ++ [ (import ../../../modules/core/home/git.nix) ]
+  ++ [ (import ../../../modules/core/home/mako.nix) ]
+  ++ [ (import ../../../modules/core/home/bashrc.nix) ];
 }
