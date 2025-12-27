@@ -1,4 +1,4 @@
-{pkgs,...}:
+{ pkgs, ... }:
 {
   environment = {
     variables = {
@@ -6,5 +6,9 @@
       NIXOS_OZONE_WL = "1";
       GTK_USE_PORTAL = "1";
     };
+  };
+
+  environment.sessionVariables = {
+    PATH = "$HOME/.config/emacs/bin:$PATH";
   };
 }

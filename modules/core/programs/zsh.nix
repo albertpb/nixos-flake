@@ -13,6 +13,7 @@
       ll = "ls -l";
       rs-pipewire = "systemctl --user restart pipewire.service";
       sample = "pw-metadata -n settings 0 clock.force-rate";
+      emacs = "doom emacs -nw";
     };
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";

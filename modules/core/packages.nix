@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs;
     [
       neovim
+      emacs
       ripgrep
       zoxide
       fzf
@@ -23,6 +24,8 @@
       nil
       tmuxifier
       nodejs
+      sqlite
+      python312
       yarn
       stress-ng
       dysk
@@ -33,6 +36,8 @@
       lm_sensors
       gopls
       go
+      fd
+      imagemagick
     ] ++ [ stylua lua-language-server marksman nixfmt-classic ];
 }
 
