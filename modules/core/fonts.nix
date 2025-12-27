@@ -15,5 +15,7 @@
     nerd-fonts.iosevka
     nerd-fonts.iosevka-term
     nerd-fonts.hack
+    nerd-fonts.symbols-only
+    emacs-all-the-icons-fonts
   ];
 }
