@@ -1,5 +1,7 @@
-{ pkgs, username, ... }: {
-  environment.systemPackages = with pkgs;
+{ pkgs, username, ... }:
+{
+  environment.systemPackages =
+    with pkgs;
     [
       neovim
       emacs
@@ -24,6 +26,7 @@
       nil
       tmuxifier
       nodejs
+      typescript-language-server
       sqlite
       python312
       yarn
@@ -38,6 +41,11 @@
       go
       fd
       imagemagick
-    ] ++ [ stylua lua-language-server marksman nixfmt-classic ];
+    ]
+    ++ [
+      stylua
+      lua-language-server
+      marksman
+      nixfmt-classic
+    ];
 }
-
