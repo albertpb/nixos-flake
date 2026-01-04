@@ -1,10 +1,9 @@
-{ pkgs, username, ... }:
-{
-  environment.systemPackages =
-    with pkgs;
+{ pkgs, username, ... }: {
+  environment.systemPackages = with pkgs;
     [
       neovim
       emacs
+      vscode
       ripgrep
       zoxide
       fzf
@@ -29,6 +28,8 @@
       typescript-language-server
       sqlite
       python312
+      python312Packages.isort
+      python312Packages.black
       yarn
       stress-ng
       dysk
@@ -41,11 +42,12 @@
       go
       fd
       imagemagick
-    ]
-    ++ [
+    ] ++ [
       stylua
       lua-language-server
       marksman
       nixfmt-classic
+      prettier
+      vscode-langservers-extracted
     ];
 }
