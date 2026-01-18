@@ -1,5 +1,4 @@
-{ pkgs, username, ... }:
-{
+{ pkgs, username, ... }: {
   users.users.${username}.packages = with pkgs; [
     pinta
     hyprpaper
@@ -10,11 +9,13 @@
     grim # take screenshots
     slurp # Select a region in wayland
     wl-clipboard # screenshot to clipboard
-    wayland-utils
     vlc
   ];
 
   environment.systemPackages = with pkgs; [
     onlyoffice-desktopeditors
+    hyprpolkitagent
+    wayland
+    wayland-utils
   ];
 }

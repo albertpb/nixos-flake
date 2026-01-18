@@ -1,5 +1,4 @@
-{ pkgs, username, ... }:
-{
+{ pkgs, username, ... }: {
   # albert-pc
   users.users.${username}.packages = with pkgs; [
     pinta
@@ -16,6 +15,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    hyprpolkitagent
     wayland
     wayland-utils
   ];

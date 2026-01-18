@@ -18,5 +18,6 @@
   environment.systemPackages = with pkgs; [
     wayland
     wayland-utils
+    hyprpolkitagent
   ];
 }

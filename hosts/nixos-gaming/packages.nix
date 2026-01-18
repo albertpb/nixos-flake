@@ -12,5 +12,9 @@
     vlc
   ];
 
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [
+    hyprpolkitagent
+    wayland
+    wayland-utils
+  ];
 }

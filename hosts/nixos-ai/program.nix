@@ -1,7 +1,7 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.hyprland = {
     enable = true;
+    withUWSM = true;
 
     # The hyprland package to use
     package = pkgs.hyprland;
@@ -9,7 +9,5 @@
     xwayland.enable = true;
   };
 
-  programs.thunar = {
-    enable = true;
-  };
+  programs.thunar = { enable = true; };
 }
