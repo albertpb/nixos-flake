@@ -10,42 +10,23 @@
 }:
 
 {
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/248d5ad4-da7c-486c-b19c-51c68137dd7a";
-    fsType = "ext4";
-  };
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/3c994209-21d0-451a-8a0d-7dd632f3c210";
+      fsType = "ext4";
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/063E-D4EA";
-    fsType = "vfat";
-    options = [
-      "fmask=0022"
-      "dmask=0022"
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/7233-3660";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/f3fd6c20-7ea6-444c-aec4-8554b9dd49fd";
+      fsType = "ext4";
+    };
+
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/a78f6933-505a-4487-9ace-2880c1df23aa"; }
     ];
-  };
-
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/9e506f16-641e-4289-8a1a-2943aa42f2d2";
-    fsType = "ext4";
-  };
-
-  fileSystems."/data/ai" = {
-    device = "/dev/disk/by-uuid/bf1edcfd-3ed4-4a2d-9028-1df7da7b7563";
-    fsType = "ext4";
-  };
-
-  fileSystems."/data/ai_models" = {
-    device = "/dev/disk/by-uuid/ec329450-ae28-4b80-8172-875aa938a1cf";
-    fsType = "ext4";
-  };
-
-  fileSystems."/data/data" = {
-    device = "/dev/disk/by-uuid/80616a06-534d-4c8c-aea6-df34ba2c7caa";
-    fsType = "ext4";
-  };
-
-  swapDevices = [
-    { device = "/dev/disk/by-uuid/b8a8a7cd-4b8a-47ae-83c4-d69e680679c0"; }
-  ];
-
 }

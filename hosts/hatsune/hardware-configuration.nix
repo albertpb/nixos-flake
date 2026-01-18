@@ -4,7 +4,7 @@
 { config, lib, pkgs, modulesPath, ... }: {
   imports = [ (modulesPath + "/profiles/qemu-guest.nix") ]
     ++ [ (import ./filesystem.nix) ] ++ [ (import ./bootloader.nix) ]
-    ++ [ (import ./nvidia.nix) ];
+    ++ [ (import ./gpu.nix) ];
 
   console = {
     font = "lat2-16";

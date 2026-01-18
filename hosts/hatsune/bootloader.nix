@@ -29,7 +29,9 @@
 
     kernelPackages = pkgs.linuxPackages;
 
-    kernelModules = [ "amdgpu" ];
+    kernelModules = [ "k10temp"
+                      "nct6775"
+ 		    ];
     kernelParams = [
       "quiet"
       "splash"
@@ -39,9 +41,8 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
-      "nvidia.NVreg_UsePageAttributeTable=1"
+      "amd_iommu=on"	
       "nvidia-drm.modeset=1"
-      "nvidia-drm.fbdev=1"
     ];
     consoleLogLevel = 0;
     extraModulePackages = [ ];

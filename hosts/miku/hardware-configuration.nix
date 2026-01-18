@@ -14,7 +14,8 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ]
   ++ [ (import ./filesystem.nix) ]
-  ++ [ (import ./bootloader.nix) ];
+  ++ [ (import ./bootloader.nix) ]
+  ++ [ (import ./radeon.nix) ];
 
   console = {
     font = "lat2-16";

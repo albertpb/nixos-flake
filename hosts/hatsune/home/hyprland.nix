@@ -33,7 +33,7 @@
 
     # Some default env vars.
     env = XCURSOR_SIZE,24
-    env = WLR_DRM_DEVICES,/dev/dri/card1
+    env = WLR_DRM_DEVICES,/dev/dri/card0
 
     # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
     input {
