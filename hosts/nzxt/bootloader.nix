@@ -26,7 +26,7 @@
 
     kernelPackages = pkgs.linuxPackages_latest;
 
-    kernelModules = [ "k10temp" ];
+    kernelModules = [ "k10temp" "amdgpu" ];
 
     kernelParams = [
       "quiet"

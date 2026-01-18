@@ -13,7 +13,7 @@
 
         # See https://wiki.hyprland.org/Configuring/Monitors/
         # monitor=,preferred,auto,auto
-          monitor=DP-2,2560x1440@144,0x0,1,transform,1
+          monitor=DP-1,2560x1440@144,0x0,1,transform,1
           monitor=HDMI-A-1,2560x1440@144,1440x0,1
 
         # See https://wiki.hyprland.org/Configuring/Keywords/ for more

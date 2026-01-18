@@ -5,7 +5,8 @@
 
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ]
-    ++ [ (import ./filesystem.nix) ] ++ [ (import ./bootloader.nix) ];
+    ++ [ (import ./filesystem.nix) ] ++ [ (import ./bootloader.nix) ]
+    ++ [ (import ./gpu.nix) ];
 
   console = {
     font = "lat2-16";
