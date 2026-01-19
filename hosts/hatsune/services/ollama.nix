@@ -4,7 +4,7 @@
     acceleration = "cuda";
     openFirewall = true;
     host = "0.0.0.0";
-    port = 14434;
+    port = 11434;
 
     environmentVariables = { };
   };
