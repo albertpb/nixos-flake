@@ -42,6 +42,12 @@
       go
       fd
       imagemagick
+      s-tui
+      iftop
+      iotop
+      nvtopPackages.full
+      perf
+      wavemon
     ] ++ [
       stylua
       lua-language-server

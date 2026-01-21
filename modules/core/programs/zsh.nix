@@ -24,6 +24,8 @@
       if [[ -n "$TMUX" ]] && command -v tmuxifier >/dev/null; then
         eval "$(tmuxifier init -)"
       fi
+
+      macchina
     '';
 
     loginExtra = ''
