@@ -32,16 +32,23 @@
   fileSystems."/data/ai" = {
     device = "/dev/disk/by-uuid/bf1edcfd-3ed4-4a2d-9028-1df7da7b7563";
     fsType = "ext4";
+    options = [ "nofail" ];
   };
 
   fileSystems."/data/ai_models" = {
     device = "/dev/disk/by-uuid/ec329450-ae28-4b80-8172-875aa938a1cf";
     fsType = "ext4";
+    options = [ "nofail" ];
   };
 
   fileSystems."/data/data" = {
-    device = "/dev/disk/by-uuid/80616a06-534d-4c8c-aea6-df34ba2c7caa";
-    fsType = "ext4";
+    device = "/dev/disk/by-uuid/19D3932B1F409610";
+    fsType = "ntfs-3g";
+    options = [
+      "rw"
+      "uid=1000"
+      "nofail"
+    ];
   };
 
   swapDevices = [
