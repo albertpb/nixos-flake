@@ -1,12 +1,18 @@
 { pkgs, ... }:
 {
   imports = [
-    (import ./greetd.nix)	
-  ] ++ [
+    (import ./kde.nix)
+  ]
+  ++ [
+    (import ./greetd.nix)
+  ]
+  ++ [
     (import ./sunshine.nix)
-  ] ++ [
+  ]
+  ++ [
     (import ./printer.nix)
-  ] ++ [
+  ]
+  ++ [
     (import ./ollama.nix)
   ];
 }

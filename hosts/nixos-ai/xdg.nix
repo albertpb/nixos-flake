@@ -4,12 +4,8 @@
     enable = true;
     xdgOpenUsePortal = true;
     extraPortals = with pkgs; [
-      xdg-desktop-portal-cosmic
-      xdg-desktop-portal-hyprland
+      kdePackages.xdg-desktop-portal-kde
       xdg-desktop-portal-wlr
     ];
-
-    config.common.default = "cosmic";
   };
-
 }

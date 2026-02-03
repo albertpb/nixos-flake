@@ -3,7 +3,6 @@
   imports = [
     (import ./../../../modules/core/programs)
   ]
-  ++ [ (import ./hyprland.nix) ]
   ++ [ (import ./zsh.nix) ]
   ++ [ (import ../../../modules/core/home/keyring.nix) ]
   ++ [ (import ../../../modules/core/home/rofi.nix) ]
