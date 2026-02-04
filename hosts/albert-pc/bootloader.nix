@@ -1,4 +1,8 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  ...
+}:
 {
   boot = {
     tmp = {
@@ -12,24 +16,28 @@
         device = "nodev";
         useOSProber = false;
         default = "saved";
-        gfxmodeEfi = "text"; # DO NOT let GRUB pick a GPU framebuffer
+        gfxpayloadEfi = "keep";
+        gfxmodeEfi = "2560x1440";
         extraConfig = ''
           terminal_output console
         '';
+
+        fontSize = 28;
+        extraEntries = ''
+          menuentry "Windows To Go (USB)" {
+            insmod part_gpt
+            insmod fat
+
+            search --fs-uuid --set=root 14FA-2312
+            chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+          }
+        '';
+
       };
 
-      timeout = lib.mkDefault 15;
+      timeout = lib.mkDefault 30;
 
       efi.canTouchEfiVariables = true;
-
-      #grub = {
-      #  enable = false;
-      #  device = "nodev";
-      #  efiSupport = true;
-      #  timeoutStyle = "countdown";
-      #  theme = null;
-      #  splashImage = null;
-      #};
     };
 
     supportedFilesystems = [ "ntfs" ];
