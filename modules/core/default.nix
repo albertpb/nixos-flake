@@ -68,6 +68,7 @@ in {
       ++ [ (import ./../../hosts/nixos-ai/user.nix) ]
       ++ [ (import ./../../hosts/nixos-ai/services) ]
       ++ [ (import ./../../hosts/nixos-ai/program.nix) ]
+      ++ [ (import ./../../hosts/nixos-ai/security.nix) ]
       ++ [ (import ./../../hosts/nixos-ai/network.nix) ]
       ++ [ (import ./../../hosts/nixos-ai/envs.nix) ]
       ++ [ (import ./../../hosts/nixos-ai/xdg.nix) ]
