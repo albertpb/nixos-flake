@@ -1,9 +1,6 @@
-{ pkgs, lib, ... }:
-{
+{ pkgs, lib, ... }: {
   boot = {
-    tmp = {
-      cleanOnBoot = true;
-    };
+    tmp = { cleanOnBoot = true; };
 
     loader = {
       systemd-boot = {
@@ -27,7 +24,7 @@
 
     supportedFilesystems = [ "ntfs" ];
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages;
 
     # kernelModules = [ "kvm-amd" ];
     kernelParams = [
@@ -40,7 +37,8 @@
       #"rd.udev.log_level=3"
       #"udev.log_priority=3"
       "amdgpu"
-      "kvm-amd"	   
+      "kvm-amd"
+      #"video=HDMI-A-1:1920x1080@60"
     ];
     #consoleLogLevel = 0;
     extraModulePackages = [ ];

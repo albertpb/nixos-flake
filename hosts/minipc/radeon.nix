@@ -1,11 +1,9 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   hardware.graphics = {
     enable = true;
-    extraPackages = with pkgs; [
-      mesa
-      libva
-      libva-utils
-    ];
+    enable32Bit = true;
+    extraPackages = with pkgs; [ mesa libva libva-utils ];
   };
+
+  hardware.enableRedistributableFirmware = true;
 }
