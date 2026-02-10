@@ -21,11 +21,19 @@
   fileSystems."/data" = {
     device = "/dev/disk/by-uuid/7c54c7b5-c59f-4769-8285-6d6686e7d49c";
     fsType = "ext4";
+    options = [ "nofail" ];
   };
 
   fileSystems."/data/ext" = {
     device = "/dev/disk/by-uuid/a3daa4b4-a7f3-45f8-a0e9-e0ebaebefe49";
     fsType = "ext4";
+    options = [ "nofail" ];
+  };
+
+  fileSystems."/data/movies" = {
+    device = "/dev/disk/by-uuid/8C2C4CDC2C4CC346";
+    fsType = "ntfs-3g";
+    options = [ "nofail" ];
   };
 
   swapDevices = [ ];

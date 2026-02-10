@@ -19,8 +19,8 @@
 
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 9443 8000 22 49494 8999 ];
-      allowedUDPPorts = [ 1900 49494 ];
+      allowedTCPPorts = [ 9443 8000 22 49494 8999 8096 ];
+      allowedUDPPorts = [ 1900 49494 7359 ];
     };
  };
 }
