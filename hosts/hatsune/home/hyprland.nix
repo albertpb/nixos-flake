@@ -199,34 +199,5 @@
     bindm = $mainMod, mouse:273, resizewindow
   '';
 
-  home.file.".config/hypr/hypridle.conf".text = ''
-    listener {
-      timeout = 900                           # 5min
-      on-timeout = hyprctl dispatch dpms off  # command to run when timeout has passed
-      on-resume = hyprctl dispatch dpms on    # command to run when activity is detected after timeout has fired.
-    }
-  '';
-
-  home.file.".config/hypr/hyprpaper.conf".text = ''
-    preload = /home/${username}/wallpapers/1.png
-    preload = /home/${username}/wallpapers/2.png
-    preload = /home/${username}/wallpapers/3.png
-    preload = /home/${username}/wallpapers/4.png
-    preload = /home/${username}/wallpapers/5.png
-
-    wallpaper = ,/home/${username}/wallpapers/1.png
-    wallpaper = ,/home/${username}/wallpapers/2.png
-    wallpaper = ,/home/${username}/wallpapers/3.png
-    wallpaper = ,/home/${username}/wallpapers/4.png
-    wallpaper = ,/home/${username}/wallpapers/5.png
-
-    #enable splash text rendering over the wallpaper
-    splash = false
-
-    #fully disable ipc
-    # ipc = off
-    ipc = on
-  '';
-
   imports = [ (import ../../../modules/core/home/hyprland.nix) ];
 }

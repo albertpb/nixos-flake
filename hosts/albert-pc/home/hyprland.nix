@@ -27,7 +27,7 @@
        exec-once=gnome-keyring-daemon --daemonize
        exec-once=systemctl --user enable --now hyprpolkitagent.service
        exec-once=nm-applet --indicator
-       exec-once=hypridle
+       # exec-once=hypridle
 
        # Source a file (multi-file configs)
        source = ~/.config/hypr/colors.conf
