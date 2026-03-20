@@ -25,7 +25,7 @@
       #};
     };
 
-    kernelPackages = pkgs.linuxPackages;
+    kernelPackages = pkgs.linuxPackages_6_18;
 
     supportedFilesystems = [ "ntfs" ];
 
