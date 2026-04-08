@@ -40,6 +40,7 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
+      "amd_pstate=active"
       "isolcpus=0-7,16-23"
       "nohz_full=0-7,16-23"
       "rcu_nocbs=0-7,16-23"

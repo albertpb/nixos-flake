@@ -40,5 +40,5 @@
     enable32Bit = true;
   };
 
-  powerManagement.cpuFreqGovernor = "ondemand";
+  powerManagement.cpuFreqGovernor = "performance";
 }
