@@ -23,15 +23,15 @@
         '';
 
         fontSize = 28;
-        extraEntries = ''
-          menuentry "Windows To Go (USB)" {
-            insmod part_gpt
-            insmod fat
+        # extraEntries = ''
+        #   menuentry "Windows To Go (USB)" {
+        #     insmod part_gpt
+        #     insmod fat
 
-            search --fs-uuid --set=root 14FA-2312
-            chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-          }
-        '';
+        #     search --fs-uuid --set=root 14FA-2312
+        #     chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+        #   }
+        # '';
 
       };
 
