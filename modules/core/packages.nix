@@ -1,8 +1,8 @@
 { pkgs, username, ... }: {
-  environment.systemPackages = with pkgs;
+  environment.systemPackages =
+    with pkgs;
     [
       neovim
-      emacs
       vscode
       ripgrep
       zoxide
@@ -22,15 +22,7 @@
       curl
       gzip
       lazygit
-      nil
       tmuxifier
-      nodejs
-      typescript-language-server
-      sqlite
-      python312
-      python312Packages.isort
-      python312Packages.black
-      yarn
       stress-ng
       dysk
       smartmontools
@@ -38,8 +30,6 @@
       ffmpeg-full
       nvme-cli
       lm_sensors
-      gopls
-      go
       fd
       imagemagick
       s-tui
@@ -48,12 +38,12 @@
       nvtopPackages.full
       perf
       wavemon
-    ] ++ [
+    ]
+    ++ [
+      nil
       stylua
       lua-language-server
-      marksman
-      nixfmt-classic
-      prettier
+      nixfmt
       vscode-langservers-extracted
     ];
 }

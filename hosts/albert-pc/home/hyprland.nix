@@ -24,7 +24,6 @@
        exec-once=waybar
        exec-once=hyprpaper
        exec-once=blueman-applet
-       exec-once=gnome-keyring-daemon --daemonize
        exec-once=systemctl --user enable --now hyprpolkitagent.service
        exec-once=nm-applet --indicator
        # exec-once=hypridle
@@ -68,19 +67,19 @@
            allow_tearing = false
        }
 
-       decoration {
-           rounding = 3
-           
-           blur {
-               enabled = true
-               passes = 2
-               new_optimizations = true
-               noise = 0.02
-               size = 8
-               contrast = 1.6
-               #brightness 1.1
-           }
-       }
+        decoration {
+          rounding = 3
+        
+          blur {
+            enabled = true
+            passes = 2
+            new_optimizations = true
+            noise = 0.02
+            size = 8
+            contrast = 1.6
+            ignore_opacity = false
+          }
+        }
 
        animations {
            enabled = yes
@@ -99,7 +98,6 @@
 
        dwindle {
            # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
-           pseudotile = yes # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
            preserve_split = yes # you probably want this
        }
 
@@ -123,18 +121,11 @@
        #}
 
 
-       # Layer Rules
-       layerrule = blur,rofi
-       layerrule = blur,waybar
-       blurls = waybar
-       blurls = rofi
-
-       # Example windowrule v1
-       # windowrule = float, ^(kitty)$
-       # Example windowrule v2
-       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-       # windowrulev2 = opacity 0.7 0.7,class:^(kitty)$
+       layerrule {
+          name = waybar_blur
+          blur = on
+          match:namespace = waybar
+       }
 
        # See https://wiki.hyprland.org/Configuring/Keywords/ for more
        $mainMod = SUPER
@@ -145,11 +136,11 @@
        $w4 = hyprctl hyprpaper wallpaper ",~/wallpapers/4.png"
        $w5 = hyprctl hyprpaper wallpaper ",~/wallpapers/5.png"
 
-       workspace = 1, monitor:HDMI-A-3
-       workspace = 2, monitor:HDMI-A-3
-       workspace = 3, monitor:HDMI-A-1
-       workspace = 4, monitor:HDMI-A-1
-       workspace = 5, monitor:HDMI-A-1
+       workspace = 1, monitor:HDMI-A-2
+       workspace = 2, monitor:HDMI-A-2
+       workspace = 3, monitor:HDMI-A-2
+       workspace = 4, monitor:HDMI-A-2
+       workspace = 5, monitor:HDMI-A-2
 
        # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
        bind = $mainMod, Q, exec, kitty
@@ -158,7 +149,6 @@
        # bind = $mainMod, E, exec, dolphin
        bind = $mainMod, V, togglefloating, 
        bind = $mainMod, P, pseudo, # dwindle
-       bind = $mainMod, J, togglesplit, # dwindle
        bind = $mainMod, SPACE, exec, rofi -show run
 
        # Move focus with mainMod + arrow keys

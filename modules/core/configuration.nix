@@ -7,8 +7,4 @@
       GTK_USE_PORTAL = "1";
     };
   };
-
-  environment.sessionVariables = {
-    PATH = "$HOME/.config/emacs/bin:$PATH";
-  };
 }

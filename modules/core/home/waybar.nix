@@ -56,7 +56,7 @@
       }
 
       window#waybar {
-        background: transparent;
+        background: rgba(0,0,0,0.25);
         border-bottom: none;
       }
 
@@ -90,7 +90,7 @@
       #workspaces button.urgent {
         background-color: @surface2;
       }
-      
+
       #user,
       #disk,
       #window,
@@ -125,7 +125,7 @@
         border-radius: 8px 0px 0px 8px;
         color: @blue;
       }
-      
+
       #language,
       #submap,
       #window,
@@ -209,9 +209,22 @@
         height = 42;
         layer = "top";
         position = "top";
-        modules-left = [ "custom/logo" "hyprland/workspaces" "hyprland/window" ];
+        modules-left = [
+          "custom/logo"
+          "hyprland/workspaces"
+          "hyprland/window"
+        ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "hyprland/language" "hyprland/submap" "pulseaudio" "cpu" "memory" "disk" "network" ];
+        modules-right = [
+          "tray"
+          "hyprland/language"
+          "hyprland/submap"
+          "pulseaudio"
+          "cpu"
+          "memory"
+          "disk"
+          "network"
+        ];
         "custom/logo" = {
           format = "  ";
           tooltip = false;
@@ -271,7 +284,13 @@
         };
         network = {
           format-wifi = "{icon}";
-          format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
+          format-icons = [
+            "󰤯"
+            "󰤟"
+            "󰤢"
+            "󰤥"
+            "󰤨"
+          ];
           format-ethernet = "󰀂";
           format-alt = "󱛇";
           format-disconnected = "󰖪";
@@ -289,7 +308,11 @@
           format-muted = "󰝟";
           format-icons = {
             headphone = "";
-            default = [ "󰖀" "󰕾" "" ];
+            default = [
+              "󰖀"
+              "󰕾"
+              ""
+            ];
           };
           on-click = "pamixer -t";
           scroll-step = 1;
@@ -303,7 +326,7 @@
           format = "{title}";
           icon-size = 14;
           icon-theme = "oomox-Tokyonight-Moon";
-          tooltip-format ="{title}";
+          tooltip-format = "{title}";
           on-click = "activate";
           on-click-middle = "close";
         };
@@ -320,4 +343,4 @@
       }
     ];
   };
-} 
+}
