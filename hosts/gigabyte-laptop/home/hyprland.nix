@@ -20,7 +20,6 @@
     exec-once=hyprctl setcursor capitaine-cursors 24
     exec-once=waybar
     exec-once=hyprpaper
-    exec-once=gnome-keyring-daemon --daemonize
     exec-once=systemctl --user enable --now hyprpolkitagent.service
     exec-once=nm-applet --indicator
     exec-once=blueman-applet
