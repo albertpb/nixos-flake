@@ -3,6 +3,7 @@
   imports = [
     ./vfio.nix
     ./virtualisation.nix
+    ./cpu_freq.nix
     #    ./libvirt.nix
   ];
 

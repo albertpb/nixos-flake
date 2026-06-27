@@ -35,7 +35,7 @@
 
       };
 
-      timeout = lib.mkDefault 30;
+      timeout = null;
 
       efi.canTouchEfiVariables = true;
     };
@@ -95,6 +95,7 @@
           "nohz_full=0-7,16-23"
           "rcu_nocbs=0-7,16-23"
           "housekeeping=8-15,24-31"
+          "irqaffinity=8-15,24-31"
         ];
       };
     };
