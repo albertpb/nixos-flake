@@ -38,6 +38,7 @@
       nvtopPackages.full
       perf
       wavemon
+      p7zip
     ]
     ++ [
       nil
