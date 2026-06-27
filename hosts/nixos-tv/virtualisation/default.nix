@@ -1,10 +1,14 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 {
   imports = [
     ./vfio.nix
     ./virtualisation.nix
-    ./cpu_freq.nix
-    #    ./libvirt.nix
+    # ./libvirt.nix
   ];
 
   virtualisation = {

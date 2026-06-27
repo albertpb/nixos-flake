@@ -13,9 +13,9 @@
 
        # See https://wiki.hyprland.org/Configuring/Monitors/
        # monitor=,preferred,auto,auto
-         monitor=HDMI-A-3,2560x1440@144,0x0,1,transform,1
-         monitor=HDMI-A-2,2560x1440@144,0x0,1,transform,1
-         monitor=HDMI-A-1,3840x2160@240,1440x0,1
+         monitor=DP-1,2560x1440@144,0x0,1,transform,1
+       #  monitor=HDMI-A-2,2560x1440@144,0x0,1,transform,1
+       #  monitor=HDMI-A-1,3840x2160@240,1440x0,1
 
        # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
@@ -136,11 +136,11 @@
        $w4 = hyprctl hyprpaper wallpaper ",~/wallpapers/4.png"
        $w5 = hyprctl hyprpaper wallpaper ",~/wallpapers/5.png"
 
-       workspace = 1, monitor:HDMI-A-2
-       workspace = 2, monitor:HDMI-A-2
-       workspace = 3, monitor:HDMI-A-2
-       workspace = 4, monitor:HDMI-A-2
-       workspace = 5, monitor:HDMI-A-2
+       workspace = 1, monitor:DP-1
+       workspace = 2, monitor:DP-1
+       workspace = 3, monitor:DP-1
+       workspace = 4, monitor:DP-1
+       workspace = 5, monitor:DP-1
 
        # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
        bind = $mainMod, Q, exec, kitty

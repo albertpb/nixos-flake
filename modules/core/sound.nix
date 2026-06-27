@@ -29,9 +29,9 @@ let
             "audio.rate" = 48000;
           };
           "playback.props" = {
-            "node.name" = "audio.rate = 48000";
-            "media.class" = "Audio/Source";
+            "node.name" = "playback.rnnoise_source";
             "audio.rate" = 48000;
+            "media.class" = "Audio/Source";
           };
         };
       }
@@ -54,7 +54,7 @@ in
           {
             matches = {{{ "node.name", "matches", "alsa_output.*" }}};
             apply_properties = {
-              ["audio.rate"] = "96000", -- for USB soundcards it should be twice your desired rate
+              ["audio.rate"] = "48000", -- for USB soundcards it should be twice your desired rate
               ["api.alsa.period-size"] = 512, -- defaults to 1024, tweak by trial-and-error
             },
           },
@@ -93,7 +93,7 @@ in
             args = {
               pulse.min.req = "128/48000";
               pulse.default.req = "128/48000";
-              pulse.max.req = "512/96000";
+              pulse.max.req = "512/48000";
               pulse.min.quantum = "128/48000";
               pulse.max.quantum = "512/48000";
             };

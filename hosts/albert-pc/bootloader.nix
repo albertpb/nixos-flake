@@ -62,6 +62,7 @@
       "video=simplefb:off"
       "pcie_aspm=off"
       "amd_pstate=active"
+      "amdgpu"
       # "amdgpu.dcdebugmask=0x10"
       # "amdgpu.deep_color=0"
       # "amdgpu.aspm=0"
