@@ -2,24 +2,28 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, ... }: {
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/2f09406f-0beb-447a-a43c-512d3e0a8811";
-    fsType = "ext4";
-  };
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/1e108593-8273-42fc-99f7-40d69192134a";
+      fsType = "ext4";
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/4C7E-A7C4";
-    fsType = "vfat";
-    options = [ "fmask=0022" "dmask=0022" ];
-  };
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/d018edb4-ece6-4fa3-a3ad-4fa58b2713aa";
+      fsType = "ext4";
+    };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/4bf71b19-00b2-4623-adf5-c0cd1607ce58";
-    fsType = "ext4";
-  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/724A-6FB5";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
+
+  swapDevices = [
+    { device = "/dev/disk/by-uuid/5b9b2cf5-62e5-44f3-83a0-68ec837f425b"; }
+  ];
 
   fileSystems."/data" = {
-    device = "/dev/disk/by-uuid/7c54c7b5-c59f-4769-8285-6d6686e7d49c";
+    device = "/dev/disk/by-uuid/8ee751a4-c268-4169-96ed-3daf21fc08de";
     fsType = "ext4";
     options = [ "nofail" ];
   };
@@ -35,7 +39,4 @@
     fsType = "ntfs-3g";
     options = [ "nofail" ];
   };
-
-  swapDevices = [ ];
-
 }

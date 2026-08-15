@@ -22,10 +22,16 @@
       portainer = {
         image = "portainer/portainer-ce";
 	autoStart = true;
+
+	environment = {
+          TRUSTED_ORIGINS = "portainer.home.arpa";
+        };
+
 	ports = [
 	  "8000:8000"
 	  "9443:9443"
 	];
+
 	volumes = [
           "/var/run/docker.sock:/var/run/docker.sock"
 	  "portainer_data:/data"

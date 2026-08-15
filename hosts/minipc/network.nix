@@ -3,7 +3,9 @@
   networking = {
     hostName = "${username}-pc";
     networkmanager.enable = true;
-    nameservers = [ "192.168.50.99" ];
+
+    nameservers = [ "192.168.50.201" ];
+    
     useDHCP = lib.mkDefault false;
     
     interfaces = {
@@ -17,10 +19,14 @@
       interface = "enp1s0";
     };
 
+
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 9443 8000 22 49494 8999 8096 ];
-      allowedUDPPorts = [ 1900 49494 7359 ];
+      allowedTCPPorts = [ 22 80 443 9443 8088 5432 ];
+      allowedUDPPorts = [ 443 7359 ];
+      trustedInterfaces = [
+        "docker0"
+      ];
     };
  };
 }
