@@ -5,7 +5,6 @@ let
     inherit system;
     config.allowUnfree = true;
   };
-  lib = nixpkgs.lib;
 in {
   albert-pc = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit self inputs username; };
@@ -20,7 +19,7 @@ in {
       ++ [ (import ./../../hosts/albert-pc/distrobox.nix) ]
       ++ [ (import ./../../hosts/albert-pc/xdg.nix) ]
       ++ [ (import ./configuration.nix) ]
-      ++ [ (import ./../../hosts/albert-pc/virtualisation/default.nix) ]
+    # ++ [ (import ./../../hosts/albert-pc/virtualisation/default.nix) ]
       ++ [ (import ./network.nix) ] ++ [ (import ./system.nix) ]
       ++ [ (import ./fonts.nix) ] ++ [ (import ./packages.nix) ]
       ++ [ (import ./user-packages.nix) ] ++ [ (import ./security.nix) ]

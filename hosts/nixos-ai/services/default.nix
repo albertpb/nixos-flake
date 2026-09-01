@@ -7,12 +7,9 @@
     (import ./greetd.nix)
   ]
   ++ [
-    (import ./sunshine.nix)
-  ]
-  ++ [
     (import ./printer.nix)
   ]
   ++ [
-    (import ./ollama.nix)
+    (import ./sunshine.nix)
   ];
 }

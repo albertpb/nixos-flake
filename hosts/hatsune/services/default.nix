@@ -1,4 +1,4 @@
 { pkgs, ... }: {
-  imports = [ (import ./greetd.nix) ] ++ [ (import ./ollama.nix) ]
+  imports = [ (import ./greetd.nix) ]
     ++ [ (import ./ssh.nix) ];
 }

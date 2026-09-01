@@ -5,7 +5,7 @@
   services.xserver.videoDrivers = [ "nvidia" ]; # or "nvidiaLegacy470 etc.
 
   hardware.nvidia = {
-    open = false;
+    open = true;
     modesetting.enable = true;
 
     # Enable the Nvidia settings menu,
@@ -17,6 +17,6 @@
     powerManagement.finegrained = false;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
   };
 }

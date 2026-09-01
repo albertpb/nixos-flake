@@ -12,7 +12,7 @@
         (import ./home)
       ];
       home.homeDirectory = "/home/${username}";
-      home.stateVersion = "25.11";
+      home.stateVersion = "26.05";
 
       programs.home-manager.enable = true;
     };
@@ -23,5 +23,5 @@
     extraGroups = [ "wheel" "libvirtd" ];
   };
 
-  nix.settings.allowed-users = [ "${username}" ];
+  nix.settings.allowed-users = [ "${username}" "root" ];
 }

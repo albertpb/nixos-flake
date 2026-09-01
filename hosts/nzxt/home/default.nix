@@ -4,7 +4,6 @@
     (import ./../../../modules/core/programs)
   ]
   ++ [ (import ./hyprland.nix) ]
-  ++ [ (import ./keeweb/default.nix) ]
   ++ [ (import ../../../modules/core/home/keyring.nix) ]
   ++ [ (import ../../../modules/core/home/rofi.nix) ]
   ++ [ (import ../../../modules/core/home/waybar.nix) ]

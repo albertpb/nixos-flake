@@ -1,12 +1,4 @@
 { username, pkgs, ... }: {
-  home.file.".config/hypr/hypridle.conf".text = ''
-    listener {
-      timeout = 900                           # 5min
-      on-timeout = hyprctl dispatch dpms off  # command to run when timeout has passed
-      on-resume = hyprctl dispatch dpms on    # command to run when activity is detected after timeout has fired.
-    }
-  '';
-
   home.file.".config/hypr/hyprpaper.conf".text = ''
     #enable splash text rendering over the wallpaper
     splash = false

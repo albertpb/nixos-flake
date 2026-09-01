@@ -10,4 +10,7 @@
   };
 
   programs.thunar = { enable = true; };
+
+  programs.nix-ld.enable = true;
+
 }
