@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    (import ./greetd.nix)
+    (import ./dms-greeter.nix)
   ]
   ++ [
     (import ./ssh.nix)

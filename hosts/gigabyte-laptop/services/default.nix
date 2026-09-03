@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    (import ./greetd.nix)
+    (import ./dms-greeter.nix)
   ];
 }

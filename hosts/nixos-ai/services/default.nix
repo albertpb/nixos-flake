@@ -4,7 +4,7 @@
     (import ./kde.nix)
   ]
   ++ [
-    (import ./greetd.nix)
+    (import ./dms-greeter.nix)
   ]
   ++ [
     (import ./printer.nix)

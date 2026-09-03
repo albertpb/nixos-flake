@@ -1,4 +1,7 @@
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
+  imports = [ inputs.dms.nixosModules.dank-material-shell ];
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;
@@ -9,5 +12,13 @@
     xwayland.enable = true;
   };
 
-  programs.thunar = { enable = true; };
+  programs.dank-material-shell = {
+    enable = true;
+    systemd.enable = true;
+    enableCalendarEvents = false;
+  };
+
+  programs.thunar = {
+    enable = true;
+  };
 }
