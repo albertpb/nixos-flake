@@ -1,18 +1,10 @@
-{ username, ... }: {
-  home.file.".config/hypr/hyprpaper.conf".text = ''
-    #enable splash text rendering over the wallpaper
-    splash = false
-
-    #fully disable ipc
-    # ipc = off
-    ipc = on
-
-    wallpaper {
-      monitor = 
-      path = /home/${username}/wallpapers
-      order = random
-      fit_mode = cover
-    }
-  '';
-
+{ pkgs, ... }:
+{
+  home.pointerCursor = {
+    package = pkgs.capitaine-cursors;
+    name = "capitaine-cursors";
+    size = 48;
+    gtk.enable = true;
+    x11.enable = true;
+  };
 }

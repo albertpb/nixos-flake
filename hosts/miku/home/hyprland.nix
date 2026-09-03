@@ -1,5 +1,7 @@
 { ... }:
 {
+  imports = [ ../../../modules/core/home/hyprland.nix ];
+
   home.file.".config/hypr/hyprland.lua".text =
     builtins.readFile ../../../modules/core/home/hyprland.lua
     + ''

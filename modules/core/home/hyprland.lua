@@ -3,7 +3,8 @@ local function configure(cfg)
 		hl.monitor(monitor)
 	end
 
-	hl.env("XCURSOR_SIZE", "24")
+	hl.env("XCURSOR_SIZE", "48")
+	hl.env("XCURSOR_THEME", "capitaine-cursors")
 	hl.env("QT_QPA_PLATFORM", "wayland")
 	hl.env("QT_QPA_PLATFORMTHEME", "gtk3")
 	hl.env("QT_QPA_PLATFORMTHEME_QT6", "gtk3")
@@ -86,7 +87,7 @@ local function configure(cfg)
 	hl.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "default" })
 
 	hl.on("hyprland.start", function()
-		hl.exec_cmd("hyprctl setcursor capitaine-cursors 24")
+		hl.exec_cmd("hyprctl setcursor capitaine-cursors 48")
 		hl.exec_cmd("systemctl --user start dms.service")
 		for _, command in ipairs(cfg.autostart or {}) do
 			hl.exec_cmd(command)
