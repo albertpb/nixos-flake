@@ -4,6 +4,10 @@ local function configure(cfg)
 	end
 
 	hl.env("XCURSOR_SIZE", "24")
+	hl.env("QT_QPA_PLATFORM", "wayland")
+	hl.env("QT_QPA_PLATFORMTHEME", "gtk3")
+	hl.env("QT_QPA_PLATFORMTHEME_QT6", "gtk3")
+	hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 	if cfg.drm_device then
 		hl.env("AQ_DRM_DEVICES", cfg.drm_device)
 	end
@@ -83,28 +87,33 @@ local function configure(cfg)
 
 	hl.on("hyprland.start", function()
 		hl.exec_cmd("hyprctl setcursor capitaine-cursors 24")
-		hl.exec_cmd("waybar")
-		hl.exec_cmd("hyprpaper")
-		hl.exec_cmd("blueman-applet")
-		hl.exec_cmd("systemctl --user enable --now hyprpolkitagent.service")
-		hl.exec_cmd("nm-applet --indicator")
+		hl.exec_cmd("systemctl --user start dms.service")
 		for _, command in ipairs(cfg.autostart or {}) do
 			hl.exec_cmd(command)
 		end
 	end)
 
 	hl.layer_rule({
-		name = "waybar_blur",
-		match = { namespace = "waybar" },
-		blur = true,
+		name = "dms_no_anim",
+		match = { namespace = "dms:.*" },
+		no_anim = true,
 	})
-	if cfg.blur_rofi then
-		hl.layer_rule({
-			name = "rofi_blur",
-			match = { namespace = "rofi" },
-			blur = true,
-		})
-	end
+	hl.layer_rule({
+		name = "dms_modals_blur",
+		match = {
+			namespace = "dms:(polkit|notification-center-modal|workspace-overview|color-picker|clipboard|spotlight|settings|process-list-modal)",
+		},
+		blur = true,
+		ignore_alpha = 0,
+	})
+	hl.layer_rule({
+		name = "dms_shell_blur",
+		match = {
+			namespace = "dms:(bar|tooltip|toast|dock-context-menu|tray-menu-window|control-center|notification-center-popout|dash|system-update|process-list-popout|battery|popout|app-launcher)",
+		},
+		blur = true,
+		ignore_alpha = 0,
+	})
 
 	for workspace, monitor in pairs(cfg.workspaces or {}) do
 		hl.workspace_rule({ workspace = tostring(workspace), monitor = monitor })
@@ -113,10 +122,35 @@ local function configure(cfg)
 	local main_mod = "SUPER"
 	hl.bind(main_mod .. " + Q", hl.dsp.exec_cmd("kitty"))
 	hl.bind(main_mod .. " + C", hl.dsp.window.close())
-	hl.bind(main_mod .. " + M", hl.dsp.exit())
-	hl.bind(main_mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+	hl.bind(main_mod .. " + SHIFT + M", hl.dsp.exit())
+	hl.bind(main_mod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 	hl.bind(main_mod .. " + P", hl.dsp.window.pseudo())
-	hl.bind(main_mod .. " + SPACE", hl.dsp.exec_cmd("rofi -show run"))
+	hl.bind(main_mod .. " + SPACE", hl.dsp.exec_cmd("dms ipc call spotlight toggle"))
+	hl.bind(main_mod .. " + V", hl.dsp.exec_cmd("dms ipc call clipboard toggle"))
+	hl.bind(main_mod .. " + M", hl.dsp.exec_cmd("dms ipc call processlist focusOrToggle"))
+	hl.bind(main_mod .. " + comma", hl.dsp.exec_cmd("dms ipc call settings focusOrToggle"))
+	hl.bind(main_mod .. " + N", hl.dsp.exec_cmd("dms ipc call notifications toggle"))
+	hl.bind(main_mod .. " + Y", hl.dsp.exec_cmd("dms ipc call dankdash wallpaper"))
+	hl.bind(main_mod .. " + TAB", hl.dsp.exec_cmd("dms ipc call hypr toggleOverview"))
+	hl.bind(main_mod .. " + ALT + L", hl.dsp.exec_cmd("dms ipc call lock lock"))
+
+	hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("dms ipc call audio increment 3"), {
+		locked = true,
+		repeating = true,
+	})
+	hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("dms ipc call audio decrement 3"), {
+		locked = true,
+		repeating = true,
+	})
+	hl.bind("XF86AudioMute", hl.dsp.exec_cmd("dms ipc call audio mute"), { locked = true })
+	hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("dms ipc call brightness increment 5"), {
+		locked = true,
+		repeating = true,
+	})
+	hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("dms ipc call brightness decrement 5"), {
+		locked = true,
+		repeating = true,
+	})
 
 	if cfg.toggle_split then
 		hl.bind(main_mod .. " + J", hl.dsp.layout("togglesplit"))
@@ -129,13 +163,9 @@ local function configure(cfg)
 
 	for workspace = 1, 5 do
 		local key = tostring(workspace)
-		local wallpaper = cfg.wallpaper_dir .. "/" .. key .. ".png"
-		local wallpaper_command = "hyprctl hyprpaper wallpaper ', " .. wallpaper .. "'"
 
 		hl.bind(main_mod .. " + " .. key, hl.dsp.focus({ workspace = workspace }))
-		hl.bind(main_mod .. " + " .. key, hl.dsp.exec_cmd(wallpaper_command))
 		hl.bind(main_mod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = workspace }))
-		hl.bind(main_mod .. " + SHIFT + " .. key, hl.dsp.exec_cmd(wallpaper_command))
 	end
 
 	hl.bind(main_mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))

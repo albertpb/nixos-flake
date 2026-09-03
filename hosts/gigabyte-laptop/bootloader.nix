@@ -11,7 +11,7 @@
         editor = false;
       };
 
-      timeout = lib.mkDefault 5;
+      timeout = 0;
 
       efi.canTouchEfiVariables = true;
 

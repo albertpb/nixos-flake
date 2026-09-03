@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ ... }:
 {
   networking = {
     networkmanager = {
@@ -19,8 +19,4 @@
       }
     ];
   };
-
-  users.users.${username}.packages = with pkgs; [
-    networkmanagerapplet
-  ];
 }

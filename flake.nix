@@ -7,15 +7,29 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dank-greeter = {
+      url = "github:AvengeMedia/dank-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, self, ... } @ inputs:
+  outputs =
+    { nixpkgs, self, ... }@inputs:
     let
       username = "albert";
     in
     {
       nixosConfigurations = import ./modules/core/default.nix {
-        inherit self nixpkgs inputs username;
+        inherit
+          self
+          nixpkgs
+          inputs
+          username
+          ;
       };
     };
 }

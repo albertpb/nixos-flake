@@ -6,32 +6,12 @@
 {
   boot = {
     loader = {
-      grub = {
+      systemd-boot = {
         enable = true;
-        efiSupport = true;
-        device = "nodev";
-        useOSProber = false;
-        default = "saved";
-        gfxpayloadEfi = "keep";
-        gfxmodeEfi = "2560x1440";
-        extraConfig = ''
-          terminal_output console
-        '';
-
-        fontSize = 28;
-        # extraEntries = ''
-        #   menuentry "Windows To Go (USB)" {
-        #     insmod part_gpt
-        #     insmod fat
-
-        #     search --fs-uuid --set=root 14FA-2312
-        #     chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-        #   }
-        # '';
-
+        editor = false;
       };
 
-      timeout = null;
+      timeout = 0;
 
       efi.canTouchEfiVariables = true;
     };
@@ -46,7 +26,10 @@
     ];
 
     kernelParams = [
+      "quiet"
+      "splash"
       "loglevel=3"
+      "systemd.show_status=false"
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
@@ -79,18 +62,18 @@
     initrd.systemd.enable = true;
   };
 
- # specialisation = {
- #   vm.configuration = {
- #     boot = {
- #       kernelParams = [
- #         "fbcon=rotate:3"
- #         "isolcpus=0-7,16-23"
- #         "nohz_full=0-7,16-23"
- #         "rcu_nocbs=0-7,16-23"
- #         "housekeeping=8-15,24-31"
- #         "irqaffinity=8-15,24-31"
- #       ];
- #     };
- #   };
- # };
+  # specialisation = {
+  #   vm.configuration = {
+  #     boot = {
+  #       kernelParams = [
+  #         "fbcon=rotate:3"
+  #         "isolcpus=0-7,16-23"
+  #         "nohz_full=0-7,16-23"
+  #         "rcu_nocbs=0-7,16-23"
+  #         "housekeeping=8-15,24-31"
+  #         "irqaffinity=8-15,24-31"
+  #       ];
+  #     };
+  #   };
+  # };
 }

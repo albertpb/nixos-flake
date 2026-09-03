@@ -2,9 +2,6 @@
   users.users.${username}.packages = with pkgs; [
     pinta
     brasero # make iso files
-    hyprpaper
-    hypridle
-    mako
     nwg-look
     macchina
     grim # take screenshots
@@ -18,7 +15,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    hyprpolkitagent
     wayland
     wayland-utils
   ];

@@ -2,9 +2,6 @@
   # albert-pc
   users.users.${username}.packages = with pkgs; [
     pinta
-    hyprpaper
-    hypridle
-    mako
     nwg-look
     macchina
     grim # take screenshots
@@ -15,7 +12,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    hyprpolkitagent
     wayland
     wayland-utils
   ];

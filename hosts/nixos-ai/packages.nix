@@ -1,7 +1,6 @@
 { pkgs, username, ... }: {
   users.users.${username}.packages = with pkgs; [
     pinta
-    mako
     nwg-look
     macchina
     vlc
