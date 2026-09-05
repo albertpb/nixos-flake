@@ -26,6 +26,7 @@
       stress-ng
       dysk
       smartmontools
+      btrfs-progs
       ethtool
       ffmpeg-full
       nvme-cli
