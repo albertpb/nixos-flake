@@ -19,5 +19,6 @@
           ignore_opacity = true,
           vrr = 1,
       })
+      hl.bind("SUPER + SHIFT + O", hl.dsp.exec_cmd("hyprctl dispatch dpms toggle HDMI-A-1"))
     '';
 }

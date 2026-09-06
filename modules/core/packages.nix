@@ -37,6 +37,7 @@
       iftop
       iotop
       nvtopPackages.full
+      jq
       perf
       wavemon
       p7zip
