@@ -6,19 +6,17 @@
     + ''
       configure({
           monitors = {
-              { output = "HDMI-A-2", mode = "2560x1440@144", position = "0x0", scale = 1, transform = 1 },
-              { output = "HDMI-A-1", mode = "3840x2160@240", position = "1440x0", scale = 1 },
+              { output = "DP-1", mode = "2560x1440@144", position = "0x0", scale = 1, transform = 1 },
           },
           workspaces = {
-              [1] = "HDMI-A-2",
-              [2] = "HDMI-A-2",
-              [3] = "HDMI-A-2",
-              [4] = "HDMI-A-1",
-              [5] = "HDMI-A-1",
+              [1] = "DP-1",
+              [2] = "DP-1",
+              [3] = "DP-1",
+              [4] = "DP-1",
+              [5] = "DP-1",
           },
           ignore_opacity = true,
           vrr = 1,
       })
-      hl.bind("SUPER + SHIFT + O", hl.dsp.exec_cmd("hyprctl dispatch dpms toggle HDMI-A-1"))
     '';
 }

@@ -21,6 +21,8 @@
     kernelPackages = pkgs.linuxPackages_6_12;
 
     kernelModules = [
+      "amdgpu"
+      "kvm-amd"
       "k10temp"
       "nct6775"
     ];
@@ -35,8 +37,14 @@
       "udev.log_priority=3"
       "video=efifb:off"
       "video=simplefb:off"
+      "fbcon=rotate:3"
       "pcie_aspm=off"
       "amd_pstate=active"
+      "isolcpus=0-7,16-23"
+      "nohz_full=0-7,16-23"
+      "rcu_nocbs=0-7,16-23"
+      "housekeeping=8-15,24-31"
+      "irqaffinity=8-15,24-31"
       # "amdgpu"
       # "amdgpu.dcdebugmask=0x10"
       # "amdgpu.deep_color=0"
@@ -49,6 +57,7 @@
     plymouth.theme = "bgrt";
 
     initrd.verbose = false;
+    initrd.kernelModules = [ "amdgpu" ];
     initrd.availableKernelModules = [
       "nvme"
       "ahci"
@@ -62,18 +71,4 @@
     initrd.systemd.enable = true;
   };
 
-  # specialisation = {
-  #   vm.configuration = {
-  #     boot = {
-  #       kernelParams = [
-  #         "fbcon=rotate:3"
-  #         "isolcpus=0-7,16-23"
-  #         "nohz_full=0-7,16-23"
-  #         "rcu_nocbs=0-7,16-23"
-  #         "housekeeping=8-15,24-31"
-  #         "irqaffinity=8-15,24-31"
-  #       ];
-  #     };
-  #   };
-  # };
 }

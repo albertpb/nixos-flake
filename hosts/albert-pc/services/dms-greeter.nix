@@ -13,8 +13,9 @@
       customConfig = ''
         env = DMS_RUN_GREETER,1
 
-        monitor = HDMI-A-1,3840x2160@240,0x0,1
-        monitor = HDMI-A-2,disable
+        monitor = DP-1,preferred,0x0,1,transform,1
+
+        exec-once = sleep 1 && hyprctl keyword monitor "DP-1,preferred,0x0,1,transform,1"
 
         misc {
           disable_hyprland_logo = true

@@ -14,7 +14,6 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ]
   ++ [ (import ./filesystem.nix) ]
-  ++ [ (import ./nvidia.nix) ]
   ++ [ (import ./bootloader.nix) ];
 
   console = {

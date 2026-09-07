@@ -5,6 +5,7 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
+    backupFileExtension = "hm-backup";
     extraSpecialArgs = { inherit inputs username; };
 
     users.${username} = {
