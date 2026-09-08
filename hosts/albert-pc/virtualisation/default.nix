@@ -51,6 +51,10 @@
 
   virtualisation.libvirtd = {
     enable = true;
+    allowedBridges = [
+      "br0"
+      "virbr0"
+    ];
     qemu = {
       package = pkgs.qemu_kvm;
       # package = qemu-anti-detection;
