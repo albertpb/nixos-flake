@@ -1,5 +1,7 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [ ../../../modules/core/home/hyprland.nix ];
+
+  home.packages = [ pkgs.hypridle ];
 
   home.file.".config/hypr/hyprland.lua".text =
     builtins.readFile ../../../modules/core/home/hyprland.lua
@@ -17,6 +19,15 @@
           },
           ignore_opacity = true,
           vrr = 1,
+          autostart = { "hypridle" },
       })
     '';
+
+  home.file.".config/hypr/hypridle.conf".text = ''
+    listener {
+      timeout = 900
+      on-timeout = hyprctl dispatch dpms off
+      on-resume = hyprctl dispatch dpms on
+    }
+  '';
 }
