@@ -37,6 +37,7 @@
       "udev.log_priority=3"
       "video=efifb:off"
       "video=simplefb:off"
+      "video=DP-1:panel_orientation=right_side_up"
       "fbcon=rotate:3"
       "pcie_aspm=off"
       "amd_pstate=active"

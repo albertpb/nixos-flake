@@ -31,9 +31,12 @@
         "10de:22ba" # Audio
         "10de:2b85" # GPU
         "10de:22e8" # Audio
-        "1987:5018" # Phison NVMe 1
         "1dbe:5236" # INNOGRIT NVMe
-        "1022:15b7" # USB 3.1
+      ];
+      deviceAddresses = [
+        "0000:02:00.0" # Phison NVMe 1
+        "0000:6c:00.0" # Phison NVMe 2
+        "0000:6a:00.0" # Dedicated USB 3.2 controller
       ];
       disableEFIfb = false;
       blacklistNvidia = true;

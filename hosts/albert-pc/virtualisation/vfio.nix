@@ -17,6 +17,12 @@ in {
       example = [ "10de:1b80" "10de:10f0" ];
       description = "PCI IDs of devices to bind to vfio-pci";
     };
+    deviceAddresses = mkOption {
+      type = types.listOf (types.strMatching "[0-9a-f]{4}:[0-9a-f]{2}:[0-9a-f]{2}\\.[0-7]");
+      default = [ ];
+      example = [ "0000:6a:00.0" ];
+      description = "PCI addresses of devices to bind exclusively to vfio-pci";
+    };
     disableEFIfb = mkOption {
       type = types.bool;
       default = false;
@@ -76,6 +82,24 @@ in {
 
     boot.initrd.kernelModules =
       [ "vfio_pci" "vfio_iommu_type1" "vfio" ];
+    systemd.services.vfio-bind-addresses = mkIf (cfg.deviceAddresses != [ ]) {
+      description = "Bind selected PCI addresses to vfio-pci";
+      wantedBy = [ "multi-user.target" ];
+      before = [ "libvirtd.service" ];
+      after = [ "systemd-udev-settle.service" ];
+      serviceConfig = {
+        Type = "oneshot";
+        RemainAfterExit = true;
+      };
+      script = concatMapStrings (device: ''
+        device_path=/sys/bus/pci/devices/${device}
+        if [ -L "$device_path/driver" ]; then
+          echo ${device} > "$device_path/driver/unbind"
+        fi
+        echo vfio-pci > "$device_path/driver_override"
+        echo ${device} > /sys/bus/pci/drivers_probe
+      '') cfg.deviceAddresses;
+    };
     boot.blacklistedKernelModules =
       optionals cfg.blacklistNvidia [ "nvidia" "nouveau" ];
 
