@@ -1,4 +1,7 @@
 { pkgs, ... }:
 {
-  imports = [ (import ./ssh.nix) ];
+  imports = [
+    (import ./ssh.nix)
+    (import ./samba.nix)
+  ];
 }
