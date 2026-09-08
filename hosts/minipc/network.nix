@@ -22,8 +22,8 @@
 
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 80 443 9443 8088 5432 445 139 ];
-      allowedUDPPorts = [ 443 7359 137 138 ];
+      allowedTCPPorts = [ 22 80 443 9443 8088 5432 6881 49494 445 139 ];
+      allowedUDPPorts = [ 443 7359 6881 1900 137 138 ];
       trustedInterfaces = [
         "docker0"
       ];
