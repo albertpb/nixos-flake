@@ -22,11 +22,4 @@
       })
     '';
 
-  home.file.".config/hypr/hypridle.conf".text = ''
-    listener {
-      timeout = 900                           # 15min
-      on-timeout = hyprctl dispatch dpms off
-      on-resume = hyprctl dispatch dpms on
-    }
-  '';
 }
